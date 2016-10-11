@@ -1,3 +1,112 @@
+/* Font imports */
+@import "https://fonts.googleapis.com/css?family=Montserrat";
+@import "https://fonts.googleapis.com/css?family=Roboto+Condensed";
+@import "https://fonts.googleapis.com/css?family=Pacifico|Roboto:100i";
+/* Declared variable */
+/* Navigation Style */
+html {
+  font-size: 100%; }
 
+ul {
+  list-style: none; }
+
+section {
+  padding: 2% 0; }
+  section h2 {
+    padding-bottom: 1%; }
+  section hr {
+    border-top: 1px solid red; }
+
+.audi_logo {
+  width: 100px;
+  margin: 0 auto; }
+
+nav .navbar-header {
+  background: #f6f6f6; }
+nav .icon-bar {
+  background: #1a1a1a; }
+nav li a {
+  color: #1a1a1a; }
+nav li:hover a {
+  color: #1a1a1a; }
+
+.navbar-nav {
+  margin: 0 -15px; }
+
+.navbar {
+  margin: 0; }
+  .navbar .dropdown a {
+    color: #1a1a1a; }
+  .navbar .dropdown ul {
+    width: 100%; }
+
+.dropdown-menu {
+  padding: 0;
+  border: none;
+  border-radius: 0; }
+  .dropdown-menu li {
+    padding: 10px;
+    border-bottom: 1px solid #f0f0f0; }
+  .dropdown-menu li:hover {
+    background: #f0f0f0;
+    transition: all 0.3s ease; }
+  .dropdown-menu li:hover a {
+    background: none; }
+
+/* Custom FlexSlide styles*/
+.slider {
+  padding: 0; }
+
+.flexslider {
+  border: none;
+  margin-bottom: 0; }
+  .flexslider .slides p {
+    font-family: 'Montserrat', sans-serif;
+    position: absolute;
+    font-size: 3rem;
+    top: 5%;
+    color: #fff;
+    padding-left: 0.3%; }
+
+/* Services */
+.services img {
+  width: 100%; }
+.services p {
+  padding-top: 2%;
+  font-family: "Open Sans", sans-serif; }
+.services .container span {
+  padding-right: 5px; }
+.services h2 {
+  margin: 0 auto; }
+
+/* News */
+.news h2 {
+  margin: 0 auto; }
+.news .nav-pills a {
+  color: #1a1a1a; }
+.news .nav-pills li.active > a,
+.news .nav-pills li.active > a:hover,
+.news .nav-pills li.active > a:focus {
+  background: #f0f0f0;
+  color: #1a1a1a; }
+.news #newsTab {
+  margin-bottom: 1%; }
+  .news #newsTab li a {
+    border-radius: 0; }
+.news #newsContent img {
+  width: 100%; }
+.news #newsContent p {
+  margin: 2% 0; }
+
+/* Footer */
+footer {
+  background: #f0f0f0;
+  padding: 2% 0; }
+  footer li {
+    border-bottom: 1px solid red;
+    font-family: "Montserrat", sans-serif;
+    padding: 10px 0; }
+  footer p {
+    font-family: 'Roboto', sans-serif; }
 
 /*# sourceMappingURL=style.css.map */
