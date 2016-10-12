@@ -25,37 +25,70 @@ AppAsset::register($this);
 <?php $this->beginBody() ?>
 
 <div class="wrap">
-<!--    --><?php
-//    NavBar::begin([
-//        'brandLabel' => 'My Company',
-//        'brandUrl' => Yii::$app->homeUrl,
-//        'options' => [
-//            'class' => 'navbar-inverse navbar-fixed-top',
-//        ],
-//    ]);
-//    echo Nav::widget([
-//        'options' => ['class' => 'navbar-nav navbar-right'],
-//        'items' => [
-//            ['label' => 'Home', 'url' => ['/site/index']],
-//            ['label' => 'About', 'url' => ['/site/about']],
-//            ['label' => 'Contact', 'url' => ['/site/contact']],
-//            Yii::$app->user->isGuest ? (
-//                ['label' => 'Login', 'url' => ['/site/login']]
-//            ) : (
-//                '<li>'
-//                . Html::beginForm(['/site/logout'], 'post', ['class' => 'navbar-form'])
-//                . Html::submitButton(
-//                    'Logout (' . Yii::$app->user->identity->username . ')',
-//                    ['class' => 'btn btn-link']
-//                )
-//                . Html::endForm()
-//                . '</li>'
-//            )
-//        ],
-//    ]);
-//    NavBar::end();
-//    ?>
+    <!--Logo Company-->
 
+    <div class="audi_logo">
+        <div>
+            <img src="/img/audi_logo.png" alt="">
+        </div>
+    </div>
+
+    <!--navigation-->
+
+    <nav class="navbar navbar-static-top">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+            </div>
+            <div id="navbar" class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                    <li class="active"><a href="#">Home</a></li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Service<span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="#">Inspection</a></li>
+                            <li><a href="#">Corporate sales</a></li>
+                            <li><a href="#">Insurance</a></li>
+                            <li><a href="#">Test drive</a></li>
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Technology<span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="#">Engine</a></li>
+                            <li><a href="#">Transmission</a></li>
+                            <li><a href="#">Quattro</a></li>
+                            <li><a href="#">Lighting</a></li>
+                            <li><a href="#">Assistent system</a></li>
+                            <li><a href="#">Information system</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="">News</a></li>
+                    <li><a href="">Sport</a></li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dillers<span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="#">Kiev</a></li>
+                            <li><a href="#">Kharkiv</a></li>
+                            <li><a href="#">Lviv</a></li>
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">About Us<span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="#">History</a></li>
+                            <li><a href="#">Museum</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
     <div>
         <?= Breadcrumbs::widget([
             'links' => isset($this->params['breadcrumbs']) ? $this->params['breadcrumbs'] : [],
@@ -64,6 +97,26 @@ AppAsset::register($this);
     </div>
 </div>
 
+<!--Footer-->
+
+<footer class="footer">
+    <div class="container">
+        <div class="col-sm-3">
+            <ul>
+                <li>Inspection</li>
+                <li>Corporate Sales</li>
+                <li>Insurance</li>
+                <li>Test drive</li>
+            </ul>
+        </div>
+        <div class="col-sm-9">
+            <h3>About Us</h3>
+            <p>Audi is a German automobile manufacturer that designs, engineers, produces, markets and distributes
+                luxury vehicles. Audi oversees worldwide operations from its headquarters in Ingolstadt, Bavaria,
+                Germany. Audi-branded vehicles are produced in nine production facilities worldwide.</p>
+        </div>
+    </div>
+</footer>
 
 
 <?php $this->endBody() ?>

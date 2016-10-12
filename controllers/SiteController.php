@@ -62,4 +62,20 @@ class SiteController extends Controller
     {
         return $this->render('index');
     }
+
+    /**
+     * @return string
+     */
+    public function actionLogin()
+    {
+        return $this->render('login');
+    }
+
+    /**
+     *
+     */
+    public function actionLogout()
+    {
+        
+    }
 }

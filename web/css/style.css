@@ -7,6 +7,13 @@
 html {
   font-size: 100%; }
 
+html, body {
+  height: 100%; }
+
+.wrap {
+  min-height: 100%;
+  height: auto; }
+
 ul {
   list-style: none; }
 
@@ -100,7 +107,7 @@ nav li:hover a {
 
 /* Footer */
 footer {
-  background: #f0f0f0;
+  background: #cbcbcb;
   padding: 2% 0; }
   footer li {
     border-bottom: 1px solid red;
