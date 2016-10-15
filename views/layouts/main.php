@@ -25,15 +25,18 @@ AppAsset::register($this);
 <?php $this->beginBody() ?>
 
 <div class="wrap">
+
     <!--Logo Company-->
 
-    <div class="audi_logo">
-        <div>
-            <img src="/img/audi_logo.png" alt="">
+    <div class="logo_container">
+        <div class="audi_logo">
+            <div>
+                <a href="/site/index"><img src="/img/audi_logo.png" alt=""></a>
+            </div>
         </div>
     </div>
 
-    <!--navigation-->
+    <!--Navigation-->
 
     <nav class="navbar navbar-static-top">
         <div class="container">
@@ -47,7 +50,7 @@ AppAsset::register($this);
             </div>
             <div id="navbar" class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
-                    <li class="active"><a href="#">Home</a></li>
+                    <li class="active"><a href="#">Models</a></li>
                     <li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Service<span class="caret"></span></a>
                         <ul class="dropdown-menu">

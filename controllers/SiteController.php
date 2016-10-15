@@ -7,7 +7,7 @@ use yii\filters\AccessControl;
 use yii\web\Controller;
 use yii\filters\VerbFilter;
 use app\models\LoginForm;
-use app\models\ContactForm;
+
 
 class SiteController extends Controller
 {
@@ -19,8 +19,16 @@ class SiteController extends Controller
         return [
             'access' => [
                 'class' => AccessControl::className(),
-                'only' => ['logout'],
+                'only' => ['login','logout'],
+                'denyCallback' => function($rule,$action){
+                    return $this->goBack();
+                },
                 'rules' => [
+                    [
+                        'actions' => ['login'],
+                        'allow' => true,
+                        'roles' => ['?'],
+                    ],
                     [
                         'actions' => ['logout'],
                         'allow' => true,
@@ -38,25 +46,7 @@ class SiteController extends Controller
     }
 
     /**
-     * @inheritdoc
-     */
-    public function actions()
-    {
-        return [
-            'error' => [
-                'class' => 'yii\web\ErrorAction',
-            ],
-            'captcha' => [
-                'class' => 'yii\captcha\CaptchaAction',
-                'fixedVerifyCode' => YII_ENV_TEST ? 'testme' : null,
-            ],
-        ];
-    }
-
-    /**
      * Displays homepage.
-     *
-     * @return string
      */
     public function actionIndex()
     {
@@ -64,18 +54,16 @@ class SiteController extends Controller
     }
 
     /**
-     * @return string
+     * Login action
      */
     public function actionLogin()
     {
-        return $this->render('login');
-    }
-
-    /**
-     *
-     */
-    public function actionLogout()
-    {
-        
+        $model = new LoginForm();
+        if ($model->load(Yii::$app->request->post()) && $model->login()) {
+            return $this->goBack();
+        }
+        return $this->render('login', [
+            'model' => $model,
+        ]);
     }
 }

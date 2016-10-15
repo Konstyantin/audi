@@ -18,7 +18,7 @@ html,body {
 }
 
 .wrap {
-  min-height: 100%;
+  min-height: 70%;
   height: auto;
 }
 
@@ -36,11 +36,14 @@ section {
     border-top: 1px solid red;
   }
 }
-
-.audi_logo {
-  width: 100px;
-  margin: 0 auto;
+.logo_container{
+  background: #f0f0f0;
+  .audi_logo {
+    width: 100px;
+    margin: 0 auto;
+  }
 }
+
 nav {
   .navbar-header {
     background: #f6f6f6;
@@ -173,7 +176,7 @@ nav {
 
 /* Footer */
 footer {
-  background: #cbcbcb;
+  background: #f0f0f0;
   padding: 2% 0;
   li {
     border-bottom: 1px solid red;
@@ -186,3 +189,7 @@ footer {
   }
 }
 
+/* Login form */
+.login {
+  padding-bottom:5%;
+}

@@ -3,22 +3,17 @@
 namespace app\models;
 
 use Yii;
-use yii\base\Model;
+use yii\base\Model; 
 
 /**
- * LoginForm is the model behind the login form.
- *
- * @property User|null $user This property is read-only.
- *
+ * LoginForm is the model which set rules for build LoginForm and validation from input data
  */
 class LoginForm extends Model
 {
-    public $username;
+    /** @var string| $login contains login for the LoginForm with a max .length 45 characters*/
+    public $login;
+    /** @var string| $password contains password for the LoginForm with a max .length 45 characters*/
     public $password;
-    public $rememberMe = true;
-
-    private $_user = false;
-
 
     /**
      * @return array the validation rules.
@@ -26,56 +21,48 @@ class LoginForm extends Model
     public function rules()
     {
         return [
-            // username and password are both required
-            [['username', 'password'], 'required'],
-            // rememberMe must be a boolean value
-            ['rememberMe', 'boolean'],
-            // password is validated by validatePassword()
-            ['password', 'validatePassword'],
+            // login and password are both required
+            [['login', 'password'], 'required'],
+            //login and password should contain at least 5 and at most 45 characters
+            [['login','password'],'string','min'=>5,'max'=>'45'],
         ];
     }
 
     /**
-     * Validates the password.
-     * This method serves as the inline validation for password.
+     * Check exists admin and input password equal is equal admin password
      *
-     * @param string $attribute the attribute currently being validated
-     * @param array $params the additional name-value pairs given in the rule
+     * @return bool
      */
-    public function validatePassword($attribute, $params)
+    public function validateForm()
     {
-        if (!$this->hasErrors()) {
-            $user = $this->getUser();
+        $admin = $this->getAdmin();
 
-            if (!$user || !$user->validatePassword($this->password)) {
-                $this->addError($attribute, 'Incorrect username or password.');
-            }
+        if (!$this->getAdmin() || !$admin->validatePassword($this->password)) {
+            return false;
         }
+        return true;
     }
 
     /**
-     * Logs in a user using the provided username and password.
-     * @return boolean whether the user is logged in successfully
+     * Logs in a admin using the provided login and password.
+     * @return boolean whether the user is logged in successfully 
      */
     public function login()
     {
-        if ($this->validate()) {
-            return Yii::$app->user->login($this->getUser(), $this->rememberMe ? 3600*24*30 : 0);
+        if ($this->validateForm()) {
+
+            return Yii::$app->user->login($this->getAdmin());
         }
-        return false;
+        return Yii::$app->session->setFlash('error','Login or Password Invalid');
     }
 
     /**
-     * Finds user by [[username]]
+     * Finds admin by [[login]]
      *
-     * @return User|null
+     * @return Admin|null
      */
-    public function getUser()
+    public function getAdmin()
     {
-        if ($this->_user === false) {
-            $this->_user = User::findByUsername($this->username);
-        }
-
-        return $this->_user;
+        return Admin::findByLogin($this->login);
     }
 }
