@@ -8,7 +8,8 @@
 
 namespace app\controllers;
 
-use yii\base\Controller;
+use Yii;
+use yii\web\Controller;
 use app\models\base\BaseRecord;
 
 /**
@@ -32,16 +33,18 @@ class BaseController extends Controller
     }
 
     /**
-     * To perform add new item to database
+     * To perform create new item to database
      * if was execute request
      *
      * @param $model
+     * @return bool
      */
     public function create($model)
     {
         if($this->checkRequest($model)){
             $values = $model->attributes;
             $model->create($values);
+            return $this->redirect(['']);
         }
     }
 
@@ -57,7 +60,7 @@ class BaseController extends Controller
         if($this->checkRequest($model)){
             $values = $model->attributes;
             $model->update($values);
-            return $this->goBack('/basic/web/');
+            return $this->goBack('');
         }
     }
 
@@ -106,5 +109,16 @@ class BaseController extends Controller
     public function getIdOnUrl()
     {
         return Yii::$app->request->get('id');
+    }
+
+    /**
+     * Set new Flash messager
+     *
+     * @param $status
+     * @param $message
+     */
+    public function setFlash($status,$message)
+    {
+        Yii::$app->session->setFlash($status,$message);
     }
 }
