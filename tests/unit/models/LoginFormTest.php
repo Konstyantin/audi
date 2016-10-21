@@ -9,7 +9,7 @@
 namespace tests\models;
 use Yii;
 use Codeception\Test\Unit;
-use app\models\LoginForm;
+use app\models\admin\LoginForm;
 
 class LoginFormTest extends Unit
 {

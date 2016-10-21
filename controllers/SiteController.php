@@ -6,6 +6,7 @@ use Yii;
 use yii\filters\AccessControl;
 use yii\web\Controller;
 use app\models\admin\LoginForm;
+use app\models\base\BaseRecord;
 
 
 class SiteController extends Controller
@@ -67,5 +68,14 @@ class SiteController extends Controller
     {
         Yii::$app->user->logout();
         return $this->goHome();
+    }
+
+    public function actionTest()
+    {
+        BaseRecord::setTable('engine');
+        $res = BaseRecord::getBy(['type'=>'abra']);
+        foreach ($res as $item){
+            echo $item->type;
+        }
     }
 }

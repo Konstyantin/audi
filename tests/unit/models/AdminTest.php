@@ -8,7 +8,7 @@
 
 namespace tests\models;
 
-use app\models\Admin;
+use app\models\admin\Admin;
 use Codeception\Test\Unit;
 
 class AdminTest extends Unit
