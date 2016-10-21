@@ -1,52 +1,57 @@
 <?php
+/**
+ * Created by PhpStorm.
+ * User: kostya
+ * Date: 15.10.16
+ * Time: 16:47
+ */
 
 namespace tests\models;
-
+use Yii;
+use Codeception\Test\Unit;
 use app\models\LoginForm;
-use Codeception\Specify;
 
-class LoginFormTest extends \Codeception\Test\Unit
+class LoginFormTest extends Unit
 {
     private $model;
 
     protected function _after()
     {
-        \Yii::$app->user->logout();
+        Yii::$app->user->logout();
     }
 
-    public function testLoginNoUser()
+    public function testLoginNoAdmin()
     {
         $this->model = new LoginForm([
-            'username' => 'not_existing_username',
-            'password' => 'not_existing_password',
+            'login' => 'not exists login',
+            'password' => 'not exists password',
         ]);
 
         expect_not($this->model->login());
-        expect_that(\Yii::$app->user->isGuest);
+        expect_that(Yii::$app->user->isGuest);
     }
-
+    
     public function testLoginWrongPassword()
     {
         $this->model = new LoginForm([
-            'username' => 'demo',
-            'password' => 'wrong_password',
+            'login' => 'admin',
+            'password' => '123456789',
         ]);
 
         expect_not($this->model->login());
-        expect_that(\Yii::$app->user->isGuest);
-        expect($this->model->errors)->hasKey('password');
+        expect_that(Yii::$app->user->isGuest);
+        expect(Yii::$app->session)->hasKey('error');
     }
 
     public function testLoginCorrect()
     {
         $this->model = new LoginForm([
-            'username' => 'demo',
-            'password' => 'demo',
+            'login' => 'admin',
+            'password' => 'admin',
         ]);
 
         expect_that($this->model->login());
-        expect_not(\Yii::$app->user->isGuest);
-        expect($this->model->errors)->hasntKey('password');
+        expect_not(Yii::$app->user->isGuest);
+        expect(Yii::$app->session)->hasntKey('error');
     }
-
 }

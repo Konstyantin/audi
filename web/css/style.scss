@@ -1,0 +1,195 @@
+/* Font imports */
+@import 'https://fonts.googleapis.com/css?family=Montserrat';
+@import 'https://fonts.googleapis.com/css?family=Roboto+Condensed';
+@import 'https://fonts.googleapis.com/css?family=Pacifico|Roboto:100i';
+/* Declared variable */
+
+$nav_color: #1a1a1a;
+$open_sans: 'Open Sans', sans-serif;
+$monserat: 'Montserrat', sans-serif;
+/* Navigation Style */
+
+html {
+  font-size: 100%;
+}
+
+html,body {
+  height: 100%;
+}
+
+.wrap {
+  min-height: 70%;
+  height: auto;
+}
+
+ul {
+  list-style: none;
+}
+section {
+  padding: 2% 0;
+
+  h2 {
+    padding-bottom: 1%;
+  }
+  
+  hr {
+    border-top: 1px solid red;
+  }
+}
+.logo_container{
+  background: #f0f0f0;
+  .audi_logo {
+    width: 100px;
+    margin: 0 auto;
+  }
+}
+
+nav {
+  .navbar-header {
+    background: #f6f6f6;
+  }
+  .icon-bar {
+    background: $nav_color;
+  }
+
+  li a {
+    color: $nav_color;
+  }
+  li:hover a {
+    color: $nav_color;
+  }
+}
+
+.navbar-nav {
+  margin:0 -15px;
+}
+.navbar {
+  margin:0;
+
+  .dropdown {
+    a {
+      color: $nav_color;
+    }
+    ul {
+      width: 100%;
+    }
+  }
+}
+
+.dropdown-menu {
+  padding:0;
+  border: none;
+  border-radius: 0;
+
+  li {
+    padding:10px;
+    border-bottom: 1px solid #f0f0f0;
+  }
+
+  li:hover {
+    background: #f0f0f0;
+    transition: all 0.3s ease;
+  }
+
+  li:hover a {
+    background: none;
+  }
+}
+
+/* Custom FlexSlide styles*/
+
+.slider {
+  padding:0;
+}
+.flexslider {
+  border: none;
+  margin-bottom: 0;
+
+  .slides p {
+    font-family: 'Montserrat', sans-serif;
+    position: absolute;
+    font-size: 3rem;
+    top: 5%;
+    color: #fff;
+    padding-left: 0.3%;
+  }
+}
+
+/* Services */
+
+.services {
+  img {
+    width: 100%;
+  }
+
+  p {
+    padding-top:2%;
+    font-family: $open_sans;
+  }
+  .container span {
+    padding-right: 5px;
+  }
+
+  h2 {
+    margin:0 auto;
+  }
+}
+
+/* News */
+
+.news {
+  h2 {
+    margin: 0 auto;
+  }
+
+  .nav-pills {
+
+    a {
+      color: $nav_color;
+    }
+
+    li.active > a,
+    li.active > a:hover,
+    li.active > a:focus {
+      background: #f0f0f0;
+      color: $nav_color;
+    }
+  }
+
+  #newsTab {
+    margin-bottom: 1%;
+
+    li a {
+      border-radius: 0;
+    }
+  }
+
+  #newsContent {
+    img {
+      width: 100%;
+    }
+    p {
+      margin:2% 0;
+    }
+  }
+}
+
+/* Footer */
+footer {
+  background: #f0f0f0;
+  padding: 2% 0;
+  li {
+    border-bottom: 1px solid red;
+    font-family: $monserat;
+    padding:10px 0;
+  }
+
+  p{
+    font-family: 'Roboto', sans-serif;
+  }
+}
+
+/* Login form */
+.login {
+  padding-bottom:5%;
+}
