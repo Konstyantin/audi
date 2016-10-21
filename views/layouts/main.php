@@ -88,6 +88,9 @@ AppAsset::register($this);
                             <li><a href="#">Museum</a></li>
                         </ul>
                     </li>
+                    <?php if(!Yii::$app->user->isGuest):?>
+                    <li><a href="/site/logout">Logout</a></li>
+                    <?php endif;?>
                 </ul>
             </div>
         </div>

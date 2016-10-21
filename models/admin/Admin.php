@@ -6,7 +6,7 @@
  * Time: 15:49
  */
 
-namespace app\models;
+namespace app\models\admin;
 
 use yii\db\ActiveRecord;
 use yii\web\IdentityInterface;
