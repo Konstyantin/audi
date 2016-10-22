@@ -16,7 +16,6 @@ use app\models\base\BaseRecord;
  * Class BaseController contains commons method for Controllers
  * @package app\controllers
  */
-
 class BaseController extends Controller
 {
     /**
@@ -44,7 +43,7 @@ class BaseController extends Controller
         if($this->checkRequest($model)){
             $values = $model->attributes;
             $model->create($values);
-            return $this->redirect(['']);
+            return true;
         }
     }
 
@@ -55,12 +54,12 @@ class BaseController extends Controller
      * @param $model
      * @return mixed
      */
-    public function update($model)
+    public function update($model,$item)
     {
         if($this->checkRequest($model)){
             $values = $model->attributes;
-            $model->update($values);
-            return $this->goBack('');
+            $model->update($item,$values);
+            return true;
         }
     }
 
@@ -68,12 +67,18 @@ class BaseController extends Controller
      * Take item id from request and delete item to id
      *
      * @param $table
+     * @return bool
      */
     public function delete($table)
     {
         $id = $this->getIdOnUrl();
-        BaseRecord::setTable($table);
-        BaseRecord::remove($id);
+
+        if($id and $table) {
+            BaseRecord::setTable($table);
+            BaseRecord::remove($id);
+
+            return true;
+        }
     }
 
     /**
@@ -92,13 +97,24 @@ class BaseController extends Controller
      * View one item from table and id item
      *
      * @param $table
-     * @param $id
      * @return mixed
      */
-    public function viewOne($table,$id)
+    public function viewOne($table)
     {
+        $id = $this->getIdOnUrl();
         BaseRecord::setTable($table);
         return BaseRecord::getOne($id);
+    }
+
+    /**
+     * Delete all item on table
+     *
+     * @param $table
+     */
+    public function deleteAll($table)
+    {
+        BaseRecord::setTable($table);
+        BaseRecord::removeAll();
     }
 
     /**

@@ -44,6 +44,9 @@ $config = [
             'enablePrettyUrl' => true,
             'showScriptName' => false,
             'rules' => [
+                'engine/<id:\d+>' => 'engine/view',
+                'engine/update/<id:\d+>' => 'engine/update',
+                'engine/delete/<id:\d+>' => 'engine/delete',
             ],
         ],
         

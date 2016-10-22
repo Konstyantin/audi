@@ -17,7 +17,7 @@ class Engine extends BaseRecord
     public function scenarios()
     {
         $scenarios = parent::scenarios();
-        $scenarios[self::SCENARIO_ENGINE] = ['type','num_cylinders','displacment','power','description'];
+        $scenarios[self::SCENARIO_ENGINE] = ['type','num_cylinders','displacment','power','rmp','torque','compression','description'];
         return $scenarios;
     }
 

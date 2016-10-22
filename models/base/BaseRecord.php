@@ -92,11 +92,6 @@ class BaseRecord extends ActiveRecord
      */
     public static function removeAll($param = null)
     {
-        if($param){
-            self::deleteAll($param);
-            return true;
-        }
-        self::removeAll();
-        return true;
+        return self::deleteAll();
     }
 }

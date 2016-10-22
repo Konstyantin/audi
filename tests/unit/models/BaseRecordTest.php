@@ -7,6 +7,7 @@
  */
 
 namespace tests\models;
+
 use Yii;
 use app\models\base\BaseRecord;
 use Codeception\Test\Unit;
@@ -31,19 +32,20 @@ class BaseRecordTest extends Unit
 
     public function testGetOne()
     {
-        expect_that($engine = BaseRecord::getOne(['id' => 8]));
+        expect_that($engine = BaseRecord::getOne(['id' => 15]));
         expect($engine->type)->equals('TDI');
     }
     
     public function testGetByParam()
     {
-        expect_that($engineByParam = BaseRecord::getBy(['type'=>'abra']));
+        expect_that($engineByParam = BaseRecord::getBy(['type'=>'TDI']));
         expect($engineByParam)->notEmpty();
     }
 
     public function testRemove()
     {
-        expect(BaseRecord::remove(['id' => 9]));
-        expect_not(BaseRecord::getBy(['id' => 9]));
+//        expect(BaseRecord::remove(['id' => 12]));
+//        expect_not(BaseRecord::getBy(['id' => 9]));
     }
+    
 }

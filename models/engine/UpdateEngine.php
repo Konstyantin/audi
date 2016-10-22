@@ -2,22 +2,19 @@
 /**
  * Created by PhpStorm.
  * User: kostya
- * Date: 21.10.16
- * Time: 19:49
+ * Date: 22.10.16
+ * Time: 15:54
  */
 
 namespace app\models\engine;
 
-use Yii;
-use app\models\engine\Engine;
 use yii\base\Model;
 
 /**
- * Class CreateEngine is the model which set rules for build CreateEngineForm and validation from input data
- *
+ * Class UpdateEngine
  * @package app\models\engine
  */
-class CreateEngine extends Model
+class UpdateEngine extends Model
 {
     /** @var int| $type contains type engine */
     public $type;
@@ -47,15 +44,18 @@ class CreateEngine extends Model
     }
 
     /**
-     * Create new Engine and add it in database
-     * take array data from form CreateEngine
+     * Update data about Engine
+     * Get data from database and change to data from form UpdateEngine *
      *
+     * @param $item
      * @param $values
+     * @return mixed
      */
-    public function create($values)
+    public function update($item,$values)
     {
-        $engine = new Engine(['scenario' => Engine::SCENARIO_ENGINE]);
-        $engine->attributes = $values;
-        $engine->save();
+        $engine = $item;
+        $engine->updateAttributes($values);
+        $engine->update();
+        return $engine;
     }
 }

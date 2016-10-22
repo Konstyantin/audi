@@ -17,6 +17,10 @@ html, body {
 ul {
   list-style: none; }
 
+a, a:hover, a:focus {
+  color: #000;
+  text-decoration: none; }
+
 section {
   padding: 2% 0; }
   section h2 {
@@ -125,5 +129,36 @@ footer {
 /* Custom setting forms*/
 .custom-form {
   padding-bottom: 2%; }
+
+/* Engine Section */
+.engine {
+  padding: 2%; }
+  .engine img {
+    width: 100%; }
+  .engine .item {
+    margin: 1% 0; }
+  .engine .btn-update {
+    padding-left: 0; }
+  .engine .btn {
+    border-radius: 0; }
+
+/* Description Engine */
+.description p {
+  font-family: "Roboto", sans-serif; }
+
+/* Engine */
+.engine-header {
+  position: relative;
+  width: 100%; }
+  .engine-header img {
+    width: 100%; }
+  .engine-header p {
+    font-family: 'Montserrat', sans-serif;
+    position: absolute;
+    font-size: 3rem;
+    top: 63%;
+    left: 3%;
+    color: #fff;
+    padding-left: 0.3%; }
 
 /*# sourceMappingURL=style.css.map */

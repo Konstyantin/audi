@@ -25,6 +25,12 @@ html,body {
 ul {
   list-style: none;
 }
+
+a, a:hover, a:focus {
+  color: #000;
+  text-decoration: none;
+}
+
 section {
   padding: 2% 0;
 
@@ -181,7 +187,7 @@ footer {
   li {
     border-bottom: 1px solid red;
     font-family: $monserat;
-    padding:10px 0;
+    padding: 10px 0;
   }
 
   p{
@@ -191,10 +197,60 @@ footer {
 
 /* Login form */
 .login {
-  padding-bottom:5%;
+  padding-bottom: 5%;
 }
 
 /* Custom setting forms*/
 .custom-form {
   padding-bottom: 2%;
+}
+
+/* Engine Section */
+.engine {
+
+  padding: 2%;
+
+  img {
+    width: 100%;
+  }
+
+  .item {
+    margin: 1% 0;
+  }
+
+  .btn-update {
+    padding-left:0;
+  }
+
+  .btn {
+    border-radius: 0;
+  }
+}
+
+/* Description Engine */
+
+.description {
+  p {
+    font-family: 'Roboto', sans-serif
+  }
+}
+
+/* Engine */
+.engine-header {
+  position: relative;
+  width: 100%;
+
+  img {
+    width: 100%;
+  }
+
+  p {
+    font-family: 'Montserrat', sans-serif;
+    position: absolute;
+    font-size: 3rem;
+    top: 63%;
+    left: 3%;
+    color: #fff;
+    padding-left: 0.3%;
+  }
 }
