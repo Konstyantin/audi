@@ -131,15 +131,15 @@ footer {
   padding-bottom: 2%; }
 
 /* Engine Section */
-.engine {
+.engine, .transmission {
   padding: 2%; }
-  .engine img {
+  .engine img, .transmission img {
     width: 100%; }
-  .engine .item {
+  .engine .item, .transmission .item {
     margin: 1% 0; }
-  .engine .btn-update {
+  .engine .btn-update, .transmission .btn-update {
     padding-left: 0; }
-  .engine .btn {
+  .engine .btn, .transmission .btn {
     border-radius: 0; }
 
 /* Description Engine */
@@ -147,12 +147,12 @@ footer {
   font-family: "Roboto", sans-serif; }
 
 /* Engine */
-.engine-header {
+.engine-header, .transmission-header {
   position: relative;
   width: 100%; }
-  .engine-header img {
+  .engine-header img, .transmission-header img {
     width: 100%; }
-  .engine-header p {
+  .engine-header p, .transmission-header p {
     font-family: 'Montserrat', sans-serif;
     position: absolute;
     font-size: 3rem;

@@ -47,6 +47,11 @@ $config = [
                 'engine/<id:\d+>' => 'engine/view',
                 'engine/update/<id:\d+>' => 'engine/update',
                 'engine/delete/<id:\d+>' => 'engine/delete',
+                /*************************************************/
+                'transmission/<id:\d+>' => 'transmission/view',
+                'transmission/update/<id:\d+>' => 'transmission/update',
+                'transmission/delete/<id:\d+>' => 'transmission/delete',
+                /*************************************************/
             ],
         ],
         

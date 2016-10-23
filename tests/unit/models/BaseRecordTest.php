@@ -32,13 +32,13 @@ class BaseRecordTest extends Unit
 
     public function testGetOne()
     {
-        expect_that($engine = BaseRecord::getOne(['id' => 15]));
-        expect($engine->type)->equals('TDI');
+        expect_that($engine = BaseRecord::getOne(['id' => 19]));
+        expect($engine->type)->equals('TFSI');
     }
     
     public function testGetByParam()
     {
-        expect_that($engineByParam = BaseRecord::getBy(['type'=>'TDI']));
+        expect_that($engineByParam = BaseRecord::getBy(['type'=>'TFSI']));
         expect($engineByParam)->notEmpty();
     }
 

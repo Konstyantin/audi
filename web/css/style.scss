@@ -206,7 +206,7 @@ footer {
 }
 
 /* Engine Section */
-.engine {
+.engine, .transmission {
 
   padding: 2%;
 
@@ -236,7 +236,7 @@ footer {
 }
 
 /* Engine */
-.engine-header {
+.engine-header, .transmission-header {
   position: relative;
   width: 100%;
 
@@ -254,3 +254,4 @@ footer {
     padding-left: 0.3%;
   }
 }
+

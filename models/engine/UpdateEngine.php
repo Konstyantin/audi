@@ -11,7 +11,8 @@ namespace app\models\engine;
 use yii\base\Model;
 
 /**
- * Class UpdateEngine
+ * Class UpdateEngine is the model which set rules for build UpdateEngine and Update data item
+ * 
  * @package app\models\engine
  */
 class UpdateEngine extends Model
