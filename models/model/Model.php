@@ -3,20 +3,20 @@
 /**
  * Created by PhpStorm.
  * User: kostya
- * Date: 21.10.16
- * Time: 19:47
+ * Date: 24.10.16
+ * Time: 11:29
  */
-namespace app\models\engine;
+namespace app\models\model;
 
 use app\models\base\BaseRecord;
 
 /**
- * Class Engine
- * @package app\models\engine
+ * Class Model
+ * @package app\models\model
  */
-class Engine extends BaseRecord
+class Model extends BaseRecord
 {
-    const SCENARIO_ENGINE = 'engine';
+    const SCENARIO_MODELS = 'models';
 
     /**
      * Set using scenarious
@@ -26,7 +26,7 @@ class Engine extends BaseRecord
     public function scenarios()
     {
         $scenarios = parent::scenarios();
-        $scenarios[self::SCENARIO_ENGINE] = ['type','num_cylinders','displacment','power','rmp','torque','compression','description'];
+        $scenarios[self::SCENARIO_MODELS] = ['name'];
         return $scenarios;
     }
 
@@ -37,6 +37,6 @@ class Engine extends BaseRecord
      */
     public static function tableName()
     {
-        return 'engine';
+        return 'models';
     }
 }
