@@ -16,7 +16,7 @@ use app\models\model\Model;
  */
 class CreateModel extends Model
 {
-    /** @var varchar| $compression set compression engine */
+    /** @var varchar| $name set name model */
     public $name;
 
     /**

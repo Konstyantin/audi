@@ -9,7 +9,7 @@
 namespace app\controllers;
 
 use app\controllers\BaseController;
-
+use app\models\model\UpdateModel;
 use app\models\model\CreateModel;
 
 /**
@@ -41,5 +41,22 @@ class ModelController extends BaseController
     {
         $list = $this->viewAll('models');
         return $this->render('list',['list' => $list]);
+    }
+
+    /**
+     * Update data about take Engine
+     *
+     * @return string
+     */
+    public function actionUpdate()
+    {
+        $model = new UpdateModel();
+        $modelItem = $this->viewOne('models');
+
+        if ($this->update($model,$modelItem)) {
+            $this->setFlash('model_update', 'Model successful update');
+        }
+
+        return $this->render('update',compact('model','modelItem'));
     }
 }
