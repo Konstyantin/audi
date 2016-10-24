@@ -31,4 +31,15 @@ class ModelController extends BaseController
         }
         return $this->render('create',['model'=>$model]);
     }
+
+    /**
+     * View All list items
+     *
+     * @return string
+     */
+    public function actionList()
+    {
+        $list = $this->viewAll('models');
+        return $this->render('list',['list' => $list]);
+    }
 }
