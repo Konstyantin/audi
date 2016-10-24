@@ -73,4 +73,15 @@ class ModelController extends BaseController
 
         return $this->goBack('/model/list');
     }
+
+    /**
+     * Delete All list items
+     *
+     * @return \yii\web\Response
+     */
+    public function actionDeleteList()
+    {
+        $this->deleteAll('models');
+        return $this->goBack('/model/list');
+    }
 }
