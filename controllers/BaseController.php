@@ -72,7 +72,7 @@ class BaseController extends Controller
     public function delete($table)
     {
         $id = $this->getIdOnUrl();
-
+        
         if($id and $table) {
             BaseRecord::setTable($table);
             BaseRecord::remove($id);

@@ -59,4 +59,18 @@ class ModelController extends BaseController
 
         return $this->render('update',compact('model','modelItem'));
     }
+
+    /**
+     * Delete one Engine by Id
+     *
+     * @return \yii\web\Response
+     */
+    public function actionDelete()
+    {
+        if($this->delete('models')){
+            $this->setFlash('delete_model','Models delete successful');
+        }
+
+        return $this->goBack('/model/list');
+    }
 }

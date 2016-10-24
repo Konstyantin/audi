@@ -38,7 +38,7 @@
                 <a href="<?= '/model/update/' . $item->id; ?>" class="btn btn-default">Update</a>
             </div>
             <div class="col-lg-4 pull-right">
-                <a href="<?= '/engine/delete/' . $item->id; ?>" class="btn btn-default">Delete</a>
+                <a href="<?= '/model/delete/' . $item->id; ?>" class="btn btn-default">Delete</a>
             </div>
         </div>
     <?php endforeach;?>
