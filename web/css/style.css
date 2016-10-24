@@ -47,7 +47,8 @@ nav li:hover a {
   margin: 0 -15px; }
 
 .navbar {
-  margin: 0; }
+  margin: 0;
+  border: none; }
   .navbar .dropdown a {
     color: #1a1a1a; }
   .navbar .dropdown ul {
@@ -131,15 +132,15 @@ footer {
   padding-bottom: 2%; }
 
 /* Engine Section */
-.engine, .transmission {
+.engine, .transmission, .model {
   padding: 2%; }
-  .engine img, .transmission img {
+  .engine img, .transmission img, .model img {
     width: 100%; }
-  .engine .item, .transmission .item {
+  .engine .item, .transmission .item, .model .item {
     margin: 1% 0; }
-  .engine .btn-update, .transmission .btn-update {
+  .engine .btn-update, .transmission .btn-update, .model .btn-update {
     padding-left: 0; }
-  .engine .btn, .transmission .btn {
+  .engine .btn, .transmission .btn, .model .btn {
     border-radius: 0; }
 
 /* Description Engine */
@@ -147,12 +148,12 @@ footer {
   font-family: "Roboto", sans-serif; }
 
 /* Engine */
-.engine-header, .transmission-header {
+.engine-header, .transmission-header, .model-header {
   position: relative;
   width: 100%; }
-  .engine-header img, .transmission-header img {
+  .engine-header img, .transmission-header img, .model-header img {
     width: 100%; }
-  .engine-header p, .transmission-header p {
+  .engine-header p, .transmission-header p, .model-header p {
     font-family: 'Montserrat', sans-serif;
     position: absolute;
     font-size: 3rem;

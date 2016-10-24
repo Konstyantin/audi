@@ -33,7 +33,7 @@ class CreateEngine extends Model
     public $torque;
     /** @var int| $torque set twisting moment engine */
     public $compression;
-    /** @var int| $compression set compression engine */
+    /** @var text| $compression set compression engine */
     public $description;
 
     /**

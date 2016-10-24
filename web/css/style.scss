@@ -71,6 +71,7 @@ nav {
 }
 .navbar {
   margin:0;
+  border: none;
 
   .dropdown {
     a {
@@ -206,7 +207,7 @@ footer {
 }
 
 /* Engine Section */
-.engine, .transmission {
+.engine, .transmission, .model {
 
   padding: 2%;
 
@@ -236,7 +237,7 @@ footer {
 }
 
 /* Engine */
-.engine-header, .transmission-header {
+.engine-header, .transmission-header, .model-header {
   position: relative;
   width: 100%;
 

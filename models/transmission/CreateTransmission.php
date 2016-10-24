@@ -21,7 +21,7 @@ class CreateTransmission extends Model
     public $line;
     /** @var int| $type contains level transmission */
     public $level;
-    /** @var int| $type contains description transmission */
+    /** @var text| $type contains description transmission */
     public $description;
 
     /**

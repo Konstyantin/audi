@@ -52,6 +52,8 @@ $config = [
                 'transmission/update/<id:\d+>' => 'transmission/update',
                 'transmission/delete/<id:\d+>' => 'transmission/delete',
                 /*************************************************/
+                'model/update/<id:\d+>' => 'model/update',
+                'model/delete/<id:\d+>' => 'model/delete',
             ],
         ],
         
