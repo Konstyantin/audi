@@ -8,9 +8,9 @@
 
 namespace app\controllers;
 
+use app\models\carModel\CreateCarModel;
+use app\models\carModel\UpdateCarModel;
 use app\controllers\BaseController;
-use app\models\model\UpdateModel;
-use app\models\model\CreateModel;
 
 /**
  * Class ModelController let us to be manipulated with Model Item
@@ -25,10 +25,12 @@ class ModelController extends BaseController
      */
     public function actionCreate()
     {
-        $model = new CreateModel();
+        $model = new CreateCarModel();
+
         if($this->create($model)){
             return $this->goBack('/model/list');
         }
+
         return $this->render('create',['model'=>$model]);
     }
 
@@ -50,7 +52,7 @@ class ModelController extends BaseController
      */
     public function actionUpdate()
     {
-        $model = new UpdateModel();
+        $model = new UpdateCarModel();
         $modelItem = $this->viewOne('models');
 
         if ($this->update($model,$modelItem)) {

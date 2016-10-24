@@ -3,16 +3,20 @@
  * Created by PhpStorm.
  * User: kostya
  * Date: 24.10.16
- * Time: 12:21
+ * Time: 21:47
  */
 
-namespace app\models\model;
+namespace app\models\carModel;
 
 use yii\base\Model;
 
-class UpdateModel extends Model
+/**
+ * Class UpdateCarModel
+ * @package app\models\carModel
+ */
+class UpdateCarModel extends Model
 {
-    /** @var varchar| $name set name model */
+    /** @var | $name contains name model */
     public $name;
 
     /**
@@ -21,13 +25,13 @@ class UpdateModel extends Model
     public function rules()
     {
         return [
-            ['name', 'required'],
+            ['name','required'],
         ];
     }
 
     /**
      * Update data about Model
-     * Get data from database and change to data from form UpdateModel
+     * Get data from database and change to data from form UpdateCarModel
      *
      * @param $item
      * @param $values

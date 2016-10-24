@@ -4,19 +4,15 @@
  * Created by PhpStorm.
  * User: kostya
  * Date: 24.10.16
- * Time: 11:29
+ * Time: 21:38
  */
-namespace app\models\model;
+namespace app\models\carModel;
 
 use app\models\base\BaseRecord;
 
-/**
- * Class Model
- * @package app\models\model
- */
-class Model extends BaseRecord
+class CarModel extends BaseRecord
 {
-    const SCENARIO_MODELS = 'models';
+    const SCENARIO_MODEL = 'models';
 
     /**
      * Set using scenarious
@@ -26,7 +22,7 @@ class Model extends BaseRecord
     public function scenarios()
     {
         $scenarios = parent::scenarios();
-        $scenarios[self::SCENARIO_MODELS] = ['name'];
+        $scenarios[self::SCENARIO_MODEL] = ['name'];
         return $scenarios;
     }
 
