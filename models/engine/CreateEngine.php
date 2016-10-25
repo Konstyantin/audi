@@ -25,15 +25,15 @@ class CreateEngine extends Model
     public $num_cylinders;
     /** @var int| $displacment set displacment engine */
     public $displacment;
-    /** @var int| $displacment set type engine */
+    /** @var int| $power set type engine */
     public $power;
-    /** @var int| $power set power engine */
+    /** @var int| $rmp set power engine */
     public $rmp;
-    /** @var int| $rmp set rmp engine */
+    /** @var int| $torque set rmp engine */
     public $torque;
-    /** @var int| $torque set twisting moment engine */
+    /** @var int| $compression set twisting moment engine */
     public $compression;
-    /** @var text| $compression set compression engine */
+    /** @var text| $description set compression engine */
     public $description;
 
     /**

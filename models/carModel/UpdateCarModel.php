@@ -16,7 +16,7 @@ use yii\base\Model;
  */
 class UpdateCarModel extends Model
 {
-    /** @var | $name contains name model */
+    /** @var char| $name contains name model */
     public $name;
 
     /**
