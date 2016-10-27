@@ -11,7 +11,7 @@
          * @return methods
          */
         init:function () {
-           this.nav_dropdown();
+            this.nav_dropdown();
         },
 
         /**
@@ -67,7 +67,7 @@
          */
         slidesDown:function (elem,duration) {
             elem.stop(true,true).slideDown(duration);
-        }
+        },
     }
 
     /**

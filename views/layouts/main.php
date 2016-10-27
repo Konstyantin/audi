@@ -88,6 +88,13 @@ AppAsset::register($this);
                             <li><a href="#">Museum</a></li>
                         </ul>
                     </li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Image<span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="/image/upload">Upload</a></li>
+                            <li><a href="/image/list">View</a></li>
+                        </ul>
+                    </li>
                     <?php if(!Yii::$app->user->isGuest):?>
                     <li><a href="/site/logout">Logout</a></li>
                     <?php endif;?>

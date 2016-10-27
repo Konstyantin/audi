@@ -203,7 +203,7 @@ footer {
 }
 
 /* Engine Section */
-.engine, .transmission, .model {
+.engine, .transmission, .model, .list-image {
 
   padding: 2%;
 
@@ -251,4 +251,29 @@ footer {
     padding-left: 0.3%;
   }
 }
+
+/* List Image */
+
+.list-image {
+
+  .list-image-form {
+
+  }
+
+  .list-item {
+
+    .item {
+      width: 100%;
+
+      p {
+        margin-top: 2%;
+      }
+      img {
+        border: 5px solid #FFFFFF;
+        box-shadow: 0 0 2px #bababa;
+      }
+    }
+  }
+}
+
 

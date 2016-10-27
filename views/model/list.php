@@ -32,7 +32,7 @@
     </div>
     <?php foreach ($list as $item):?>
         <div class="col-lg-3 col-xs-6 item">
-            <img src="/img/models/a7_logo.png" alt="">
+            <img src="/img/models/A7.png" alt="">
             <h2 class="text-center"><a href="<?= '/model/' . $item->id; ?>"><?= $item->name;?></a></h2>
             <div class="col-lg-4 pull-left btn-update">
                 <a href="<?= '/model/update/' . $item->id; ?>" class="btn btn-default">Update</a>

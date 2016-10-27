@@ -130,15 +130,15 @@ footer {
   padding-bottom: 2%; }
 
 /* Engine Section */
-.engine, .transmission, .model {
+.engine, .transmission, .model, .list-image {
   padding: 2%; }
-  .engine img, .transmission img, .model img {
+  .engine img, .transmission img, .model img, .list-image img {
     width: 100%; }
-  .engine .item, .transmission .item, .model .item {
+  .engine .item, .transmission .item, .model .item, .list-image .item {
     margin: 1% 0; }
-  .engine .btn-update, .transmission .btn-update, .model .btn-update {
+  .engine .btn-update, .transmission .btn-update, .model .btn-update, .list-image .btn-update {
     padding-left: 0; }
-  .engine .btn, .transmission .btn, .model .btn {
+  .engine .btn, .transmission .btn, .model .btn, .list-image .btn {
     border-radius: 0; }
 
 /* Description Engine */
@@ -159,5 +159,14 @@ footer {
     left: 3%;
     color: #fff;
     padding-left: 0.3%; }
+
+/* List Image */
+.list-image .list-item .item {
+  width: 100%; }
+  .list-image .list-item .item p {
+    margin-top: 2%; }
+  .list-image .list-item .item img {
+    border: 5px solid #FFFFFF;
+    box-shadow: 0 0 2px #bababa; }
 
 /*# sourceMappingURL=style.css.map */

@@ -9,10 +9,15 @@
 namespace app\controllers;
 
 use Yii;
+use yii\web\UploadedFile;
 use app\models\image\UploadForm;
 use app\controllers\BaseController;
-use yii\web\UploadedFile;
+use app\models\image\ImageList;
 
+/**
+ * Class ImageController let us manipulate images
+ * @package app\controllers
+ */
 class ImageController extends BaseController
 {
     /**
@@ -33,5 +38,21 @@ class ImageController extends BaseController
         }
 
         return $this->render('upload',['model' => $model]);
+    }
+
+
+    /**
+     * Search and display search data
+     * 
+     * @return string
+     */
+    public function actionList()
+    {
+        $model = new ImageList();
+
+        $path = $model->getDataRequest('path');
+        $imageList = $model->loadImage($path);
+
+        return $this->render('list',compact('model','imageList','path'));
     }
 }
