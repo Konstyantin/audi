@@ -15,8 +15,24 @@ use yii\widgets\ActiveForm;
     <?php Pjax::begin();?>
     <div class="container list-image-form">
         <div class="col-md-6 col-md-offset-3">
+            <?php if(Yii::$app->session->hasFlash('image_delete')):?>
+                <?php
+                $success = Yii::$app->session->getFlash('image_delete');
+                echo \yii\bootstrap\Alert::widget([
+                    'options' => [
+                        'class' => 'alert-success'
+                    ],
+                    'body' => $success
+                ]);
+                ?>
+            <?php endif;?>
+            
             <?php $form = ActiveForm::begin(['options' => ['data-pjax' => true]]);?>
-            <?= $form->field($model,'path')->textInput(['name' => 'path','value' => $path]);?>
+            <?= $form->field($model,'path')->textInput([
+                'name' => 'path',
+                'value' => $path,
+                'placeholder' => 'Choose directory'
+            ]);?>
             <?= Html::submitButton('View Images',['class' => 'btn btn-default']);?>
             <?php $form::end();?>
         </div>
@@ -27,14 +43,13 @@ use yii\widgets\ActiveForm;
         <?php foreach ($imageList as $imgItem):?>
             <hr>
             <div class="container item">
-                <div class="col-lg-6">
-                    <img src="/<?= $imgItem;?>" alt="">
+                <div class="col-lg-6 test">
+                    <img class="imgItem" src="/<?= $imgItem;?>" alt="">
                 </div>
                 <div class="col-lg-6 item-content">
                     <p>Path: <span><?=$imgItem;?></span></p>
                     <div class="model-manage">
-                        <a href="" class="btn btn-default delete">Image Delete</a>
-                        <a href="/img/update/<?= $imgItem;?>" class="btn btn-default">Image Update</a>
+                        <a href="/image/delete" class="btn btn-default delete" data-image="<?=$imgItem;?>">Image Delete</a>
                     </div>
                 </div>
             </div>
@@ -43,4 +58,3 @@ use yii\widgets\ActiveForm;
     <?php endif;?>
     <?php Pjax::end();?>
 </div>
-

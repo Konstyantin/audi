@@ -55,6 +55,7 @@ $config = [
                 'model/update/<id:\d+>' => 'model/update',
                 'model/delete/<id:\d+>' => 'model/delete',
                 /*************************************************/
+                'image/delete/<param:\w+>' => 'image/delete',
             ],
         ],
         

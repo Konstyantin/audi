@@ -74,4 +74,50 @@ class ImageList extends Model
         }
         return false;
     }
+
+    /**
+     * Check the existence file of the specific path
+     *
+     * @param $file
+     * @return bool
+     */
+    public function checkExists($file)
+    {
+        $file = $this->shapePath($file);
+            if(file_exists($file)){
+                return true;
+            }
+        return false;
+    }
+
+    /**
+     * Delete passed file if it exists
+     *
+     * @param $file
+     * @return bool
+     */
+    public function deleteFile($file)
+    {
+        if($file){
+            if($this->checkExists($file)){
+                unlink($file);
+                return true;
+            }
+        }
+        return false;
+    }
+
+    /**
+     * Sets the correct path file to the directory
+     *
+     * @param $file
+     * @return bool|string
+     */
+    public function shapePath($file)
+    {
+        if($file){
+            return $file = './' . $file;
+        }
+        return false;
+    }
 }

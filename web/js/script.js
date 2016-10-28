@@ -12,6 +12,7 @@
          */
         init:function () {
             this.nav_dropdown();
+            this.imageManager();
         },
 
         /**
@@ -33,7 +34,7 @@
              */
             nav_drop.on('mouseover',function () {
                 var $this = $(this),
-                    drop_menu = $this.find('.dropdown-menu');
+                    drop_menu = $(this).find('.dropdown-menu');
 
                 $this.addClass('open');
             });
@@ -68,11 +69,48 @@
         slidesDown:function (elem,duration) {
             elem.stop(true,true).slideDown(duration);
         },
+
+        /**
+         * ImageManager method allow to manage the found images
+         * according to the attribute
+         */
+        imageManager:function () {
+
+            var listImage = $('.list-image'),
+                that = this;
+
+            listImage.on('click','a',function (e) {
+                e.preventDefault();
+
+                var $this = $(this),
+                    url = $this.attr('href'),
+                    image = $this.attr('data-image');
+
+                that.ajaxRequest(url,image)
+            });
+        },
+
+        /**
+         * AjaxRequest method sends the received attributes to the server
+         * if server return true, method perform reload page
+         *
+         * @param url
+         * @param param
+         */
+        ajaxRequest:function (url,param) {
+            $.ajax({
+                url:url,
+                data:{param:param},
+                success:function (data) {
+                    location.reload();
+                }
+            });
+        },
     }
 
     /**
      * Initialization App
      */
     app.init();
-
 })(jQuery)
+

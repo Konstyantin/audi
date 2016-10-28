@@ -55,4 +55,18 @@ class ImageController extends BaseController
 
         return $this->render('list',compact('model','imageList','path'));
     }
+
+    /**
+     * Action Delete allow us delete files
+     */
+    public function actionDelete()
+    {
+        $image = Yii::$app->request->get('param');
+
+        $model = new ImageList();
+
+        if($model->deleteFile($image)){
+            $this->setFlash('image_delete','Image deleted success');
+        }
+    }
 }
