@@ -13,13 +13,12 @@ html {
   font-size: 100%;
 }
 
-html,body {
-  height: 100%;
+img {
+  width: 100%;
 }
 
-.wrap {
-  min-height: 70%;
-  height: auto;
+html,body {
+  height: 100%;
 }
 
 ul {
@@ -30,7 +29,62 @@ a, a:hover, a:focus {
   color: #000;
   text-decoration: none;
 }
+.wrap {
+  height:100%;
+}
 
+.form-control {
+  border-radius: 0;
+}
+
+.alert {
+  border-radius: 0;
+  margin-bottom:0;
+}
+
+/* style for button manipulate */
+.btn {
+  border-radius: 0;
+}
+
+.btn-create {
+  border: 1px solid #5cb85c;
+  color: #5cb85c;
+}
+
+.btn-create:hover {
+  background: #5cb85c;
+  color: #FFFFFF;
+  transition: .3s;
+}
+
+.btn-delete {
+  border: 1px solid #b92c28;
+  color: #b92c28;
+}
+
+.btn-delete:hover {
+  background: #b92c28;
+  color: #FFFFFF;
+  transition: .3s;
+}
+
+.btn-update {
+  border: 1px solid #286090;
+  color: #286090;
+}
+
+.btn-update:hover {
+  background: #286090;
+  color: #FFFFFF;
+  transition: .3s;
+}
+
+/* Set border for element */
+.navbar, .manage-container,.news {
+  border-top: 1px solid #f0f0f0;
+  border-bottom: 1px solid #f0f0f0;
+}
 section {
   padding: 2% 0;
 
@@ -38,8 +92,7 @@ section {
     padding-bottom: 1%;
   }
 }
-.logo_container{
-  background: #f0f0f0;
+.logo_container {
   .audi_logo {
     width: 100px;
     margin: 0 auto;
@@ -67,7 +120,6 @@ nav {
 }
 .navbar {
   margin:0;
-  border: none;
 
   .dropdown {
     a {
@@ -121,10 +173,6 @@ nav {
 /* Services */
 
 .services {
-  img {
-    width: 100%;
-  }
-
   p {
     padding-top:2%;
     font-family: $open_sans;
@@ -168,27 +216,10 @@ nav {
   }
 
   #newsContent {
-    img {
-      width: 100%;
-    }
+  padding-left: 1.5%;
     p {
       margin:2% 0;
     }
-  }
-}
-
-/* Footer */
-footer {
-  background: #f0f0f0;
-  padding: 2% 0;
-  li {
-    border-bottom: 1px solid red;
-    font-family: $monserat;
-    padding: 10px 0;
-  }
-
-  p{
-    font-family: 'Roboto', sans-serif;
   }
 }
 
@@ -205,23 +236,14 @@ footer {
 /* Engine Section */
 .engine, .transmission, .model, .list-image {
 
-  padding: 2%;
-
-  img {
-    width: 100%;
-  }
-
   .item {
     margin: 1% 0;
   }
 
-  .btn-update {
-    padding-left:0;
-  }
+}
 
-  .btn {
-    border-radius: 0;
-  }
+.manage-control {
+  margin:1% 2%;
 }
 
 /* Description Engine */
@@ -236,10 +258,6 @@ footer {
 .engine-header, .transmission-header, .model-header {
   position: relative;
   width: 100%;
-
-  img {
-    width: 100%;
-  }
 
   p {
     font-family: 'Montserrat', sans-serif;
@@ -274,6 +292,17 @@ footer {
       }
     }
   }
+}
+
+/* Scroll Top Button */
+.scrollTop {
+  display: none;
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 50px;
+  height:50px;
+  z-index: 100;
 }
 
 

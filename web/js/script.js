@@ -13,6 +13,7 @@
         init:function () {
             this.nav_dropdown();
             this.imageManager();
+            this.scrollTop();
         },
 
         /**
@@ -77,7 +78,8 @@
         imageManager:function () {
 
             var listImage = $('.list-image'),
-                that = this;
+                btn = listImage.find('.btn');
+
 
             listImage.on('click','a',function (e) {
                 e.preventDefault();
@@ -85,8 +87,7 @@
                 var $this = $(this),
                     url = $this.attr('href'),
                     image = $this.attr('data-image');
-
-                that.ajaxRequest(url,image)
+                app.ajaxRequest(url,image)
             });
         },
 
@@ -102,9 +103,72 @@
                 url:url,
                 data:{param:param},
                 success:function (data) {
-                    location.reload();
+                    var elem = $('.test');
+                    app.reuseSearch(elem);
                 }
             });
+        },
+
+        /**
+         * Method perform scroll top with animate effect 
+         * @param duration
+         */
+        lookUp:function (duration) {
+            $('html,body').stop(true,true).animate({scrollTop:0},duration);
+        },
+
+        /**
+         * Method perform recycling event with select element
+         * @param elem
+         */
+        reuseSearch:function (elem) {
+            if(elem.click()){
+                app.lookUp();
+            }
+        },
+
+        /**
+         * Method perform the display btn by scrolling page
+         * at click on btn will execute method lookUp()
+         */
+        scrollTop:function () {
+            var btn = $('.scrollTop');
+
+            btn.on('click',function () {
+                app.lookUp(1000);
+            });
+
+            $(window).on('scroll',function () {
+                var $this = $(this),
+                    height = $this.height(),
+                    top = $this.scrollTop();
+
+                app.hideElem(btn);
+
+                if(top > height){
+                    app.showElem(btn);
+                }
+            })
+        },
+
+        /**
+         * Hide elem set display:none
+         *
+         * @param elem
+         * @returns {*}
+         */
+        hideElem:function (elem) {
+            return elem.hide();
+        },
+
+        /**
+         * Hide elem set display:block
+         *
+         * @param elem
+         * @returns {*}
+         */
+        showElem:function (elem) {
+            return elem.show();
         },
     }
 

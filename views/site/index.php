@@ -32,24 +32,25 @@
 <!--Services-->
 
 <section class="services">
-    <div class="container">
+    <div class="">
         <h2 class="text-center">Audi Service</h2>
-        <hr>
-        <div class="col-md-3 col-sm-6">
-            <img src="/img/service/insurance.jpg" alt="">
-            <p class="text-center">Insurance</p>
-        </div>
-        <div class="col-md-3 col-sm-6">
-            <img src="/img/service/test_drive.jpg" alt="">
-            <p class="text-center">Test drive</p>
-        </div>
-        <div class="col-md-3 col-sm-6">
-            <img src="/img/service/corporate_sales.jpg" alt="">
-            <p class="text-center">Corporate sales</p>
-        </div>
-        <div class="col-md-3 col-sm-6">
-            <img src="/img/service/inspection.jpg" alt="">
-            <p class="text-center">Inspection</p>
+        <div class="container">
+            <div class=" col-sm-3 col-xs-6">
+                <img src="/img/news/A164202_large.jpg" alt="">
+                <p class="text-center">Insurance</p>
+            </div>
+            <div class="col-sm-3 col-xs-6">
+                <img src="/img/news/A164202_large.jpg" alt="">
+                <p class="text-center">Test drive</p>
+            </div>
+            <div class="col-sm-3 col-xs-6">
+                <img src="/img/news/A164202_large.jpg" alt="">
+                <p class="text-center">Test drive</p>
+            </div>
+            <div class="col-sm-3 col-xs-6">
+                <img src="/img/news/A164202_large.jpg" alt="">
+                <p class="text-center">Test drive</p>
+            </div>
         </div>
     </div>
 </section>
@@ -59,7 +60,6 @@
 <section class="news">
     <div class="container">
         <h2 class="text-center">Audi News</h2>
-        <hr>
         <ul id="newsTab" class="nav nav-pills">
             <li class="active">
                 <a href="#news" data-toggle="tab">News</a>
@@ -70,23 +70,21 @@
         </ul>
         <div id="newsContent" class="tab-content">
             <div class="tab-pane fade in active" id="news">
-                <div class="container">
-                    <div class="col-sm-3 col-xs-6">
-                        <img src="/img/news/A164202_large.jpg" alt="">
-                        <p class="news_title text-center">Audi Sport TT Cup, Hungaroring 2016</p>
-                    </div>
-                    <div class="col-sm-3 col-xs-6">
-                        <img src="/img/news/A164202_large.jpg" alt="">
-                        <p class="news_title text-center">Audi Sport TT Cup, Hungaroring 2016</p>
-                    </div>
-                    <div class="col-sm-3 col-xs-6">
-                        <img src="/img/news/A164202_large.jpg" alt="">
-                        <p class="news_title text-center">Audi Sport TT Cup, Hungaroring 2016</p>
-                    </div>
-                    <div class="col-sm-3 col-xs-6">
-                        <img src="/img/news/A164202_large.jpg" alt="">
-                        <p class="news_title text-center">Audi Sport TT Cup, Hungaroring 2016</p>
-                    </div>
+                <div class="col-sm-3 col-xs-6">
+                    <img src="/img/news/A164202_large.jpg" alt="">
+                    <p class="news_title text-center">Audi Sport TT Cup, Hungaroring 2016</p>
+                </div>
+                <div class="col-sm-3 col-xs-6">
+                    <img src="/img/news/A164202_large.jpg" alt="">
+                    <p class="news_title text-center">Audi Sport TT Cup, Hungaroring 2016</p>
+                </div>
+                <div class="col-sm-3 col-xs-6">
+                    <img src="/img/news/A164202_large.jpg" alt="">
+                    <p class="news_title text-center">Audi Sport TT Cup, Hungaroring 2016</p>
+                </div>
+                <div class="col-sm-3 col-xs-6">
+                    <img src="/img/news/A164202_large.jpg" alt="">
+                    <p class="news_title text-center">Audi Sport TT Cup, Hungaroring 2016</p>
                 </div>
             </div>
             <div class="tab-pane fade" id="sport">

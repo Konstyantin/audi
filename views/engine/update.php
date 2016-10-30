@@ -33,7 +33,7 @@ use yii\helpers\Html;
         <?= $form->field($model,'torque')->textInput(['value' => $engine->torque]);?>
         <?= $form->field($model,'compression')->textInput(['value' => $engine->compression]);?>
         <?= $form->field($model,'description')->textarea(['value' => $engine->description]);?>
-        <?= Html::submitButton('Update Engine',['class' => 'btn btn-success']);?>
+        <?= Html::submitButton('Update Engine',['class' => 'btn btn-update']);?>
         <?php $form->end();?>
     </div>
 </div>

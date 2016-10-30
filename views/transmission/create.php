@@ -16,7 +16,7 @@ use yii\helpers\Html;
         <?= $form->field($model,'line')->textInput(['placeholder' => 'Line Transmission']);?>
         <?= $form->field($model,'level')->textInput(['placeholder' => 'Level Transmission']);?>
         <?= $form->field($model,'description')->textarea(['placeholder' => 'Description Transmission']);?>
-        <?= Html::submitButton('Create Transmission',['class' => 'btn btn-success']);?>
+        <?= Html::submitButton('Create Transmission',['class' => 'btn btn-create']);?>
         <?php $form->end();?>
     </div>
 </div>

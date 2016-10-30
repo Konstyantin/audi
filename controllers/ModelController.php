@@ -11,6 +11,7 @@ namespace app\controllers;
 use app\models\carModel\CreateCarModel;
 use app\models\carModel\UpdateCarModel;
 use app\controllers\BaseController;
+use app\models\image\ImageModel;
 
 /**
  * Class ModelController let us to be manipulated with Model Item
@@ -42,7 +43,8 @@ class ModelController extends BaseController
     public function actionList()
     {
         $list = $this->viewAll('models');
-        return $this->render('list',['list' => $list]);
+        $imgs = ImageModel::load('img/models/');
+        return $this->render('list',['list' => $list,'imgs' => $imgs]);
     }
 
     /**

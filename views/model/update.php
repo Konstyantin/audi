@@ -26,7 +26,7 @@ use yii\helpers\Html;
 
         <?php $form = ActiveForm::begin();?>
         <?= $form->field($model,'name')->textInput(['value' => $modelItem->name]);?>
-        <?= Html::submitButton('Update Model',['class' => 'btn btn-success']);?>
+        <?= Html::submitButton('Update Model',['class' => 'btn btn-update']);?>
         <?php $form->end();?>
     </div>
 </div>

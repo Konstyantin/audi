@@ -108,28 +108,8 @@ AppAsset::register($this);
         ]) ?>
         <?= $content ?>
     </div>
+    <img class="scrollTop" src="/img/logo/up-arrow.png" alt="">
 </div>
-
-<!--Footer-->
-
-<footer class="footer">
-    <div class="container">
-        <div class="col-sm-3">
-            <ul>
-                <li>Inspection</li>
-                <li>Corporate Sales</li>
-                <li>Insurance</li>
-                <li>Test drive</li>
-            </ul>
-        </div>
-        <div class="col-sm-9">
-            <h3>About Us</h3>
-            <p>Audi is a German automobile manufacturer that designs, engineers, produces, markets and distributes
-                luxury vehicles. Audi oversees worldwide operations from its headquarters in Ingolstadt, Bavaria,
-                Germany. Audi-branded vehicles are produced in nine production facilities worldwide.</p>
-        </div>
-    </div>
-</footer>
 
 
 <?php $this->endBody() ?>

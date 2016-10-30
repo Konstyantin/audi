@@ -75,7 +75,7 @@ class EngineController extends BaseController
      */
     public function actionDeleteList()
     {
-        $this->deleteAll('perfomance');
+        $this->deleteAll('engine');
         return $this->goBack('/engine/list');
     }
 

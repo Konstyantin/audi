@@ -7,12 +7,11 @@
 html {
   font-size: 100%; }
 
+img {
+  width: 100%; }
+
 html, body {
   height: 100%; }
-
-.wrap {
-  min-height: 70%;
-  height: auto; }
 
 ul {
   list-style: none; }
@@ -21,16 +20,60 @@ a, a:hover, a:focus {
   color: #000;
   text-decoration: none; }
 
+.wrap {
+  height: 100%; }
+
+.form-control {
+  border-radius: 0; }
+
+.alert {
+  border-radius: 0;
+  margin-bottom: 0; }
+
+/* style for button manipulate */
+.btn {
+  border-radius: 0; }
+
+.btn-create {
+  border: 1px solid #5cb85c;
+  color: #5cb85c; }
+
+.btn-create:hover {
+  background: #5cb85c;
+  color: #FFFFFF;
+  transition: .3s; }
+
+.btn-delete {
+  border: 1px solid #b92c28;
+  color: #b92c28; }
+
+.btn-delete:hover {
+  background: #b92c28;
+  color: #FFFFFF;
+  transition: .3s; }
+
+.btn-update {
+  border: 1px solid #286090;
+  color: #286090; }
+
+.btn-update:hover {
+  background: #286090;
+  color: #FFFFFF;
+  transition: .3s; }
+
+/* Set border for element */
+.navbar, .manage-container, .news {
+  border-top: 1px solid #f0f0f0;
+  border-bottom: 1px solid #f0f0f0; }
+
 section {
   padding: 2% 0; }
   section h2 {
     padding-bottom: 1%; }
 
-.logo_container {
-  background: #f0f0f0; }
-  .logo_container .audi_logo {
-    width: 100px;
-    margin: 0 auto; }
+.logo_container .audi_logo {
+  width: 100px;
+  margin: 0 auto; }
 
 nav .navbar-header {
   background: #f6f6f6; }
@@ -45,8 +88,7 @@ nav li:hover a {
   margin: 0 -15px; }
 
 .navbar {
-  margin: 0;
-  border: none; }
+  margin: 0; }
   .navbar .dropdown a {
     color: #1a1a1a; }
   .navbar .dropdown ul {
@@ -81,8 +123,6 @@ nav li:hover a {
     padding-left: 0.3%; }
 
 /* Services */
-.services img {
-  width: 100%; }
 .services p {
   padding-top: 2%;
   font-family: "Open Sans", sans-serif; }
@@ -105,21 +145,10 @@ nav li:hover a {
   margin-bottom: 1%; }
   .news #newsTab li a {
     border-radius: 0; }
-.news #newsContent img {
-  width: 100%; }
-.news #newsContent p {
-  margin: 2% 0; }
-
-/* Footer */
-footer {
-  background: #f0f0f0;
-  padding: 2% 0; }
-  footer li {
-    border-bottom: 1px solid red;
-    font-family: "Montserrat", sans-serif;
-    padding: 10px 0; }
-  footer p {
-    font-family: 'Roboto', sans-serif; }
+.news #newsContent {
+  padding-left: 1.5%; }
+  .news #newsContent p {
+    margin: 2% 0; }
 
 /* Login form */
 .login {
@@ -130,16 +159,11 @@ footer {
   padding-bottom: 2%; }
 
 /* Engine Section */
-.engine, .transmission, .model, .list-image {
-  padding: 2%; }
-  .engine img, .transmission img, .model img, .list-image img {
-    width: 100%; }
-  .engine .item, .transmission .item, .model .item, .list-image .item {
-    margin: 1% 0; }
-  .engine .btn-update, .transmission .btn-update, .model .btn-update, .list-image .btn-update {
-    padding-left: 0; }
-  .engine .btn, .transmission .btn, .model .btn, .list-image .btn {
-    border-radius: 0; }
+.engine .item, .transmission .item, .model .item, .list-image .item {
+  margin: 1% 0; }
+
+.manage-control {
+  margin: 1% 2%; }
 
 /* Description Engine */
 .description p {
@@ -149,8 +173,6 @@ footer {
 .engine-header, .transmission-header, .model-header {
   position: relative;
   width: 100%; }
-  .engine-header img, .transmission-header img, .model-header img {
-    width: 100%; }
   .engine-header p, .transmission-header p, .model-header p {
     font-family: 'Montserrat', sans-serif;
     position: absolute;
@@ -168,5 +190,15 @@ footer {
   .list-image .list-item .item img {
     border: 5px solid #FFFFFF;
     box-shadow: 0 0 2px #bababa; }
+
+/* Scroll Top Button */
+.scrollTop {
+  display: none;
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 50px;
+  height: 50px;
+  z-index: 100; }
 
 /*# sourceMappingURL=style.css.map */

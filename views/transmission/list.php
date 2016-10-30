@@ -12,7 +12,7 @@
         <p>Audi Transsmisiion</p>
     </div>
 </div>
-<div class="container transmission">
+<div class="transmission">
     <?php if(Yii::$app->session->hasFlash('delete_transmission')):?>
         <?php
         $success = Yii::$app->session->getFlash('delete_transmission');
@@ -25,22 +25,19 @@
         ?>
     <?php endif;?>
 
-    <div class="transmission-manage">
-        <a href="/transmission/create" class="btn btn-default">Create Transmission</a>
-        <a href="/transmission/delete-list" class="btn btn-default">Delete All</a>
-        <hr>
+    <div class="manage-container">
+        <div class="manage-control">
+            <a href="/transmission/create" class="btn btn-create">Create Transmission</a>
+            <a href="/transmission/delete-list" class="btn btn-delete">Delete All</a>
+        </div>
     </div>
 
 <?php foreach ($list as $item):?>
     <div class="col-lg-3 col-xs-6 item">
         <img src="/img/transmission/A1610481_large.jpg" alt="">
         <h2 class="text-center"><a href="<?= '/transmission/' . $item->id; ?>"><?= $item->line;?></a></h2>
-        <div class="col-lg-4 pull-left btn-update">
-            <a href="<?= '/transmission/update/' . $item->id; ?>" class="btn btn-default">Update</a>
-        </div>
-        <div class="col-lg-4 pull-right">
-            <a href="<?= '/transmission/delete/' . $item->id; ?>" class="btn btn-default">Delete</a>
-        </div>
+            <a href="<?= '/transmission/update/' . $item->id; ?>" class="pull-left btn btn-update">Update</a>
+            <a href="<?= '/transmission/delete/' . $item->id; ?>" class="pull-right btn btn-delete">Delete</a>
     </div>
 <?php endforeach;?>
 </div>

@@ -28,7 +28,7 @@ use yii\helpers\Html;
         <?= $form->field($model,'line')->textInput(['value' => $transmission->line]);?>
         <?= $form->field($model,'level')->textInput(['value' => $transmission->level]);?>
         <?= $form->field($model,'description')->textarea(['value' => $transmission->description]);?>
-        <?= Html::submitButton('Update Transmission',['class' => 'btn btn-success']);?>
+        <?= Html::submitButton('Update Transmission',['class' => 'btn btn-update']);?>
         <?php $form->end();?>
     </div>
 </div>

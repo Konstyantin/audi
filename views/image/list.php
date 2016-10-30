@@ -10,6 +10,7 @@ use yii\widgets\Pjax;
 use yii\widgets\ActiveForm;
 
 ?>
+
 <div class="list-image">
     <h2 class="text-center">Write path to catalog</h2>
     <?php Pjax::begin();?>
@@ -33,7 +34,7 @@ use yii\widgets\ActiveForm;
                 'value' => $path,
                 'placeholder' => 'Choose directory'
             ]);?>
-            <?= Html::submitButton('View Images',['class' => 'btn btn-default']);?>
+            <?= Html::submitButton('View Images',['class' => 'btn btn-create']);?>
             <?php $form::end();?>
         </div>
     </div>
@@ -43,13 +44,13 @@ use yii\widgets\ActiveForm;
         <?php foreach ($imageList as $imgItem):?>
             <hr>
             <div class="container item">
-                <div class="col-lg-6 test">
+                <div class="col-lg-6">
                     <img class="imgItem" src="/<?= $imgItem;?>" alt="">
                 </div>
                 <div class="col-lg-6 item-content">
                     <p>Path: <span><?=$imgItem;?></span></p>
                     <div class="model-manage">
-                        <a href="/image/delete" class="btn btn-default delete" data-image="<?=$imgItem;?>">Image Delete</a>
+                        <a href="/image/delete" class="btn btn-delete delete" data-image="<?=$imgItem;?>">Image Delete</a>
                     </div>
                 </div>
             </div>
@@ -58,3 +59,5 @@ use yii\widgets\ActiveForm;
     <?php endif;?>
     <?php Pjax::end();?>
 </div>
+
+
