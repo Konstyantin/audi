@@ -104,6 +104,7 @@
                 data:{param:param},
                 success:function (data) {
                     var elem = $('.test');
+                    
                     app.reuseSearch(elem);
                 }
             });

@@ -24,7 +24,7 @@ class BaseController extends Controller
      * @param $model
      * @return bool
      */
-    public function checkRequest($model)
+    public function checkModelRequest($model)
     {
         if($model->load(Yii::$app->request->post())){
             return true;
@@ -40,7 +40,7 @@ class BaseController extends Controller
      */
     public function create($model)
     {
-        if($this->checkRequest($model)){
+        if($this->checkModelRequest($model)){
             $values = $model->attributes;
             $model->create($values);
             return true;
@@ -56,7 +56,7 @@ class BaseController extends Controller
      */
     public function update($model,$item)
     {
-        if($this->checkRequest($model)){
+        if($this->checkModelRequest($model)){
             $values = $model->attributes;
             $model->update($item,$values);
             return true;
@@ -71,7 +71,7 @@ class BaseController extends Controller
      */
     public function delete($table)
     {
-        $id = $this->getIdOnUrl();
+        $id = $this->getParamOnUrl('id');
         
         if($id and $table) {
             BaseRecord::setTable($table);
@@ -101,7 +101,7 @@ class BaseController extends Controller
      */
     public function viewOne($table)
     {
-        $id = $this->getIdOnUrl();
+        $id = $this->getParamOnUrl('id');
         BaseRecord::setTable($table);
         return BaseRecord::getOne($id);
     }
@@ -122,9 +122,9 @@ class BaseController extends Controller
      *
      * @return mixed
      */
-    public function getIdOnUrl()
+    public function getParamOnUrl($param)
     {
-        return Yii::$app->request->get('id');
+        return Yii::$app->request->get($param);
     }
 
     /**
