@@ -10,6 +10,10 @@ namespace app\models\performance;
 
 use yii\base\Model;
 
+/**
+ * Class CreatePerformance is the model which set rules for build CreatePerformance and validation from input data
+ * @package app\models\performance
+ */
 class CreatePerformance extends Model
 {
     /** @var int| $speed contains car speed */

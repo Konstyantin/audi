@@ -17,7 +17,7 @@ use yii\widgets\Pjax;
                 <ul>
                     <li><a href="#tab1" data-toggle="tab">Body</a></li>
                     <li><a href="#tab2" data-toggle="tab">Performance</a></li>
-                    <li><a href="#tab3" data-toggle="tab">Third</a></li>
+                    <li><a href="#tab3" data-toggle="tab">Fuel</a></li>
                     <li><a href="#tab4" data-toggle="tab">Fourth</a></li>
                     <li><a href="#tab5" data-toggle="tab">Fifth</a></li>
                     <li><a href="#tab6" data-toggle="tab">Sixth</a></li>
@@ -52,7 +52,13 @@ use yii\widgets\Pjax;
             <?php $formPerformance::end();?>
         </div>
         <div class="tab-pane" id="tab3">
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maxime, repudiandae.</p>
+            <?php $formFuel = ActiveForm::begin();?>
+            <?= $formFuel->field($fuel,'urban')->textInput(['placeholder' => 'Urban Car']);?>
+            <?= $formFuel->field($fuel,'extra_urban')->textInput(['placeholder' => 'Extra Urban']);?>
+            <?= $formFuel->field($fuel,'combined')->textInput(['placeholder' => 'Combined Urban']);?>
+            <?= $formFuel->field($fuel,'emission')->textInput(['placeholder' => 'Emission Car']);?>
+            <?= Html::submitButton('Create Urban',['class' => 'btn btn-create']);?>
+            <?php $formFuel::end();?>
         </div>
         <div class="tab-pane" id="tab4">
             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maxime, repudiandae.</p>

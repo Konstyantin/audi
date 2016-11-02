@@ -10,16 +10,18 @@ namespace app\controllers;
 
 use app\controllers\BaseController;
 use app\models\body\CreateBody;
+use app\models\fuel\Fuel;
 use app\models\performance\CreatePerformance;
+use app\models\fuel\CreateFuel;
 
 class CarController extends BaseController
 {
     public function actionCreate()
     {
         $body = new CreateBody();
-        $this->create($body);
+        $fuel = new CreateFuel();
         $performance = new CreatePerformance();
-        $this->create($performance);
-        return $this->render('create',compact('body','performance'));
+
+        return $this->render('create',compact('body','performance','fuel'));
     }
 }
