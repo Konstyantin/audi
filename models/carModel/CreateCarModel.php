@@ -9,6 +9,11 @@
 namespace app\models\carModel;
 
 use yii\base\Model;
+
+/**
+ * Class CreateCarModel is the model which set rules for build CreateCarModel and validation from input data
+ * @package app\models\carModel
+ */
 class CreateCarModel extends Model
 {
     /** @var int| $name contains name model */

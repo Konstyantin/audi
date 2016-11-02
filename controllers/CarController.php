@@ -9,11 +9,14 @@
 namespace app\controllers;
 
 use app\controllers\BaseController;
+use app\models\body\CreateBody;
 
 class CarController extends BaseController
 {
     public function actionCreate()
     {
-        return $this->render('create');
+        $body = new CreateBody();
+        
+        return $this->render('create',compact('body'));
     }
 }
