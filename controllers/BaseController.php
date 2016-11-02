@@ -19,7 +19,7 @@ use app\models\base\BaseRecord;
 class BaseController extends Controller
 {
     /**
-     * Check execute if the request
+     * Check execute if the model request
      *
      * @param $model
      * @return bool
@@ -74,9 +74,7 @@ class BaseController extends Controller
         $id = $this->getParamOnUrl('id');
         
         if($id and $table) {
-            BaseRecord::setTable($table);
-            BaseRecord::remove($id);
-
+            BaseRecord::remove($table,$id);
             return true;
         }
     }
@@ -87,10 +85,9 @@ class BaseController extends Controller
      * @param $tabel
      * @return mixed
      */
-    public function viewAll($tabel)
+    public function viewAll($table)
     {
-        BaseRecord::setTable($tabel);
-        return BaseRecord::getAll();
+        return BaseRecord::getAll($table);
     }
 
     /**
@@ -102,8 +99,7 @@ class BaseController extends Controller
     public function viewOne($table)
     {
         $id = $this->getParamOnUrl('id');
-        BaseRecord::setTable($table);
-        return BaseRecord::getOne($id);
+        return BaseRecord::getOne($table,$id);
     }
 
     /**
@@ -113,12 +109,11 @@ class BaseController extends Controller
      */
     public function deleteAll($table)
     {
-        BaseRecord::setTable($table);
-        BaseRecord::removeAll();
+        BaseRecord::removeAll($table);
     }
 
     /**
-     * Get id param from request
+     * Get param from request
      *
      * @return mixed
      */
@@ -136,5 +131,17 @@ class BaseController extends Controller
     public function setFlash($status,$message)
     {
         Yii::$app->session->setFlash($status,$message);
+    }
+
+    /**
+     * Check execute if the request
+     *
+     * @return bool
+     */
+    public function checkRequest()
+    {
+        if(Yii::$app->request->post()){
+            return true;
+        }
     }
 }

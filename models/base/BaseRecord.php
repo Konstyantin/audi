@@ -44,8 +44,9 @@ class BaseRecord extends ActiveRecord
      *
      * @return array|\yii\db\ActiveRecord[]
      */
-    public static function getAll()
+    public static function getAll($table)
     {
+        self::setTable($table);
         return self::find()->all();
     }
 
@@ -55,8 +56,9 @@ class BaseRecord extends ActiveRecord
      * @param $param
      * @return static
      */
-    public static function getOne($param)
+    public static function getOne($table,$param)
     {
+        self::setTable($table);
         return self::findOne($param);
     }
 
@@ -79,19 +81,31 @@ class BaseRecord extends ActiveRecord
      * @param $param
      * @throws \Exception
      */
-    public static function remove($param)
+    public static function remove($table,$param)
     {
+        self::setTable($table);
         self::findOne($param)->delete();
     }
 
     /**
      * Remove all item 
-     * 
-     * @param null $param
+     *
      * @return bool
      */
-    public static function removeAll($param = null)
+    public static function removeAll($table)
     {
+        self::setTable($table);
         return self::deleteAll();
+    }
+
+    /**
+     * Get last add record to table by id
+     *
+     * @return mixed
+     */
+    public static function getLast($table)
+    {
+        self::setTable($table);
+        return self::find()->max('id');
     }
 }
