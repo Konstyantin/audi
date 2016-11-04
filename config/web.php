@@ -54,8 +54,11 @@ $config = [
                 /*************************************************/
                 'model/update/<id:\d+>' => 'model/update',
                 'model/delete/<id:\d+>' => 'model/delete',
+                'model/<id:\d+>' => 'model/cars',
                 /*************************************************/
                 'image/delete/<param:\w+>' => 'image/delete',
+                /*************************************************/
+                'car/<id:\d+>' => 'car/view',
             ],
         ],
         

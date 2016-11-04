@@ -8,6 +8,7 @@
 
 use app\models\image\LoadImage;
 use app\models\image\LoadWidget;
+use app\models\image\CustomWidget;
 ?>
 <div class="model-header">
     <div>
@@ -30,6 +31,7 @@ use app\models\image\LoadWidget;
 
     <div class="manage-container">
         <div class="manage-control">
+            <a href="/car/list" class="btn btn-create">View All</a>
             <a href="/model/create" class="btn btn-create">Create Model</a>
             <a href="/model/delete-list" class="btn btn-delete">Delete All</a>
         </div>
@@ -38,6 +40,7 @@ use app\models\image\LoadWidget;
         <?= LoadWidget::widget([
             'imgs' => $imgs,
             'items' => $list,
+            'controller' => 'model'
         ]);?>
     </div>
 </div>

@@ -88,4 +88,17 @@ class ModelController extends BaseController
         $this->deleteAll('models');
         return $this->goBack('/model/list');
     }
+
+    /**
+     * View a list of all cars belonging to the group specified id
+     *
+     * @return string
+     */
+    public function actionCars()
+    {
+        $id = $this->getParamOnUrl('id');
+        $imgs = ImageModel::load('img/car/');
+        $list = $this->getAllBy('car',['model_id' => $id]);
+        return $this->render('cars',compact('list','imgs'));
+    }
 }

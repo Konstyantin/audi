@@ -176,4 +176,16 @@ class BaseController extends Controller
     {
         return BaseRecord::getLast($table);
     }
+
+    /**
+     * Get all Item by param from set table
+     *
+     * @param $table
+     * @param $param
+     * @return static[]
+     */
+    public function getAllBy($table,$param)
+    {
+        return BaseRecord::getAllBy($table,$param);
+    }
 }

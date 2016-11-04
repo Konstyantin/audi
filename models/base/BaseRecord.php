@@ -76,6 +76,19 @@ class BaseRecord extends ActiveRecord
     }
 
     /**
+     * Get all items by $param
+     * 
+     * @param $table
+     * @param $param
+     * @return static[]
+     */
+    public static function getAllBy($table,$param)
+    {
+        self::setTable($table);
+        return self::findAll($param);
+    }
+
+    /**
      * Remove item on param 
      *
      * @param $param

@@ -10,9 +10,11 @@ namespace app\controllers;
 
 use app\controllers\BaseController;
 
+
 use app\models\car\CreateCar;
 use app\models\body\CreateBody;
 use app\models\fuel\CreateFuel;
+use app\models\image\ImageModel;
 use app\models\performance\CreatePerformance;
 
 class CarController extends BaseController
@@ -40,5 +42,30 @@ class CarController extends BaseController
         }
 
         return $this->render('create',compact('body','performance','fuel','car','test'));
+    }
+
+    /**
+     * View all list items
+     *
+     * @return string
+     */
+    public function actionList()
+    {
+        $list = $this->viewAll('car');
+        $imgs = ImageModel::load('img/car/');
+        return $this->render('list',compact('list','imgs'));
+    }
+
+    /**
+     * View car by get id
+     *
+     * @return string
+     */
+    public function actionView()
+    {
+        $id = $this->getParamOnUrl('id');
+        $imgs = ImageModel::load('img/car/');
+        $list = $this->getAllBy('car',['model_id' => $id]);
+        return $this->render('model',compact('list','imgs'));
     }
 }
