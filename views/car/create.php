@@ -11,10 +11,12 @@ use yii\widgets\Pjax;
 use yii\helpers\ArrayHelper;
 use app\models\base\BaseRecord;
 
+/**
+ * Get all engine, transmission, models for realisation dropDownList Engine, Transmission, Models
+ */
 $engines = ArrayHelper::map(BaseRecord::getAll('engine'),'id','type');
 $transmission = ArrayHelper::map(BaseRecord::getAll('transmission'),'id','line');
 $models = ArrayHelper::map(BaseRecord::getAll('models'),'id','name');
-
 ?>
 
 

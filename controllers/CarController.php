@@ -17,6 +17,11 @@ use app\models\performance\CreatePerformance;
 
 class CarController extends BaseController
 {
+    /**
+     * Create new Car
+     *
+     * @return string
+     */
     public function actionCreate()
     {
         $car = new CreateCar([

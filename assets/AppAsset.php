@@ -28,9 +28,7 @@ class AppAsset extends AssetBundle
     ];
     public $depends = [
         'yii\web\YiiAsset',
-        'yii\web\FormWizard',
         'yii\bootstrap\BootstrapAsset',
         'yii\web\FlexSlider',
-//        'yii\web\NormalizeCss',
     ];
 }
