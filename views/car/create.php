@@ -8,76 +8,66 @@
 use yii\widgets\ActiveForm;
 use yii\helpers\Html;
 use yii\widgets\Pjax;
+use yii\helpers\ArrayHelper;
+use app\models\base\BaseRecord;
+
+$engines = ArrayHelper::map(BaseRecord::getAll('engine'),'id','type');
+$transmission = ArrayHelper::map(BaseRecord::getAll('transmission'),'id','line');
+$models = ArrayHelper::map(BaseRecord::getAll('models'),'id','name');
+
 ?>
+
+
 <div id="rootwizard" class="container">
     <h2 class="text-center">Create Car</h2>
-    <div class="">
-        <div class="navbar-inner">
-            <div class="container">
-                <ul>
-                    <li><a href="#tab1" data-toggle="tab">Body</a></li>
-                    <li><a href="#tab2" data-toggle="tab">Performance</a></li>
-                    <li><a href="#tab3" data-toggle="tab">Fuel</a></li>
-                    <li><a href="#tab4" data-toggle="tab">Fourth</a></li>
-                    <li><a href="#tab5" data-toggle="tab">Fifth</a></li>
-                    <li><a href="#tab6" data-toggle="tab">Sixth</a></li>
-                    <li><a href="#tab7" data-toggle="tab">Seventh</a></li>
-                </ul>
-            </div>
-        </div>
-    </div>
-
     <div class="tab-content">
-        <br>
         <div id="bar" class="progress">
             <div class="progress-bar progress-bar-striped active" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="width: 0%;"></div>
         </div>
-
-        <div class="tab-pane" id="tab1">
-            <?php $formBody = ActiveForm::begin();?>
+        <div class="tab-pane active">
+            <?php Pjax::begin();?>
+                <?php $formBody = ActiveForm::begin(['options' => ['data-pjax' => true]]);?>
                 <?= $formBody->field($body,'height')->textInput(['placeholder' => 'Height Car']);?>
                 <?= $formBody->field($body,'width')->textInput(['placeholder' => 'Width Car']);?>
                 <?= $formBody->field($body,'length')->textInput(['placeholder' => 'Length Car']);?>
                 <?= $formBody->field($body,'wheelbase')->textInput(['placeholder' => 'Wheelbase Car']);?>
                 <?= $formBody->field($body,'drag')->textInput(['placeholder' => 'Drag Car']);?>
                 <?= $formBody->field($body,'weight')->textInput(['placeholder' => 'Weight Car']);?>
-                <?= Html::submitButton('Create Body',['class' => 'btn btn-create']);?>
-            <?php $formBody::end();?>
+                <?= Html::submitButton('Create Body',['class' => 'btn btn-primary submit_record','id' => 1]);?>
+                <?php $formBody::end();?>
+            <?php Pjax::end();?>
         </div>
-        <div class="tab-pane" id="tab2">
-            <?php $formPerformance = ActiveForm::begin();?>
+        <div class="tab-pane">
+            <?php Pjax::begin();?>
+                <?php $formPerformance = ActiveForm::begin(['options' => ['data-pjax' => true]]);?>
                 <?= $formPerformance->field($performance,'speed')->textInput(['placeholder' => 'Speed Car']);?>
                 <?= $formPerformance->field($performance,'acceleration')->textInput(['placeholder' => 'Acceleration Car']);?>
-                <?= Html::submitButton('Create Performance',['class' => 'btn btn-create']);?>
-            <?php $formPerformance::end();?>
+                <?= Html::submitButton('Create Performance',['class' => 'btn btn-primary submit_record','id' => 2]);?>
+                <?php $formPerformance::end();?>
+            <?php Pjax::end();?>
         </div>
-        <div class="tab-pane" id="tab3">
-            <?php $formFuel = ActiveForm::begin();?>
-            <?= $formFuel->field($fuel,'urban')->textInput(['placeholder' => 'Urban Car']);?>
-            <?= $formFuel->field($fuel,'extra_urban')->textInput(['placeholder' => 'Extra Urban']);?>
-            <?= $formFuel->field($fuel,'combined')->textInput(['placeholder' => 'Combined Urban']);?>
-            <?= $formFuel->field($fuel,'emission')->textInput(['placeholder' => 'Emission Car']);?>
-            <?= Html::submitButton('Create Urban',['class' => 'btn btn-create']);?>
-            <?php $formFuel::end();?>
+        <div class="tab-pane">
+            <?php Pjax::begin();?>
+                <?php $formFuel = ActiveForm::begin(['options' => ['data-pjax' => true]]);?>
+                <?= $formFuel->field($fuel,'urban')->textInput(['placeholder' => 'Urban Car']);?>
+                <?= $formFuel->field($fuel,'extra_urban')->textInput(['placeholder' => 'Extra Urban']);?>
+                <?= $formFuel->field($fuel,'combined')->textInput(['placeholder' => 'Combined Urban']);?>
+                <?= $formFuel->field($fuel,'emission')->textInput(['placeholder' => 'Emission Car']);?>
+                <?= Html::submitButton('Create Urban',['class' => 'btn btn-primary submit_record','id' => 3]);?>
+                <?php $formFuel::end();?>
+            <?php Pjax::end();?>
         </div>
-        <div class="tab-pane" id="tab4">
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maxime, repudiandae.</p>
+        <div class="tab-pane">
+            <?php Pjax::begin();?>
+                <?php $formCar = ActiveForm::begin(['options' => ['data-pjax' => true]]);?>
+                <?= $formCar->field($car,'name')->textInput(['placeholder' => 'Name Car']);?>
+                <?= $formCar->field($car,'engine_id')->dropDownList($engines);?>
+                <?= $formCar->field($car,'transmission_id')->dropDownList($transmission);?>
+                <?= $formCar->field($car,'price')->textInput(['placeholder' => 'Price Car']);?>
+                <?= $formCar->field($car,'model_id')->dropDownList($models);?>
+                <?= Html::submitButton('Create Car',['class' => 'btn btn-primary submit_record','id' => 4]);?>
+                <?php $formCar::end();?>
+            <?php Pjax::end();?>
         </div>
-        <div class="tab-pane" id="tab5">
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maxime, repudiandae.</p>
-        </div>
-        <div class="tab-pane" id="tab6">
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maxime, repudiandae.</p>
-        </div>
-        <div class="tab-pane" id="tab7">
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maxime, repudiandae.</p>
-        </div>
-
-        <ul class="pager wizard">
-            <li class="previous first" style="display:none;"><a href="#">First</a></li>
-            <li class="previous"><a href="#">Previous</a></li>
-            <li class="next last" style="display:none;"><a href="#">Last</a></li>
-            <li class="next"><a href="#">Next</a></li>
-        </ul>
     </div>
 </div>

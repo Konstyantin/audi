@@ -14,6 +14,7 @@
             this.nav_dropdown();
             this.imageManager();
             this.scrollTop();
+            this.wizardFrom();
         },
 
         /**
@@ -171,6 +172,66 @@
         showElem:function (elem) {
             return elem.show();
         },
+
+        /**
+         * WizardFrom execute multiform create new Car
+         * check each form is valid and create new record
+         * form each form and to change width progressbar
+         * depended of current form
+         */
+        wizardFrom:function () {
+            var submit_record = $('.submit_record'),
+                tab_pane = $('.tab-pane'),
+                multiplier = 0;
+
+            app.progress_bar(multiplier);
+
+            submit_record.on('click',function () {
+                var $this = $(this),
+                    record_pos = $this.attr('id'),
+                    form = $this.closest('form'),
+                    inputs = form.find('.form-group');
+
+                var isValid = false;
+
+                inputs.each(function () {
+                    if($(this).hasClass('has-success')){
+                        return isValid = true
+                    }
+                    return isValid = false;
+                });
+
+                if(isValid){
+                    app.set_active_item(tab_pane,record_pos);
+                    app.progress_bar(record_pos);
+                }
+            });
+        },
+
+        /**
+         * Change width progressbar dependent submit posititon
+         *
+         * @param multiplier
+         */
+        progress_bar:function (multiplier) {
+            var multiplier = parseInt(multiplier) + 1,
+                progress_bar = $('.progress-bar');
+
+            progress_bar.width(multiplier * 25 + '%');
+        },
+
+        /**
+         * Set class active for next form in list form
+         *
+         * @param list
+         * @param pos
+         */
+        set_active_item:function (list,pos) {
+            list.eq(pos)
+                .addClass('active')
+                .siblings()
+                .removeClass('active');
+        }
     }
 
     /**

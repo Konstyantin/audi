@@ -144,4 +144,36 @@ class BaseController extends Controller
             return true;
         }
     }
+
+    /**
+     * Select model to choose from array models
+     * and check send request from select model
+     * after execute create new record
+     *
+     * @param $models
+     * @return mixed
+     */
+    public function selectModel($models)
+    {
+        if(is_array($models)){
+            foreach ($models as $modelItem){
+                if($this->checkModelRequest($modelItem)){
+                    return $modelItem;
+                }
+            }
+        }
+
+        return $models;
+    }
+
+    /**
+     * Get last record from set table
+     *
+     * @param $table
+     * @return mixed
+     */
+    public function lastRecord($table)
+    {
+        return BaseRecord::getLast($table);
+    }
 }
