@@ -20,19 +20,6 @@ use app\models\base\BaseRecord;
 class BaseController extends Controller
 {
     /**
-     * Check execute if the model request
-     *
-     * @param $model
-     * @return bool
-     */
-    public function checkModelRequest($model)
-    {
-        if($model->load(Yii::$app->request->post())){
-            return true;
-        }
-    }
-
-    /**
      * To perform create new item to database
      * if was execute request
      *
@@ -70,9 +57,11 @@ class BaseController extends Controller
      * @param $table
      * @return bool
      */
-    public function delete($table)
+    public function delete($table,$id = null)
     {
-        $id = BaseRequest::getParamOnUrl('id');
+        if(!$id){
+            $id = BaseRequest::getParamOnUrl('id');
+        }
         
         if($id and $table) {
             BaseRecord::remove($table,$id);
@@ -83,7 +72,6 @@ class BaseController extends Controller
     /**
      * View all items from table
      *
-     * @param $tabel
      * @return mixed
      */
     public function viewAll($table)
@@ -113,8 +101,6 @@ class BaseController extends Controller
         BaseRecord::removeAll($table);
     }
 
-    
-
     /**
      * Set new Flash messager
      *
@@ -124,18 +110,6 @@ class BaseController extends Controller
     public function setFlash($status,$message)
     {
         Yii::$app->session->setFlash($status,$message);
-    }
-
-    /**
-     * Check execute if the request
-     *
-     * @return bool
-     */
-    public function checkRequest()
-    {
-        if(Yii::$app->request->post()){
-            return true;
-        }
     }
 
     /**
@@ -155,7 +129,6 @@ class BaseController extends Controller
                 }
             }
         }
-
         return $models;
     }
 

@@ -45,6 +45,7 @@
             </tr>
             </tbody>
         </table>
+        <a href="<?='/body/update/' . $car->body->id;?>" class="btn btn-update">Update Body</a>
     </div>
     <div class="col-lg-6 table-item">
         <table class="table table-hover">
@@ -81,6 +82,7 @@
             </tr>
             </tbody>
         </table>
+        <a href="<?='/engine/update/' . $car->engine->id;?>" class="btn btn-update">Update Engine</a>
     </div>
     <div class="col-lg-6 table-item">
         <table class="table table-hover">
@@ -101,6 +103,7 @@
             </tr>
             </tbody>
         </table>
+        <a href="<?='/performance/update/' . $car->performance->id;?>" class="btn btn-update">Update Performance</a>
     </div>
     <div class="col-lg-6 table-item">
         <table class="table table-hover">
@@ -121,6 +124,7 @@
             </tr>
             </tbody>
         </table>
+        <a href="<?='/transmission/update/' . $car->transmission->id;?>" class="btn btn-update">Update Transmission</a>
     </div>
     <div class="col-lg-6 table-item">
         <table class="table table-hover">
@@ -149,5 +153,6 @@
             </tr>
             </tbody>
         </table>
+        <a href="<?='/fuel/update/' . $car->fuel->id;?>" class="btn btn-update">Update Fuel</a>
     </div>
 </div>
