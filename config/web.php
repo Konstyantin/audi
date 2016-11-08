@@ -59,6 +59,7 @@ $config = [
                 'image/delete/<param:\w+>' => 'image/delete',
                 /*************************************************/
                 'car/view/<param:\w+>' => 'car/view',
+                'car/details/<param:\w+>' => 'car/details'
             ],
         ],
         

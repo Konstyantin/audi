@@ -181,10 +181,4 @@ class BaseController extends Controller
     {
         return BaseRecord::getAllBy($table,$param);
     }
-
-    public static function getData()
-    {
-        $data = BaseRecord::getOne('car',['name' => 'A8']);
-        return $data->fuel;
-    }
 }

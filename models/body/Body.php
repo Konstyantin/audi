@@ -39,4 +39,14 @@ class Body extends BaseRecord
     {
         return 'body';
     }
+
+    /**
+     * Set join table Body and Car
+     *
+     * @return \yii\db\ActiveQuery
+     */
+    public function getCar()
+    {
+        return $this->hasMany(Car::className(),['body_id' => 'id']);
+    }
 }

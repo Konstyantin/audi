@@ -8,6 +8,7 @@
  */
 namespace app\models\car;
 
+use app\models\body\Body;
 use app\models\fuel\Fuel;
 use app\models\performance\Performance;
 use app\models\transmission\Transmission;
@@ -80,6 +81,27 @@ class Car extends BaseRecord
     {
         return $this->hasOne(Transmission::className(),['id' => 'transmission_id']);
     }
+
+    /**
+     * Set join table Car and Body
+     *
+     * @return \yii\db\ActiveQuery
+     */
+    public function getBody()
+    {
+        return $this->hasOne(Body::className(),['id' => 'body_id']);
+    }
+
+
+    public static function carName($name)
+    {
+        if (strpos($name,'_') !== false) {
+            return $carName = str_replace('_',' ',$name);
+        }
+
+        return false;
+    }
+
 
     /**
      * Get data about car by $param

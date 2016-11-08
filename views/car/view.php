@@ -46,6 +46,7 @@
                 </tr>
                 </tbody>
             </table>
+            <a href="<?='/car/details/' . $car->name;?>" class="btn btn-create">View Datails</a>
         </div>
     </div>
     <div class="highlights">
@@ -54,13 +55,13 @@
             <li class="item col-xs-6">
                 <img src="<?='/img/car/' . $car->name . '/transmission.jpg'?>" alt="">
                 <div class="item-info">
-                    <a href="<?='/engine/' . $car->engine->id;?>"><?=$car->engine->type . ' ' . $car->name;?></a>
+                    <a href="<?='/engine/' . $car->engine->id;?>"><?=$car->engine->type . ' ' . $name;?></a>
                 </div>
             </li>
             <li class="item col-xs-6">
                 <img src="<?='/img/car/' . $car->name . '/transmission.jpg'?>" alt="">
                 <div class="item-info">
-                    <a href="<?='/transmission/' . $car->transmission->id;?>"><?=$car->transmission->line . ' ' . $car->name;?></a>
+                    <a href="<?='/transmission/' . $car->transmission->id;?>"><?=$car->transmission->line . ' ' . $name;?></a>
                 </div>
             </li>
         </ul>

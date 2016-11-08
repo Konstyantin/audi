@@ -13,5 +13,6 @@ use app\models\image\LoadWidget;
         'imgs' => $imgs,
         'items' => $list,
         'controller' => 'car',
+        'level' => 3
     ]);?>
 </div>

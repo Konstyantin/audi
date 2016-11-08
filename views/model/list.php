@@ -40,7 +40,8 @@ use app\models\image\CustomWidget;
         <?= LoadWidget::widget([
             'imgs' => $imgs,
             'items' => $list,
-            'controller' => 'model'
+            'controller' => 'model',
+            'level' => 2
         ]);?>
     </div>
 </div>

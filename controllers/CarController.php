@@ -54,7 +54,7 @@ class CarController extends BaseController
     public function actionList()
     {
         $list = $this->viewAll('car');
-        $imgs = ImageModel::load('img/car/');
+        $imgs = ImageModel::load('img/car/cars/');
         return $this->render('list',compact('list','imgs'));
     }
 
@@ -65,12 +65,33 @@ class CarController extends BaseController
      */
     public function actionView()
     {
-        $carName = BaseRequest::getParamOnUrl('param');
-        $car = Car::getData(['name' => $carName]);
+        $name = BaseRequest::getParamOnUrl('param');
+        $car = Car::getData(['name' => $name]);
 
-        $imgs = ImageModel::load('img/car/' . $carName . '/');
-        $imgGallery = ImageModel::load('img/car/' . $carName . '/gallery/');
+        $imgGallery = ImageModel::load('img/car/' . $name . '/gallery/');
 
-        return $this->render('view',compact('car','imgGallery'));
+        if(Car::carName($name)){
+            $name = Car::carName($name);
+        }
+
+        return $this->render('view',compact('car','imgGallery','name'));
+    }
+
+    /**
+     * Get car by request param $name, search car by $name
+     * and view all information about car
+     *
+     * @return string
+     */
+    public function actionDetails()
+    {
+        $name = BaseRequest::getParamOnUrl('param');
+        $car = Car::getData(['name' => $name]);
+
+        if(Car::carName($name)){
+            $name = Car::carName($name);
+        }
+
+        return $this->render('details',['car' => $car,'name' => $name]);
     }
 }
