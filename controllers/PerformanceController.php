@@ -11,11 +11,15 @@ namespace app\controllers;
 use app\controllers\BaseController;
 use app\models\performance\UpdatePerformance;
 
+/**
+ * Class PerformanceController
+ * @package app\controllers
+ */
 class PerformanceController extends BaseController
 {
     /**
      * action Update performance for to select car
-     * 
+     *
      * @return string
      */
     public function actionUpdate()

@@ -3,13 +3,13 @@
  * Created by PhpStorm.
  * User: kostya
  * Date: 08.11.16
- * Time: 21:53
+ * Time: 22:26
  */
 use yii\widgets\ActiveForm;
 use yii\helpers\Html;
 ?>
 <div class="container">
-    <h2 class="text-center">Update Performance</h2>
+    <h2 class="text-center">Update Fuel</h2>
     <div class="col-md-8 col-md-offset-2">
         <?php if(Yii::$app->session->hasFlash('update')):?>
             <?php
@@ -22,10 +22,13 @@ use yii\helpers\Html;
             ]);
             ?>
         <?php endif;?>
+
         <?php $form = ActiveForm::begin();?>
-        <?= $form->field($model,'speed')->textInput(['value' => $performance->speed]);?>
-        <?= $form->field($model,'acceleration')->textInput(['value' => $performance->acceleration]);?>
-        <?= Html::submitButton('Update Model',['class' => 'btn btn-create']);?>
+            <?= $form->field($model,'urban')->textInput(['value' => $fuel->urban]);?>
+            <?= $form->field($model,'extra_urban')->textInput(['value' => $fuel->extra_urban]);?>
+            <?= $form->field($model,'combined')->textInput(['value' => $fuel->combined]);?>
+            <?= $form->field($model,'emission')->textInput(['value' => $fuel->emission]);?>
+            <?= Html::submitButton('Update Fuel',['class' => 'btn btn-update']);?>
         <?php $form->end();?>
     </div>
 </div>
