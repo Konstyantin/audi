@@ -8,6 +8,7 @@
 
 namespace app\controllers;
 
+use app\models\base\BaseRequest;
 use app\models\carModel\CreateCarModel;
 use app\models\carModel\UpdateCarModel;
 use app\controllers\BaseController;
@@ -96,8 +97,8 @@ class ModelController extends BaseController
      */
     public function actionCars()
     {
-        $id = $this->getParamOnUrl('id');
-        $imgs = ImageModel::load('img/car/');
+        $id = BaseRequest::getParamOnUrl('id');
+        $imgs = ImageModel::load('img/car/logo/');
         $list = $this->getAllBy('car',['model_id' => $id]);
         return $this->render('cars',compact('list','imgs'));
     }

@@ -14,7 +14,8 @@
             this.nav_dropdown();
             this.imageManager();
             this.scrollTop();
-            this.wizardFrom();
+            this.wizardFrom()
+            this.highlights();
         },
 
         /**
@@ -231,7 +232,8 @@
                 .addClass('active')
                 .siblings()
                 .removeClass('active');
-        }
+        },
+        
     }
 
     /**

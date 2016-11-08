@@ -23,12 +23,13 @@ class AppAsset extends AssetBundle
     ];
     public $js = [
         'js/script.js',
-        'js/formWizard.js',
         'js/flexslider.js',
+        'js/lightgallery.js',
     ];
     public $depends = [
         'yii\web\YiiAsset',
         'yii\bootstrap\BootstrapAsset',
         'yii\web\FlexSlider',
+        'yii\web\LightGallery',
     ];
 }

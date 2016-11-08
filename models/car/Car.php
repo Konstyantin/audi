@@ -8,7 +8,12 @@
  */
 namespace app\models\car;
 
+use app\models\fuel\Fuel;
+use app\models\performance\Performance;
+use app\models\transmission\Transmission;
+use Yii;
 use app\models\base\BaseRecord;
+use app\models\engine\Engine;
 
 class Car extends BaseRecord
 {
@@ -34,5 +39,56 @@ class Car extends BaseRecord
     public static function tableName()
     {
         return 'car';
+    }
+
+    /**
+     * Set join table Car and Fuel
+     *
+     * @return \yii\db\ActiveQuery
+     */
+    public function getFuel()
+    {
+        return $this->hasOne(Fuel::className(),['id' => 'fuel_id']);
+    }
+
+    /**
+     * Set join table Car and Performance
+     *
+     * @return \yii\db\ActiveQuery
+     */
+    public function getEngine()
+    {
+        return $this->hasOne(Engine::className(),['id' => 'engine_id']);
+    }
+
+    /**
+     * Set join table Car and Performance
+     *
+     * @return \yii\db\ActiveQuery
+     */
+    public function getPerformance()
+    {
+        return $this->hasOne(Performance::className(),['id' => 'performance_id']);
+    }
+
+    /**
+     * Set join table Car and Transmission
+     *
+     * @return \yii\db\ActiveQuery
+     */
+    public function getTransmission()
+    {
+        return $this->hasOne(Transmission::className(),['id' => 'transmission_id']);
+    }
+
+    /**
+     * Get data about car by $param
+     * 
+     * @param $param
+     * @return static
+     */
+    public static function getData($param)
+    {
+        return self::findOne($param);
     }
 }

@@ -39,4 +39,14 @@ class Transmission extends BaseRecord
     {
         return 'transmission';
     }
+
+    /**
+     * Set join table Transmission and Car
+     *
+     * @return \yii\db\ActiveQuery
+     */
+    public function getCar()
+    {
+        return $this->hasMany(Car::className(),['transmission_id' => 'id']);
+    }
 }

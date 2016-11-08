@@ -11,7 +11,6 @@
         <img src="/img/engine/A161508_medium.jpg" alt="">
     </div>
     <div class="col-lg-6">
-        <h2></h2>
         <table class="table table-hover">
             <thead>
                 <tr>

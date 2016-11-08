@@ -29,6 +29,12 @@ a, a:hover, a:focus {
   color: #000;
   text-decoration: none;
 }
+
+section {
+  h2 {
+    margin-bottom: 2%;
+  }
+}
 .wrap {
   height:100%;
 }
@@ -85,13 +91,7 @@ a, a:hover, a:focus {
   border-top: 1px solid #f0f0f0;
   border-bottom: 1px solid #f0f0f0;
 }
-section {
-  padding: 2% 0;
 
-  h2 {
-    padding-bottom: 1%;
-  }
-}
 .logo_container {
   .audi_logo {
     width: 100px;
@@ -180,18 +180,11 @@ nav {
   .container span {
     padding-right: 5px;
   }
-
-  h2 {
-    margin:0 auto;
-  }
 }
 
 /* News */
 
 .news {
-  h2 {
-    margin: 0 auto;
-  }
 
   .nav-pills {
 
@@ -303,4 +296,56 @@ nav {
   width: 50px;
   height:50px;
   z-index: 100;
+}
+
+.short-view {
+  padding: 2%;
+  h2 {
+    margin: 0 0 2%;
+  }
+}
+
+.highlights {
+  background: rgba(73, 73, 73, 0.62);
+  padding: 3% 0;
+  font-family: $monserat;
+  color: #f0f0f0;
+
+  h2 {
+    margin: 0 0 2%;
+  }
+  .list-item {
+    margin:0;
+    padding: 0;
+  }
+  .item {
+    padding: 0 3%;
+
+    &:hover .item-info {
+      background: rgba(200, 10, 27, 0.87);
+      transition: .3s;
+    }
+    .item-info {
+      padding: 3%;
+      background: rgba(73, 73, 73, 0.62);
+
+      a {
+        color: #f0f0f0;
+      }
+    }
+  }
+}
+/* car gallery */
+.demo-gallery {
+  padding: 2% 0;
+  h2 {
+    margin: 0 0 2%;
+  }
+}
+.list-unstyled {
+  margin: 0;
+
+  .gallery-item {
+    padding: 0;
+  }
 }

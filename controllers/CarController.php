@@ -11,6 +11,8 @@ namespace app\controllers;
 use app\controllers\BaseController;
 
 
+use app\models\base\BaseRequest;
+use app\models\car\Car;
 use app\models\car\CreateCar;
 use app\models\body\CreateBody;
 use app\models\fuel\CreateFuel;
@@ -26,15 +28,15 @@ class CarController extends BaseController
      */
     public function actionCreate()
     {
+        $body = new CreateBody();
+        $fuel = new CreateFuel();
+        $performance = new CreatePerformance();
+
         $car = new CreateCar([
             'fuel_id' => $this->lastRecord('fuel'),
             'body_id' => $this->lastRecord('body'),
             'performance_id' => $this->lastRecord('performance'),
         ]);
-        $body = new CreateBody();
-        $fuel = new CreateFuel();
-        $performance = new CreatePerformance();
-
 
         if ($this->checkRequest()) {
             $model = $this->selectModel([$body,$fuel,$performance,$car]);
@@ -57,15 +59,18 @@ class CarController extends BaseController
     }
 
     /**
-     * View car by get id
+     * View car by get param
      *
      * @return string
      */
     public function actionView()
     {
-        $id = $this->getParamOnUrl('id');
-        $imgs = ImageModel::load('img/car/');
-        $list = $this->getAllBy('car',['model_id' => $id]);
-        return $this->render('model',compact('list','imgs'));
+        $carName = BaseRequest::getParamOnUrl('param');
+        $car = Car::getData(['name' => $carName]);
+
+        $imgs = ImageModel::load('img/car/' . $carName . '/');
+        $imgGallery = ImageModel::load('img/car/' . $carName . '/gallery/');
+
+        return $this->render('view',compact('car','imgGallery'));
     }
 }

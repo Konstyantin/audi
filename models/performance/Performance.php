@@ -9,6 +9,7 @@
 namespace app\models\performance;
 
 use app\models\base\BaseRecord;
+use app\models\car\Car;
 
 /**
  * Class Performance
@@ -38,5 +39,15 @@ class Performance extends BaseRecord
     public static function tableName()
     {
         return 'performance';
+    }
+
+    /**
+     * Set join table Performance and Car
+     *
+     * @return \yii\db\ActiveQuery
+     */
+    public function getCar()
+    {
+        return $this->hasMany(Car::className(),['performance_id' => 'id']);
     }
 }

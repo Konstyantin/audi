@@ -8,6 +8,7 @@
 
 namespace app\controllers;
 
+use app\models\base\BaseRequest;
 use Yii;
 use yii\web\Controller;
 use app\models\base\BaseRecord;
@@ -40,7 +41,7 @@ class BaseController extends Controller
      */
     public function create($model)
     {
-        if($this->checkModelRequest($model)){
+        if(BaseRequest::checkModelRequest($model)){
             $values = $model->attributes;
             $model->create($values);
             return true;
@@ -56,7 +57,7 @@ class BaseController extends Controller
      */
     public function update($model,$item)
     {
-        if($this->checkModelRequest($model)){
+        if(BaseRequest::checkModelRequest($model)){
             $values = $model->attributes;
             $model->update($item,$values);
             return true;
@@ -71,7 +72,7 @@ class BaseController extends Controller
      */
     public function delete($table)
     {
-        $id = $this->getParamOnUrl('id');
+        $id = BaseRequest::getParamOnUrl('id');
         
         if($id and $table) {
             BaseRecord::remove($table,$id);
@@ -98,7 +99,7 @@ class BaseController extends Controller
      */
     public function viewOne($table)
     {
-        $id = $this->getParamOnUrl('id');
+        $id = BaseRequest::getParamOnUrl('id');
         return BaseRecord::getOne($table,$id);
     }
 
@@ -112,15 +113,7 @@ class BaseController extends Controller
         BaseRecord::removeAll($table);
     }
 
-    /**
-     * Get param from request
-     *
-     * @return mixed
-     */
-    public function getParamOnUrl($param)
-    {
-        return Yii::$app->request->get($param);
-    }
+    
 
     /**
      * Set new Flash messager
@@ -187,5 +180,11 @@ class BaseController extends Controller
     public function getAllBy($table,$param)
     {
         return BaseRecord::getAllBy($table,$param);
+    }
+
+    public static function getData()
+    {
+        $data = BaseRecord::getOne('car',['name' => 'A8']);
+        return $data->fuel;
     }
 }

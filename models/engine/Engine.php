@@ -7,8 +7,9 @@
  * Time: 19:47
  */
 namespace app\models\engine;
-
+use Yii;
 use app\models\base\BaseRecord;
+use app\models\car\Car;
 
 /**
  * Class Engine
@@ -38,5 +39,10 @@ class Engine extends BaseRecord
     public static function tableName()
     {
         return 'engine';
+    }
+
+    public function getCar()
+    {
+        return $this->hasMany(Car::className(),['engine_id' => 'id']);
     }
 }
