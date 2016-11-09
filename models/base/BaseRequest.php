@@ -45,4 +45,12 @@ class BaseRequest
             return true;
         }
     }
+
+    public static function checkPassParam($param)
+    {
+        if($param){
+            return $param;
+        }
+        return self::getParamOnUrl('id');
+    }
 }

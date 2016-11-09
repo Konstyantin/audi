@@ -8,14 +8,13 @@
  */
 namespace app\models\car;
 
+use Yii;
 use app\models\body\Body;
 use app\models\fuel\Fuel;
+use app\models\engine\Engine;
+use app\models\base\BaseRecord;
 use app\models\performance\Performance;
 use app\models\transmission\Transmission;
-use Yii;
-use app\models\base\BaseRecord;
-use app\models\engine\Engine;
-
 /**
  * Class Car
  * @package app\models\car
@@ -121,5 +120,24 @@ class Car extends BaseRecord
     public static function getData($param)
     {
         return self::findOne($param);
+    }
+
+    /**
+     * Get Car param
+     *
+     * @param $car
+     * @return array
+     */
+    public static function getCarParam($car)
+    {
+        $fuel_id = $car->fuel_id;
+        $body_id = $car->body_id;
+        $performance_id = $car->performance_id;
+
+        return [
+            'fuel' => $fuel_id,
+            'body' => $body_id,
+            'performance' => $performance_id
+        ];
     }
 }

@@ -58,12 +58,11 @@ class BaseController extends Controller
      * @param $table
      * @return bool
      */
-    public function delete($table)
+    public function delete($table,$param = null)
     {
-        $id = BaseRequest::getParamOnUrl('id');
-
-        if($id and $table) {
-            BaseRecord::remove($table,$id);
+        if($table){
+            $param = BaseRequest::checkPassParam($param);
+            BaseRecord::remove($table,$param);
             return true;
         }
     }
@@ -155,4 +154,17 @@ class BaseController extends Controller
     {
         return BaseRecord::getAllBy($table,$param);
     }
+
+    /**
+     * Delete additional components for item
+     * 
+     * @param array $params
+     */
+    public function deleteComponent($params = [])
+    {
+        foreach ($params as $table => $param){
+            $this->delete($table,$param);
+        }
+    }
+
 }

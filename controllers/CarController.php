@@ -43,7 +43,12 @@ class CarController extends BaseController
 
         if (BaseRequest::checkRequest()) {
             $model = $this->selectModel([$body,$fuel,$performance,$car]);
-            $this->create($model);
+            if($this->create($model)){
+                if($model === $car){
+                    $this->setFlash('success','Create success');
+                    return $this->goBack('/model/list');
+                }
+            }
         }
 
         return $this->render('create',compact('body','performance','fuel','car','test'));
@@ -133,5 +138,21 @@ class CarController extends BaseController
         }
 
         return $this->render('select-transmission',['model' => $model,'transmissions' => $transmissions]);
+    }
+
+    /**
+     * action delete car
+     * 
+     * @return \yii\web\Response
+     */
+    public function actionDelete()
+    {
+        $car = $this->viewOne('car');
+
+        if($this->delete('car')){
+            $this->deleteComponent(Car::getCarParam($car));
+            $this->setFlash('success','Delete car success');
+            return $this->goBack('/model/list');
+        }
     }
 }

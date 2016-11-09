@@ -68,8 +68,9 @@ class BaseRecord extends ActiveRecord
      * @param $param
      * @return array|\yii\db\ActiveRecord[]
      */
-    public static function getBy($param)
+    public static function getBy($table,$param)
     {
+        self::setTable($table);
         return self::find()
             ->where($param)
             ->all();

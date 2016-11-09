@@ -47,13 +47,14 @@
                 </tbody>
             </table>
             <a href="<?='/car/details/' . $car->name;?>" class="btn btn-create">View Datails</a>
+            <a href="<?='/car/delete/' . $car->id;?>" class="btn btn-delete">Delete</a>
         </div>
     </div>
     <div class="highlights">
         <h2 class="text-center">Highlights</h2>
         <ul class="list-item clearfix">
             <li class="item col-xs-6">
-                <img src="<?='/img/car/' . $car->name . '/transmission.jpg'?>" alt="">
+                <img src="<?='/img/car/' . $car->name . '/engine.jpg'?>" alt="">
                 <div class="item-info">
                     <a href="<?='/engine/' . $car->engine->id;?>"><?=$car->engine->type . ' ' . $name;?></a>
                 </div>

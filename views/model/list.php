@@ -17,9 +17,9 @@ use app\models\image\CustomWidget;
     </div>
 </div>
 <div class="model">
-    <?php if(Yii::$app->session->hasFlash('delete_model')):?>
+    <?php if(Yii::$app->session->hasFlash('success')):?>
         <?php
-        $success = Yii::$app->session->getFlash('delete_model');
+        $success = Yii::$app->session->getFlash('success');
         echo \yii\bootstrap\Alert::widget([
             'options' => [
                 'class' => 'alert-success'

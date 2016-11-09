@@ -23,10 +23,8 @@ use app\models\car\Car;
             <div class="col-md-4 col-xs-6 item">
                 <img src="<?='/'.$imgItem;?>" alt="">
                 <h2 class="text-center">
-                    <a href="<?='/car/view/'.$item->name;?>"><?=$carName ? $carName : $item->name;?></a>
+                    <a href="<?='/car/view/'.$item->name;?>"><?=$item->name;?></a>
                 </h2>
-                <a href="<?='/car/update/'.$item->name;?>" class="btn pull-left btn-update">Update</a>
-                <a href="<?='/car/delete/'.$item->name;?>" class="btn pull-right btn-delete">Delete</a>
             </div>
         <?php endif;?>
     <?php endforeach;?>

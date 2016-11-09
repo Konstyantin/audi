@@ -52,14 +52,15 @@ $config = [
                 'transmission/update/<id:\d+>' => 'transmission/update',
                 'transmission/delete/<id:\d+>' => 'transmission/delete',
                 /*************************************************/
+                'model/<id:\d+>' => 'model/cars',
                 'model/update/<id:\d+>' => 'model/update',
                 'model/delete/<id:\d+>' => 'model/delete',
-                'model/<id:\d+>' => 'model/cars',
                 /*************************************************/
                 'image/delete/<param:\w+>' => 'image/delete',
                 /*************************************************/
                 'car/view/<param:\w+>' => 'car/view',
                 'car/details/<param:\w+>' => 'car/details',
+                'car/delete/<id:\d+>' => 'car/delete',
                 'car/select-engine/<id:\d+>' => 'car/select-engine',
                 'car/select-transmission/<id:\d+>' => 'car/select-transmission',
                 /*************************************************/
