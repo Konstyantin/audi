@@ -17,6 +17,7 @@ use app\models\car\Car;
 use app\models\car\CreateCar;
 use app\models\body\CreateBody;
 use app\models\car\SelectEngine;
+use app\models\car\SelectTransmission;
 use app\models\fuel\CreateFuel;
 use app\models\image\ImageModel;
 use app\models\performance\CreatePerformance;
@@ -109,8 +110,28 @@ class CarController extends BaseController
 
         if(BaseRequest::checkModelRequest($model)){
             $model->update($car);
+            $this->setFlash('update','Engine update successful');
         }
 
         return $this->render('select-engine',['model' => $model,'engines' => $engines]);
+    }
+
+    /**
+     * action SelectTransmission select new transmission for car
+     *
+     * @return string
+     */
+    public function actionSelectTransmission()
+    {
+        $model = new SelectTransmission();
+        $transmissions = $this->viewAll('transmission');
+        $car = $this->viewOne('car');
+
+        if(BaseRequest::checkModelRequest($model)){
+            $model->update($car);
+            $this->setFlash('update','Transmission update successful');
+        }
+
+        return $this->render('select-transmission',['model' => $model,'transmissions' => $transmissions]);
     }
 }

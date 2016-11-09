@@ -61,6 +61,7 @@ $config = [
                 'car/view/<param:\w+>' => 'car/view',
                 'car/details/<param:\w+>' => 'car/details',
                 'car/select-engine/<id:\d+>' => 'car/select-engine',
+                'car/select-transmission/<id:\d+>' => 'car/select-transmission',
                 /*************************************************/
                 'body/update/<id:\d+>' => 'body/update',
                 /*************************************************/

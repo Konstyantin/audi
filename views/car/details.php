@@ -124,7 +124,7 @@
             </tr>
             </tbody>
         </table>
-        <a href="<?='/transmission/update/' . $car->transmission->id;?>" class="btn btn-update">Update Transmission</a>
+        <a href="<?='/car/select-transmission/' . $car->id;?>" class="btn btn-update">Update Transmission</a>
     </div>
     <div class="col-lg-6 table-item">
         <table class="table table-hover">
