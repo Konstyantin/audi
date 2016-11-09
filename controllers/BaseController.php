@@ -8,10 +8,10 @@
 
 namespace app\controllers;
 
-use app\models\base\BaseRequest;
 use Yii;
 use yii\web\Controller;
 use app\models\base\BaseRecord;
+use app\models\base\BaseRequest;
 
 /**
  * Class BaseController contains commons method for Controllers
@@ -19,6 +19,7 @@ use app\models\base\BaseRecord;
  */
 class BaseController extends Controller
 {
+
     /**
      * To perform create new item to database
      * if was execute request
@@ -57,12 +58,10 @@ class BaseController extends Controller
      * @param $table
      * @return bool
      */
-    public function delete($table,$id = null)
+    public function delete($table)
     {
-        if(!$id){
-            $id = BaseRequest::getParamOnUrl('id');
-        }
-        
+        $id = BaseRequest::getParamOnUrl('id');
+
         if($id and $table) {
             BaseRecord::remove($table,$id);
             return true;
@@ -72,6 +71,7 @@ class BaseController extends Controller
     /**
      * View all items from table
      *
+     * @param $table
      * @return mixed
      */
     public function viewAll($table)
@@ -124,11 +124,12 @@ class BaseController extends Controller
     {
         if(is_array($models)){
             foreach ($models as $modelItem){
-                if($this->checkModelRequest($modelItem)){
+                if(BaseRequest::checkModelRequest($modelItem)){
                     return $modelItem;
                 }
             }
         }
+
         return $models;
     }
 

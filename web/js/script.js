@@ -14,8 +14,7 @@
             this.nav_dropdown();
             this.imageManager();
             this.scrollTop();
-            this.wizardFrom()
-            this.highlights();
+            this.wizardFrom();
         },
 
         /**
@@ -197,12 +196,13 @@
 
                 inputs.each(function () {
                     if($(this).hasClass('has-success')){
-                        return isValid = true
+                        return isValid = true;
                     }
                     return isValid = false;
                 });
 
                 if(isValid){
+                    console.log('true');
                     app.set_active_item(tab_pane,record_pos);
                     app.progress_bar(record_pos);
                 }
@@ -233,7 +233,7 @@
                 .siblings()
                 .removeClass('active');
         },
-        
+
     }
 
     /**

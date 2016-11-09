@@ -11,10 +11,12 @@ namespace app\controllers;
 use app\controllers\BaseController;
 
 
+use app\models\base\BaseRecord;
 use app\models\base\BaseRequest;
 use app\models\car\Car;
 use app\models\car\CreateCar;
 use app\models\body\CreateBody;
+use app\models\car\SelectEngine;
 use app\models\fuel\CreateFuel;
 use app\models\image\ImageModel;
 use app\models\performance\CreatePerformance;
@@ -38,7 +40,7 @@ class CarController extends BaseController
             'performance_id' => $this->lastRecord('performance'),
         ]);
 
-        if ($this->checkRequest()) {
+        if (BaseRequest::checkRequest()) {
             $model = $this->selectModel([$body,$fuel,$performance,$car]);
             $this->create($model);
         }
@@ -78,8 +80,7 @@ class CarController extends BaseController
     }
 
     /**
-     * Get car by request param $name, search car by $name
-     * and view all information about car
+     * Get car by request param $name search car by $name
      *
      * @return string
      */
@@ -93,5 +94,23 @@ class CarController extends BaseController
         }
 
         return $this->render('details',['car' => $car,'name' => $name]);
+    }
+
+    /**
+     * action SelectEngine select new engine for car
+     *
+     * @return string
+     */
+    public function actionSelectEngine()
+    {
+        $model = new SelectEngine();
+        $engines = $this->viewAll('engine');
+        $car = $this->viewOne('car');
+
+        if(BaseRequest::checkModelRequest($model)){
+            $model->update($car);
+        }
+
+        return $this->render('select-engine',['model' => $model,'engines' => $engines]);
     }
 }

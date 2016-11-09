@@ -82,7 +82,7 @@
             </tr>
             </tbody>
         </table>
-        <a href="<?='/engine/update/' . $car->engine->id;?>" class="btn btn-update">Update Engine</a>
+        <a href="<?='/car/select-engine/' . $car->id;?>" class="btn btn-update">Update Engine</a>
     </div>
     <div class="col-lg-6 table-item">
         <table class="table table-hover">

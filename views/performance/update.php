@@ -20,7 +20,7 @@ use yii\helpers\Html;
                 ],
                 'body' => $success
             ]);
-            ?>
+        ?>
         <?php endif;?>
         <?php $form = ActiveForm::begin();?>
         <?= $form->field($model,'speed')->textInput(['value' => $performance->speed]);?>

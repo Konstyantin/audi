@@ -16,6 +16,10 @@ use Yii;
 use app\models\base\BaseRecord;
 use app\models\engine\Engine;
 
+/**
+ * Class Car
+ * @package app\models\car
+ */
 class Car extends BaseRecord
 {
     const SCENARIO_CAR = 'car';
@@ -92,7 +96,12 @@ class Car extends BaseRecord
         return $this->hasOne(Body::className(),['id' => 'body_id']);
     }
 
-
+    /**
+     * Retrieve car name from request query 
+     *
+     * @param $name
+     * @return bool|mixed
+     */
     public static function carName($name)
     {
         if (strpos($name,'_') !== false) {
