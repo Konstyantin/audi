@@ -64,7 +64,7 @@ class CarController extends BaseController
     public function actionList()
     {
         $list = $this->viewAll('car');
-        $imgs = ImageModel::load('img/car/cars/');
+        $imgs = ImageModel::load('img/car/logo/');
         return $this->render('list',compact('list','imgs'));
     }
 

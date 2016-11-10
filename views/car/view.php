@@ -13,7 +13,7 @@
     <div class="short-view container">
         <h2 class="text-center">Technical Specs</h2>
         <div class="col-lg-6 car-logo">
-            <img src="/img/car/cars/<?=$car->name;?>.png" alt="">
+            <img src="/img/car/logo/<?=$car->name;?>.png" alt="">
         </div>
         <div class="col-lg-6">
             <table class="table table-hover">
