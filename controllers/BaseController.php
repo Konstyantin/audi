@@ -41,6 +41,7 @@ class BaseController extends Controller
      * if was execute request and to perform model method update
      *
      * @param $model
+     * @param $item
      * @return mixed
      */
     public function update($model,$item)
@@ -56,6 +57,7 @@ class BaseController extends Controller
      * Take item id from request and delete item to id
      *
      * @param $table
+     * @param $param
      * @return bool
      */
     public function delete($table,$param = null)

@@ -13,6 +13,7 @@ use yii\web\UploadedFile;
 use app\models\image\UploadForm;
 use app\controllers\BaseController;
 use app\models\image\ImageList;
+use app\models\base\BaseRequest;
 
 /**
  * Class ImageController let us manipulate images
@@ -29,7 +30,7 @@ class ImageController extends BaseController
     {
         $model = new UploadForm();
 
-        if ($this->checkRequest($model)) {
+        if (BaseRequest::checkModelRequest($model)) {
             $model->imageFiles = UploadedFile::getInstances($model, 'imageFiles');
             if ($model->upload()) {
                 $this->setFlash('image_upload','Image upload successful');
@@ -61,8 +62,7 @@ class ImageController extends BaseController
      */
     public function actionDelete()
     {
-        $image = Yii::$app->request->get('param');
-
+        $image = BaseRequest::getParamOnUrl('param');
         $model = new ImageList();
 
         if($model->deleteFile($image)){

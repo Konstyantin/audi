@@ -18,6 +18,7 @@ use app\models\car\CreateCar;
 use app\models\body\CreateBody;
 use app\models\car\SelectEngine;
 use app\models\car\SelectTransmission;
+use app\models\directories\Directories;
 use app\models\fuel\CreateFuel;
 use app\models\image\ImageModel;
 use app\models\performance\CreatePerformance;
@@ -45,6 +46,7 @@ class CarController extends BaseController
             $model = $this->selectModel([$body,$fuel,$performance,$car]);
             if($this->create($model)){
                 if($model === $car){
+                    Directories::createDirectory('./img/car/' . $model->name);
                     $this->setFlash('success','Create success');
                     return $this->goBack('/model/list');
                 }
@@ -73,10 +75,11 @@ class CarController extends BaseController
      */
     public function actionView()
     {
+
         $name = BaseRequest::getParamOnUrl('param');
         $car = Car::getData(['name' => $name]);
 
-        $imgGallery = ImageModel::load('img/car/' . $name . '/gallery/');
+        $imgGallery = ImageModel::load('img/car/' . $name . '/*.jpg');
 
         if(Car::carName($name)){
             $name = Car::carName($name);
@@ -150,6 +153,9 @@ class CarController extends BaseController
         $car = $this->viewOne('car');
 
         if($this->delete('car')){
+
+            Directories::removeDirectory('./img/car/' . $car->name);
+
             $this->deleteComponent(Car::getCarParam($car));
             $this->setFlash('success','Delete car success');
             return $this->goBack('/model/list');

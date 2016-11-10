@@ -13,7 +13,7 @@
     <div class="short-view container">
         <h2 class="text-center">Technical Specs</h2>
         <div class="col-lg-6 car-logo">
-            <img src="/img/car/<?=$car->name;?>/logo.png" alt="">
+            <img src="/img/car/cars/<?=$car->name;?>.png" alt="">
         </div>
         <div class="col-lg-6">
             <table class="table table-hover">
@@ -54,13 +54,13 @@
         <h2 class="text-center">Highlights</h2>
         <ul class="list-item clearfix">
             <li class="item col-xs-6">
-                <img src="<?='/img/car/' . $car->name . '/engine.jpg'?>" alt="">
+                <img src="<?='/img/car/engine/' . $car->engine->type . '.jpg';?>" alt="">
                 <div class="item-info">
                     <a href="<?='/engine/' . $car->engine->id;?>"><?=$car->engine->type . ' ' . $name;?></a>
                 </div>
             </li>
             <li class="item col-xs-6">
-                <img src="<?='/img/car/' . $car->name . '/transmission.jpg'?>" alt="">
+                <img src="<?='/img/car/transmission/'. $car->transmission->line . '.jpg'?>" alt="">
                 <div class="item-info">
                     <a href="<?='/transmission/' . $car->transmission->id;?>"><?=$car->transmission->line . ' ' . $name;?></a>
                 </div>
