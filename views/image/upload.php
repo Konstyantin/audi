@@ -29,7 +29,7 @@ use kartik\file\FileInput;
             'options' => ['accept' => 'image/*'],
         ]) ?>
         <?= $form->field($model,'path')->textInput(['placeholder' => 'img/']);?>
-        <?= $form->field($model,'name')->textInput(['placeholder' => 'Name upload file']);?>
+        <?= $form->field($model,'name')->textInput(['placeholder' => 'Name uploagit d file']);?>
         <?php ActiveForm::end() ?>
     </div>
 </div>
