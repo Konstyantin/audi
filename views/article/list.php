@@ -14,7 +14,7 @@
             <li class="item col-xs-6 col-md-4">
                 <img src="/img/news/A164202_large.jpg" alt="">
                 <div class="item-info">
-                    <a href="/article/view/<?=$item->id?>"><?=$item->title;?></a>
+                    <a href="/article/<?=$item->id?>"><?=$item->title;?></a>
                 </div>
             </li>
         <?php endforeach;?>

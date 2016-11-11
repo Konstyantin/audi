@@ -42,4 +42,15 @@ class ArticleController extends BaseController
         $list = $this->viewAll('article');
         return $this->render('list',['list' => $list]);
     }
+
+    /**
+     * actionView use for view article item by id
+     * @return string
+     */
+    public function actionView()
+    {
+        $article = $this->viewOne('article');
+
+        return $this->render('view',['article' => $article]);
+    }
 }
