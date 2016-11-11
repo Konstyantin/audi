@@ -10,6 +10,7 @@ namespace app\controllers;
 
 use app\controllers\BaseController;
 use app\models\article\CreateArticle;
+use app\models\base\BaseRequest;
 
 class ArticleController extends BaseController
 {
@@ -28,5 +29,17 @@ class ArticleController extends BaseController
         }
 
         return $this->render('create',['model' => $model,'category' => $category]);
+    }
+
+
+    /**
+     * actionList use for display all exists articles
+     *
+     * @return string
+     */
+    public function actionList()
+    {
+        $list = $this->viewAll('article');
+        return $this->render('list',['list' => $list]);
     }
 }

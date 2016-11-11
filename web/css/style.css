@@ -200,25 +200,25 @@ nav li:hover a {
   .short-view h2 {
     margin: 0 0 2%; }
 
-.highlights {
+.highlights, .article {
   background: rgba(73, 73, 73, 0.62);
   padding: 3% 0;
   font-family: "Montserrat", sans-serif;
   color: #f0f0f0; }
-  .highlights h2 {
+  .highlights h2, .article h2 {
     margin: 0 0 2%; }
-  .highlights .list-item {
+  .highlights .list-item, .article .list-item {
     margin: 0;
     padding: 0; }
-  .highlights .item {
+  .highlights .item, .article .item {
     padding: 0 3%; }
-    .highlights .item:hover .item-info {
+    .highlights .item:hover .item-info, .article .item:hover .item-info {
       background: rgba(200, 10, 27, 0.87);
       transition: .3s; }
-    .highlights .item .item-info {
+    .highlights .item .item-info, .article .item .item-info {
       padding: 3%;
       background: rgba(73, 73, 73, 0.62); }
-      .highlights .item .item-info a {
+      .highlights .item .item-info a, .article .item .item-info a {
         color: #f0f0f0; }
 
 /* car gallery */
@@ -235,5 +235,13 @@ nav li:hover a {
 /* details car */
 .table-item {
   margin: 1% 0; }
+
+/* article list */
+.article {
+  background: none; }
+  .article h2 {
+    color: #000; }
+  .article .item {
+    padding: 1%; }
 
 /*# sourceMappingURL=style.css.map */

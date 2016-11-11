@@ -305,7 +305,7 @@ nav {
   }
 }
 
-.highlights {
+.highlights, .article{
   background: rgba(73, 73, 73, 0.62);
   padding: 3% 0;
   font-family: $monserat;
@@ -356,3 +356,16 @@ nav {
   margin: 1% 0;
 }
 
+/* article list */
+
+.article {
+
+  background: none;
+
+  h2 {
+    color: #000;
+  }
+  .item {
+    padding: 1%;
+  }
+}
