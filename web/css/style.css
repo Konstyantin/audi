@@ -238,9 +238,12 @@ nav li:hover a {
 
 /* article list */
 .article {
+  padding: 3% 5%;
   background: none; }
   .article h2 {
     color: #000; }
+  .article .manage {
+    padding: 1%; }
   .article .item {
     padding: 1%; }
 

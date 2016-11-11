@@ -359,12 +359,16 @@ nav {
 /* article list */
 
 .article {
-
+  padding: 3% 5%;
   background: none;
-
   h2 {
     color: #000;
   }
+
+  .manage {
+    padding: 1%;
+  }
+
   .item {
     padding: 1%;
   }

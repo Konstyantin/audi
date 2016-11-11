@@ -8,10 +8,15 @@
 
 namespace app\controllers;
 
+use app\models\article\UpdateArticle;
+use app\models\base\BaseRequest;
 use app\controllers\BaseController;
 use app\models\article\CreateArticle;
-use app\models\base\BaseRequest;
 
+/**
+ * Class ArticleController
+ * @package app\controllers
+ */
 class ArticleController extends BaseController
 {
     /**
@@ -45,12 +50,38 @@ class ArticleController extends BaseController
 
     /**
      * actionView use for view article item by id
+     *
      * @return string
      */
     public function actionView()
     {
         $article = $this->viewOne('article');
-
         return $this->render('view',['article' => $article]);
+    }
+
+    /**
+     * actionDelete use for delete article by id
+     *
+     * @return \yii\web\Response
+     */
+    public function actionDelete()
+    {
+        if($this->delete('article')){
+            $this->setFlash('success','Article delete success');
+        }
+        return $this->goBack('/article/list');
+    }
+
+    /**
+     * actionDeleteList use for delete all exists articles
+     *
+     * @return \yii\web\Response
+     */
+    public function actionDeleteList()
+    {
+        if($this->deleteAll('article')){
+            $this->setFlash('success','Article list is clear');
+        }
+        return $this->goBack('/article/list');
     }
 }
