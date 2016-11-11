@@ -8,9 +8,8 @@
 
 namespace app\controllers;
 
-use app\models\article\UpdateArticle;
-use app\models\base\BaseRequest;
 use app\controllers\BaseController;
+use app\models\article\UpdateArticle;
 use app\models\article\CreateArticle;
 
 /**
@@ -83,5 +82,23 @@ class ArticleController extends BaseController
             $this->setFlash('success','Article list is clear');
         }
         return $this->goBack('/article/list');
+    }
+
+    /**
+     * actionUpdate use for update data
+     * @return string|\yii\web\Response
+     */
+    public function actionUpdate()
+    {
+        $model = new UpdateArticle();
+        $category = $this->viewAll('article_category');
+        $article = $this->viewOne('article');
+
+        if ($this->update($model,$article)) {
+            $this->setFlash('success','Article update success');
+            return $this->goBack('/article/' . $article->id);
+        }
+
+        return $this->render('update',['model' => $model,'article' => $article,'category' => $category]);
     }
 }

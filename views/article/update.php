@@ -3,7 +3,7 @@
  * Created by PhpStorm.
  * User: kostya
  * Date: 11.11.16
- * Time: 13:55
+ * Time: 18:16
  */
 
 use yii\widgets\ActiveForm;
@@ -13,7 +13,7 @@ use yii\helpers\ArrayHelper;
 ?>
 
 <div class="container">
-    <h2 class="text-center">Create Article</h2>
+    <h2 class="text-center">Update Article</h2>
     <div class="form">
         <?php if(Yii::$app->session->hasFlash('success')):?>
             <?php
@@ -27,11 +27,15 @@ use yii\helpers\ArrayHelper;
             ?>
         <?php endif;?>
         <?php $form = ActiveForm::begin();?>
-            <?=$form->field($model,'category_id')->dropDownList(ArrayHelper::map($category,'id','name'));?>
-            <?=$form->field($model,'title')->textInput();?>
-            <?=$form->field($model,'content')->widget(
+        <?=$form->field($model,'category_id')->dropDownList(ArrayHelper::map($category,'id','name'));?>
+        <?=$form->field($model,'title')->textInput(['value' => $article->title]);?>
+        <?=$form->field($model,'content')->widget(
             TinyMce::className(),
             [
+                'options' => [
+                    'rows' => 30,
+                    'value' => $article->content,
+                ],
                 'settings'        => [
                     'language'               => 'en',
                     'plugins'                => [
@@ -47,7 +51,8 @@ use yii\helpers\ArrayHelper;
                 ],
             ]
         )?>
-        <?=Html::submitButton('Create Article',['class' => 'btn btn-success']);?>
+        <?=Html::submitButton('Update Article',['class' => 'btn btn-success']);?>
         <?php $form::end();?>
     </div>
 </div>
+

@@ -7,6 +7,18 @@
  */
 ?>
 <div class="container article-view">
+    <?php if(Yii::$app->session->hasFlash('success')):?>
+        <?php
+        $success = Yii::$app->session->getFlash('success');
+        echo \yii\bootstrap\Alert::widget([
+            'options' => [
+                'class' => 'alert-success'
+            ],
+            'body' => $success
+        ]);
+        ?>
+    <?php endif;?>
+    <br>
     <div class="manage">
         <a href="/article/update/<?=$article->id;?>" class="btn btn-primary">Update</a>
         <a href="/article/delete/<?=$article->id?>" class="btn btn-danger">Delete</a>

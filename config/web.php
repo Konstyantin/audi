@@ -71,6 +71,7 @@ $config = [
                 'fuel/update/<id:\d+>' => 'fuel/update',
                 /*************************************************/
                 'article/<id:\d+>' => 'article/view',
+                'article/update/<id:\d+>' => 'article/update',
                 'article/delete/<id:\d+>' => 'article/delete',
             ],
         ],
