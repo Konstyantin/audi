@@ -27,7 +27,7 @@ use yii\helpers\ArrayHelper;
             ?>
         <?php endif;?>
         <?php $form = ActiveForm::begin();?>
-        <?=$form->field($model,'category_id')->dropDownList(ArrayHelper::map($category,'id','name'));?>
+        <?=$form->field($model,'category')->dropDownList(ArrayHelper::map($category,'name','name'));?>
         <?=$form->field($model,'title')->textInput(['value' => $article->title]);?>
         <?=$form->field($model,'content')->widget(
             TinyMce::className(),

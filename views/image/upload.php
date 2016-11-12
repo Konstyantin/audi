@@ -11,7 +11,7 @@ use kartik\file\FileInput;
 ?>
 <h2 class="text-center">Upload Image</h2>
 <div class="container">
-    <div class="col-md-6 col-md-offset-3">
+    <div class="col-md-10 col-md-offset-1">
         <?php if(Yii::$app->session->hasFlash('image_upload')):?>
             <?php
             $success = Yii::$app->session->getFlash('image_upload');
@@ -26,10 +26,12 @@ use kartik\file\FileInput;
         <?php $form = ActiveForm::begin(['options' => ['enctype' => 'multipart/form-data']]) ?>
 
         <?= $form->field($model, 'imageFiles[]')->widget(FileInput::classname(),[
-            'options' => ['accept' => 'image/*'],
+            'options' => [
+                'accept' => 'image/*',
+                'multiple' => true,
+            ],
         ]) ?>
         <?= $form->field($model,'path')->textInput(['placeholder' => 'img/']);?>
-        <?= $form->field($model,'name')->textInput(['placeholder' => 'Name uploagit d file']);?>
         <?php ActiveForm::end() ?>
     </div>
 </div>
