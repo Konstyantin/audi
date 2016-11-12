@@ -8,6 +8,7 @@
  */
 namespace app\models\image;
 
+use app\models\directories\Directories;
 use yii\base\Model;
 
 /**
@@ -21,8 +22,6 @@ class UploadForm extends Model
     public $imageFiles;
     /** @var string| $path set path for save uploading file */
     public $path;
-    /** @var string| $name set name uploading file */
-    public $name;
 
     /**
      * @return array the validation rules.
@@ -30,7 +29,7 @@ class UploadForm extends Model
     public function rules()
     {
         return [
-            [['name','path'],'required'],
+            [['path'],'required'],
             [['imageFiles'], 'file', 'skipOnEmpty' => false, 'extensions' => 'png, jpg', 'maxFiles' => 4]
         ];
     }
@@ -44,8 +43,9 @@ class UploadForm extends Model
     public function upload()
     {
         if ($this->validate()) {
+            Directories::createDirectory($this->path);
             foreach ($this->imageFiles as $file) {
-                $file->saveAs($this->path . $this->name . '.' . $file->extension);
+                $file->saveAs($this->path . $file->baseName . '.' . $file->extension);
             }
             return true;
         }

@@ -11,6 +11,7 @@ namespace app\controllers;
 use app\controllers\BaseController;
 use app\models\article\UpdateArticle;
 use app\models\article\CreateArticle;
+use app\models\directories\Directories;
 
 /**
  * Class ArticleController
@@ -29,6 +30,7 @@ class ArticleController extends BaseController
         $category = $this->viewAll('article_category');
 
         if($this->create($model)){
+            Directories::createDirectory('./img/article/' . $model->title);
             $this->setFlash('success','Article create success');
         }
 
@@ -65,7 +67,11 @@ class ArticleController extends BaseController
      */
     public function actionDelete()
     {
+        $article = $this->viewOne('article');
+
         if($this->delete('article')){
+
+            Directories::removeDirectory('./img/article/' . $article->title);
             $this->setFlash('success','Article delete success');
         }
         return $this->goBack('/article/list');
@@ -86,6 +92,7 @@ class ArticleController extends BaseController
 
     /**
      * actionUpdate use for update data
+     * 
      * @return string|\yii\web\Response
      */
     public function actionUpdate()
