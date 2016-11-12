@@ -21,7 +21,7 @@ class UpdateArticle extends Model
     /** @var int| $content set the number content article */
     public $content;
     /** @var int| $category_id set category article */
-    public $category_id;
+    public $category;
     /** @var int| $power set type engine */
 
     /**
@@ -30,7 +30,7 @@ class UpdateArticle extends Model
     public function rules()
     {
         return [
-            [['title','content','category_id'], 'required'],
+            [['title','content','category'], 'required'],
         ];
     }
 

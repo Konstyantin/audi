@@ -27,7 +27,7 @@ class Article extends BaseRecord
     public function scenarios()
     {
         $scenarios = parent::scenarios();
-        $scenarios[self::SCENARIO_ARTICLE] = ['title','content','category_id'];
+        $scenarios[self::SCENARIO_ARTICLE] = ['title','content','category'];
         return $scenarios;
     }
 
