@@ -56,10 +56,10 @@ AppAsset::register($this);
                     <li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Service<span class="caret"></span></a>
                         <ul class="dropdown-menu">
-                            <li><a href="#">Inspection</a></li>
-                            <li><a href="#">Corporate sales</a></li>
-                            <li><a href="#">Insurance</a></li>
-                            <li><a href="#">Test drive</a></li>
+                            <li><a href="/service/inspection">Inspection</a></li>
+                            <li><a href="/service/testDrive">TestDrive</a></li>
+                            <li><a href="/service/view/guarantee">Guarantee</a></li>
+                            <li><a href="/service/view/insurance">Insurance</a></li>
                         </ul>
                     </li>
                     <li class="dropdown">

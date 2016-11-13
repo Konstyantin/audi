@@ -251,4 +251,17 @@ nav li:hover a {
 .article-view {
   padding: 1%; }
 
+/* Service Description */
+.service-description h2 {
+  margin: 0;
+  background: #f6f6f6;
+  padding: 1.5% 6.5%; }
+.service-description .service-content {
+  padding-top: 2%;
+  padding-bottom: 2%; }
+
+.service-register {
+  background: #f6f6f6;
+  padding: 2%; }
+
 /*# sourceMappingURL=style.css.map */

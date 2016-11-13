@@ -73,6 +73,9 @@ $config = [
                 'article/<id:\d+>' => 'article/view',
                 'article/update/<id:\d+>' => 'article/update',
                 'article/delete/<id:\d+>' => 'article/delete',
+                /*************************************************/
+                'service/view/<param:\w+>' => 'service/view',
+                'service/update/<id:\d+>' => 'service/update',
             ],
         ],
         

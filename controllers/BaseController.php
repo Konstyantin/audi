@@ -157,6 +157,14 @@ class BaseController extends Controller
         return BaseRecord::getAllBy($table,$param);
     }
 
+    public function getOneByParam($table,$param = null)
+    {
+        if($table){
+            $param = BaseRequest::checkPassParam($param);
+            return BaseRecord::getOne($table,$param);
+        }
+    }
+
     /**
      * Delete additional components for item
      * 
