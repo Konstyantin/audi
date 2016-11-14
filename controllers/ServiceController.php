@@ -60,13 +60,14 @@ class ServiceController extends BaseController
                 $model->create($values);
             }
             $this->setFlash('success','Your application is accepted we will contact with you');
+            return $this->goBack('/service/testDrive');
         }
         
         return $this->render('test-drive',compact('model','car','service','dealer'));
     }
 
     /**
-     * actionView use for view information about service
+     * actionView display all information about record
      *
      * @return string
      */
@@ -93,7 +94,7 @@ class ServiceController extends BaseController
 
         if($this->update($model,$service)){
             $this->setFlash('success','Service content update success');
-            return $this->goBack('/service/inspection');
+            return $this->goHome();
         }
         return $this->render('update',['model' => $model,'service' => $service]);
     }

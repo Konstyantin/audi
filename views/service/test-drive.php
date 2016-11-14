@@ -17,14 +17,25 @@ use yii\helpers\ArrayHelper;
         <a href="/service/update/<?=$service->id?>" class="btn btn-primary">Update </a>
     </div>
 </div>
+<?php if(Yii::$app->session->hasFlash('success')):?>
+    <?php
+    $success = Yii::$app->session->getFlash('success');
+    echo \yii\bootstrap\Alert::widget([
+        'options' => [
+            'class' => 'alert-success'
+        ],
+        'body' => $success
+    ]);
+    ?>
+<?php endif;?>
 <div class="service-register clearfix">
     <div class="col-md-8 col-md-offset-2">
         <h2 class="text-center">Your Data</h2>
         <?php $form = ActiveForm::begin();?>
-        <?=$form->field($model,'first_name')->textInput(['placeholder' => 'First name','value' => 'kostya'])->label(false);?>
-        <?=$form->field($model,'last_name')->textInput(['placeholder' => 'Last name','value' => 'nagula'])->label(false);?>
-        <?=$form->field($model,'phone')->textInput(['placeholder' => 'Phone','value' => '380669936205'])->label(false);?>
-        <?=$form->field($model,'email')->textInput(['placeholder' => 'Email','value' => 'kostya_nagula@mail.ua'])->label(false);?>
+        <?=$form->field($model,'first_name')->textInput(['placeholder' => 'First name'])->label(false);?>
+        <?=$form->field($model,'last_name')->textInput(['placeholder' => 'Last name'])->label(false);?>
+        <?=$form->field($model,'phone')->textInput(['placeholder' => 'Phone'])->label(false);?>
+        <?=$form->field($model,'email')->textInput(['placeholder' => 'Email'])->label(false);?>
         <?=$form->field($model,'dealer')->dropDownList(ArrayHelper::map($dealer,'id','city'))->label(false);?>
         <?=$form->field($model,'car')->dropDownList(ArrayHelper::map($car,'name','name'))->label(false);?>
         <?=$form->field($model,'month')->textInput(['placeholder' => 'Month'])->label(false);?>

@@ -252,6 +252,8 @@ nav li:hover a {
   padding: 1%; }
 
 /* Service Description */
+.service-description ul {
+  list-style: disc; }
 .service-description h2 {
   margin: 0;
   background: #f6f6f6;

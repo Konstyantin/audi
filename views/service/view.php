@@ -6,6 +6,11 @@
  * Time: 21:47
  */
 ?>
-<div>
-    <a href="/service/update/<?=$service->id?>" class="btn btn-primary">Update</a>
+<div class="service-description">
+    <img src="/img/service/<?=$service->title?>.jpg" alt="">
+    <h2><?=$service->title;?></h2>
+    <div class="container service-content">
+        <?=$service->content;?>
+        <a href="/service/update/<?=$service->id?>" class="btn btn-primary">Update </a>
+    </div>
 </div>

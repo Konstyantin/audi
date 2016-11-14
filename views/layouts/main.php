@@ -58,7 +58,7 @@ AppAsset::register($this);
                         <ul class="dropdown-menu">
                             <li><a href="/service/inspection">Inspection</a></li>
                             <li><a href="/service/testDrive">TestDrive</a></li>
-                            <li><a href="/service/view/guarantee">Guarantee</a></li>
+                            <li><a href="/service/view/garantee">Guarantee</a></li>
                             <li><a href="/service/view/insurance">Insurance</a></li>
                         </ul>
                     </li>
