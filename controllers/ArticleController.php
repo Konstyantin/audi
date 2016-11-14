@@ -11,6 +11,7 @@ namespace app\controllers;
 use app\controllers\BaseController;
 use app\models\article\UpdateArticle;
 use app\models\article\CreateArticle;
+use app\models\base\BaseRequest;
 use app\models\directories\Directories;
 
 /**
@@ -46,6 +47,13 @@ class ArticleController extends BaseController
     public function actionList()
     {
         $list = $this->viewAll('article');
+        return $this->render('list',['list' => $list]);
+    }
+    
+    public function actionListCategory()
+    {
+        $category = BaseRequest::getParamOnUrl('param');
+        $list = $this->getAllBy('article',['category' => $category]);
         return $this->render('list',['list' => $list]);
     }
 

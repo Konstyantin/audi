@@ -12,6 +12,7 @@ use Yii;
 use yii\web\Controller;
 use app\models\base\BaseRecord;
 use app\models\base\BaseRequest;
+use yii\data\Pagination;
 
 /**
  * Class BaseController contains commons method for Controllers
@@ -168,5 +169,4 @@ class BaseController extends Controller
             $this->delete($table,$param);
         }
     }
-
 }

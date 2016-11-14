@@ -73,8 +73,8 @@ AppAsset::register($this);
                             <li><a href="#">Information system</a></li>
                         </ul>
                     </li>
-                    <li><a href="">News</a></li>
-                    <li><a href="">Sport</a></li>
+                    <li><a href="/article/news/list">News</a></li>
+                    <li><a href="/article/sport/list">Sport</a></li>
                     <li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dillers<span class="caret"></span></a>
                         <ul class="dropdown-menu">

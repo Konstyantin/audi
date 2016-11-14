@@ -9,6 +9,7 @@
 namespace app\models\base;
 
 use yii\db\ActiveRecord;
+use yii\data\Pagination;
 
 /**
  * Class BaseRecord contains common method for Records
