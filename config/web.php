@@ -77,6 +77,9 @@ $config = [
                 'service/view/<param:\w+>' => 'service/view',
                 'service/update/<id:\d+>' => 'service/update',
                 'service/testDrive' => 'service/test-drive',
+                /*************************************************/
+                'technology/<param:\w+>' => 'technology/view',
+                'technology/update/<id:\d+>' => 'technology/update',
             ],
         ],
         

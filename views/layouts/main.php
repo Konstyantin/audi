@@ -67,10 +67,10 @@ AppAsset::register($this);
                         <ul class="dropdown-menu">
                             <li><a href="/engine/list">Engine</a></li>
                             <li><a href="/transmission/list">Transmission</a></li>
-                            <li><a href="#">Quattro</a></li>
-                            <li><a href="#">Lighting</a></li>
-                            <li><a href="#">Assistent system</a></li>
-                            <li><a href="#">Information system</a></li>
+                            <li><a href="/technology/quattro">Quattro</a></li>
+                            <li><a href="/technology/lighting">Lighting</a></li>
+                            <li><a href="/technology/assistent">Assistent</a></li>
+                            <li><a href="/technology/connect">Connect</a></li>
                         </ul>
                     </li>
                     <li><a href="">News</a></li>
