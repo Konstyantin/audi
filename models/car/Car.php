@@ -31,7 +31,11 @@ class Car extends BaseRecord
     public function scenarios()
     {
         $scenarios = parent::scenarios();
-        $scenarios[self::SCENARIO_CAR] = ['name','engine_id','transmission_id','performance_id','fuel_id','body_id','price','model_id'];
+        $scenarios[self::SCENARIO_CAR] = [
+            'name','engine_id','transmission_id',
+            'performance_id','fuel_id','body_id',
+            'price','model_id','test_drive'
+        ];
         return $scenarios;
     }
 

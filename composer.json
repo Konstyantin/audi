@@ -20,7 +20,9 @@
         "yiisoft/yii2-swiftmailer": "~2.0.0",
         "kartik-v/yii2-widget-fileinput": "@dev",
         "kartik-v/yii2-widget-datetimepicker": "*",
-        "codezeen/yii2-tinymce": "*"
+        "codezeen/yii2-tinymce": "*",
+        "kartik-v/yii2-date-range": "*",
+        "kartik-v/yii2-widget-timepicker": "*"
     },
     "require-dev": {
         "yiisoft/yii2-debug": "~2.0.0",

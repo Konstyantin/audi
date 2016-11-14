@@ -8,10 +8,12 @@
 
 namespace app\controllers;
 
+use app\models\service\TestDrive;
 use app\controllers\BaseController;
 use app\models\base\BaseRequest;
 use app\models\service\InspectionRecord;
 use app\models\service\UpdateService;
+use app\models\service\TestDriveRecord;
 
 /**
  * Class ServiceController
@@ -39,6 +41,35 @@ class ServiceController extends BaseController
         return $this->render('inspection',['model' => $model,'cars' => $cars,'service' => $service]);
     }
 
+    /**
+     * actionTestDrive use for registration user test drive
+     *
+     * @return string
+     */
+    public function actionTestDrive()
+    {
+        $model = new TestDriveRecord();
+
+        $car = $this->viewAll('car');
+        $service = $this->getOneByParam('service',['title' => 'Test Drive']);
+        $dealer = $this->viewAll('dealer');
+
+        if(BaseRequest::checkModelRequest($model)){
+            if($model->checkTest()){
+                $values = $model->attributes;
+                $model->create($values);
+            }
+            $this->setFlash('success','Your application is accepted we will contact with you');
+        }
+        
+        return $this->render('test-drive',compact('model','car','service','dealer'));
+    }
+
+    /**
+     * actionView use for view information about service
+     *
+     * @return string
+     */
     public function actionView()
     {
         $param = BaseRequest::getParamOnUrl('param');

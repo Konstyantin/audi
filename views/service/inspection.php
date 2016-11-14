@@ -22,8 +22,8 @@ use yii\helpers\ArrayHelper;
     </div>
 </div>
 <div class="service-register clearfix">
+    <h2 class="text-center">Your Data</h2>
     <div class="col-md-8 col-md-offset-2">
-        <h2 class="text-center">Your Data</h2>
         <?php $form = ActiveForm::begin();?>
         <?=$form->field($model,'first_name')->textInput();?>
         <?=$form->field($model,'last_name')->textInput();?>
@@ -37,7 +37,7 @@ use yii\helpers\ArrayHelper;
                 'autoclose'=>true,
                 'format' => 'dd-M-yyyy HH:ii P'
             ]
-        ])?>
+        ]);?>
         <?=$form->field($model,'car')->dropDownList(ArrayHelper::map($cars,'name','name'));?>
         <?=$form->field($model,'mileage')->textInput();?>
         <?=$form->field($model,'license_plate')->textInput();?>

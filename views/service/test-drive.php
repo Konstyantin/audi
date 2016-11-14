@@ -1,0 +1,36 @@
+<?php
+/**
+ * Created by PhpStorm.
+ * User: kostya
+ * Date: 13.11.16
+ * Time: 17:47
+ */
+use yii\widgets\ActiveForm;
+use yii\helpers\Html;
+use yii\helpers\ArrayHelper;
+?>
+<div class="service-description">
+    <img src="/img/service/<?=$service->title?>.jpg" alt="">
+    <h2><?=$service->title;?></h2>
+    <div class="container service-content">
+        <?=$service->content;?>
+        <a href="/service/update/<?=$service->id?>" class="btn btn-primary">Update </a>
+    </div>
+</div>
+<div class="service-register clearfix">
+    <div class="col-md-8 col-md-offset-2">
+        <h2 class="text-center">Your Data</h2>
+        <?php $form = ActiveForm::begin();?>
+        <?=$form->field($model,'first_name')->textInput(['placeholder' => 'First name','value' => 'kostya'])->label(false);?>
+        <?=$form->field($model,'last_name')->textInput(['placeholder' => 'Last name','value' => 'nagula'])->label(false);?>
+        <?=$form->field($model,'phone')->textInput(['placeholder' => 'Phone','value' => '380669936205'])->label(false);?>
+        <?=$form->field($model,'email')->textInput(['placeholder' => 'Email','value' => 'kostya_nagula@mail.ua'])->label(false);?>
+        <?=$form->field($model,'dealer')->dropDownList(ArrayHelper::map($dealer,'id','city'))->label(false);?>
+        <?=$form->field($model,'car')->dropDownList(ArrayHelper::map($car,'name','name'))->label(false);?>
+        <?=$form->field($model,'month')->textInput(['placeholder' => 'Month'])->label(false);?>
+        <?=$form->field($model,'day')->textInput(['placeholder' => 'Day'])->label(false);?>
+        <?=$form->field($model,'time')->textInput(['placeholder' => 'Time'])->label(false);?>
+        <?=Html::submitButton('Sing up',['class' => 'btn btn-success']);?>
+        <?php $form::end();?>
+    </div>
+</div>

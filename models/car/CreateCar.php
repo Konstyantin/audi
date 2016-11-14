@@ -32,6 +32,8 @@ class CreateCar extends Model
     public $price;
     /** @var int| $model_id contains model_id car */
     public $model_id;
+    /** @var int| $model_id contains model_id car */
+    public $test_drive;
 
     /**
      * @return array the validation rules.
@@ -39,7 +41,7 @@ class CreateCar extends Model
     public function rules()
     {
         return [
-            [['name','engine_id','transmission_id','performance_id','fuel_id','body_id','price','model_id'],'required']
+            [['name','engine_id','transmission_id','performance_id','fuel_id','body_id','price','model_id','test_drive'],'required']
         ];
     }
 
