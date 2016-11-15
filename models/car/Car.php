@@ -34,7 +34,7 @@ class Car extends BaseRecord
         $scenarios[self::SCENARIO_CAR] = [
             'name','engine_id','transmission_id',
             'performance_id','fuel_id','body_id',
-            'price','model_id','test_drive'
+            'price','model_id'
         ];
         return $scenarios;
     }

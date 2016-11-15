@@ -10,7 +10,7 @@ namespace app\controllers;
 
 use app\controllers\BaseController;
 
-
+use Yii;
 use app\models\base\BaseRecord;
 use app\models\base\BaseRequest;
 use app\models\car\Car;
@@ -18,6 +18,7 @@ use app\models\car\CreateCar;
 use app\models\body\CreateBody;
 use app\models\car\SelectEngine;
 use app\models\car\SelectTransmission;
+use app\models\car\UpdateCar;
 use app\models\directories\Directories;
 use app\models\fuel\CreateFuel;
 use app\models\image\ImageModel;
@@ -160,5 +161,30 @@ class CarController extends BaseController
             $this->setFlash('success','Delete car success');
             return $this->goBack('/model/list');
         }
+    }
+
+    /**
+     * actionUpdate use for update date about car
+     *
+     * @return string
+     */
+    public function actionUpdate()
+    {
+        $id = BaseRequest::getParamOnUrl('id');
+
+        $modelList = $this->viewAll('models');
+        $model = new UpdateCar();
+        $car = $this->viewOne('car');
+
+        if($this->update($model,$car)){
+            $this->setFlash('success','car update success');
+        }
+
+        return $this->render('update',['model' => $model,'car' => $car,'modelList' => $modelList]);
+    }
+
+    public function actionTest()
+    {
+        Directories::renameDir('./img/test','./img/testasd');
     }
 }
