@@ -80,9 +80,11 @@ $config = [
                 /*************************************************/
                 'technology/<param:\w+>' => 'technology/view',
                 'technology/update/<id:\d+>' => 'technology/update',
+                'article/<param:\w+>/list' => 'article/list-category',
+                'article/list/<page:\d+>' => 'article/list',
+                /**************************************************/
             ],
         ],
-        
     ],
     'params' => $params,
 ];

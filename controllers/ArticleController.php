@@ -11,6 +11,7 @@ namespace app\controllers;
 use app\controllers\BaseController;
 use app\models\article\UpdateArticle;
 use app\models\article\CreateArticle;
+use app\models\base\BaseRequest;
 use app\models\directories\Directories;
 
 /**
@@ -45,8 +46,28 @@ class ArticleController extends BaseController
      */
     public function actionList()
     {
-        $list = $this->viewAll('article');
-        return $this->render('list',['list' => $list]);
+        $pagination = $this->setPagination('article',null,1);
+        
+        $list = $pagination['recordList'];
+        $pages = $pagination['pages'];
+
+        return $this->render('list',['list' => $list,'pages' => $pages]);
+    }
+
+    /**
+     * actionList use for display all exist articles by passed category
+     *
+     * @return string
+     */
+    public function actionListCategory()
+    {
+        $category = BaseRequest::getParamOnUrl('param');
+
+        $pagination = $this->setPagination('article',['category' => $category]);
+        $list = $pagination['recordList'];
+        $pages = $pagination['pages'];
+
+        return $this->render('list',['list' => $list,'pages' => $pages]);
     }
 
     /**

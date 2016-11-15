@@ -380,7 +380,6 @@ nav {
   padding: 1%;
 }
 
-
 /* Service Description */
 
 .service-description {
@@ -405,4 +404,27 @@ nav {
 
 .bootstrap-timepicker-widget {
   width: 100%;
+}
+
+/* pagination */
+
+.pagination {
+
+  li > a,
+  li > a:hover,
+  li > a:focus {
+    color: #C80A1B;
+  }
+
+  .active > a,
+  .active > a:hover{
+    background-color: #C80A1B;
+    border-color: #C80A1B;
+  }
+
+}
+.pagination > .active > a,
+.pagination > .active > a:hover {
+  background-color: #C80A1B;
+  border-color: #C80A1B;
 }
