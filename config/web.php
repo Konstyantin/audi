@@ -74,6 +74,8 @@ $config = [
                 'article/update/<id:\d+>' => 'article/update',
                 'article/delete/<id:\d+>' => 'article/delete',
                 'article/<param:\w+>/list' => 'article/list-category',
+                'article/list/<page:\d+>' => 'article/list',
+                /**************************************************/
             ],
         ],
         

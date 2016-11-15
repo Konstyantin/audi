@@ -123,4 +123,30 @@ class BaseRecord extends ActiveRecord
         self::setTable($table);
         return self::find()->max('id');
     }
+
+    /**
+     * Set pagination for received list record by regulation table
+     * set count of record per page depending on param $pageSize
+     * if $pageSize not null then $pageSize assign passed value
+     * else use default value
+     *
+     * @param $table
+     * @param $search
+     * @param $pageSize
+     * @return array
+     */
+    public static function pagination($table,$search = null,$pageSize = 9)
+    {
+        self::setTable($table);
+
+        $records = BaseRecord::find($table);
+
+        $pages = new Pagination(['totalCount' => $records->count(),'pageSize' => $pageSize,'pageSizeParam' => false,'forcePageParam' => false]);
+        $recordList = $records->offset($pages->offset)->where($search)
+                              ->limit($pages->limit)
+                              ->all();
+
+        return ['pages' => $pages, 'recordList' => $recordList];
+
+    }
 }

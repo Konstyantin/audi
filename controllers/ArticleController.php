@@ -46,15 +46,28 @@ class ArticleController extends BaseController
      */
     public function actionList()
     {
-        $list = $this->viewAll('article');
-        return $this->render('list',['list' => $list]);
+        $pagination = $this->setPagination('article',null,1);
+        
+        $list = $pagination['recordList'];
+        $pages = $pagination['pages'];
+
+        return $this->render('list',['list' => $list,'pages' => $pages]);
     }
-    
+
+    /**
+     * actionList use for display all exist articles by passed category
+     *
+     * @return string
+     */
     public function actionListCategory()
     {
         $category = BaseRequest::getParamOnUrl('param');
-        $list = $this->getAllBy('article',['category' => $category]);
-        return $this->render('list',['list' => $list]);
+
+        $pagination = $this->setPagination('article',['category' => $category]);
+        $list = $pagination['recordList'];
+        $pages = $pagination['pages'];
+
+        return $this->render('list',['list' => $list,'pages' => $pages]);
     }
 
     /**

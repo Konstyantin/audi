@@ -5,11 +5,12 @@
  * Date: 11.11.16
  * Time: 14:26
  */
+use yii\widgets\LinkPager;
 ?>
 
 <div class="clearfix article">
     <h2 class="text-center">Article list</h2>
-    <ul class="list-item">
+    <ul class="list-item clearfix">
         <div class="manage">
             <a href="/article/create" class="btn btn-success">Create</a>
             <a href="/article/delete-list" class="btn btn-danger">Delete all</a>
@@ -23,4 +24,5 @@
             </li>
         <?php endforeach;?>
     </ul>
+    <?=LinkPager::widget(['pagination' => $pages])?>
 </div>

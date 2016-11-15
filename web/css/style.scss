@@ -379,3 +379,26 @@ nav {
 .article-view {
   padding: 1%;
 }
+
+/* pagination */
+
+.pagination {
+
+  li > a,
+  li > a:hover,
+  li > a:focus {
+    color: #C80A1B;
+  }
+
+  .active > a,
+  .active > a:hover{
+    background-color: #C80A1B;
+    border-color: #C80A1B;
+  }
+
+}
+.pagination > .active > a,
+.pagination > .active > a:hover {
+  background-color: #C80A1B;
+  border-color: #C80A1B;
+}

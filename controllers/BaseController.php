@@ -169,4 +169,17 @@ class BaseController extends Controller
             $this->delete($table,$param);
         }
     }
+
+    /**
+     * Set pagination for get list record
+     *
+     * @param $table
+     * @param null $search
+     * @param null $pageSize
+     * @return array
+     */
+    public function setPagination($table,$search = null,$pageSize = null)
+    {
+        return BaseRecord::pagination($table,$search,$pageSize);
+    }
 }
