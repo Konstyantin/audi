@@ -153,6 +153,31 @@ class DealerController extends BaseController
     {
         $id = BaseRequest::getParamOnUrl('id');
         $this->delete('test_drive');
-        return $this->goBack('/dealer/delete-test');
+        return $this->goBack('/dealer/tests');
+    }
+
+    /**
+     * actionInspectionList display list inspection record
+     *
+     * @return string
+     */
+    public function actionInspectionList()
+    {
+        $dealerId = BaseRequest::getParamOnUrl('id');
+        $list = $this->getAllBy('inspection',['dealer' => $dealerId]);
+
+        return $this->render('inspection-list',['list' => $list]);
+    }
+
+    /**
+     * actionDeleteInspection use for delete select inspection record
+     *
+     * @return \yii\web\Response
+     */
+    public function actionDeleteInspection()
+    {
+        $id = BaseRequest::getParamOnUrl('id');
+        $this->delete('inspection');
+        return $this->goBack('/dealer/inspection-list');
     }
 }
