@@ -37,6 +37,8 @@ use yii2mod\google\maps\markers\GoogleMaps;
         ],
     ]);?>
 
+    <br>
+    <a href="/dealer/add-car" class="btn btn-success">Add test car</a>
     <h2 class="text-center">Dealer list</h2>
     <ul class="dealer-list clearfix">
         <?php foreach ($dealers as $dealerItem):?>

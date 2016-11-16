@@ -12,6 +12,7 @@ use app\controllers\BaseController;
 use app\models\base\BaseRequest;
 use app\models\dealer\CreateDealer;
 use app\models\dealer\UpdateDealer;
+use app\models\testCar\CreateTestCar;
 
 class DealerController extends BaseController
 {
@@ -83,7 +84,17 @@ class DealerController extends BaseController
         }
 
         return $this->goBack('/dealer/list');
-
     }
+    
+    public function actionAddCar()
+    {
+        $model = new CreateTestCar();
+        $cars = $this->viewAll('car');
 
+        if($this->create($model)){
+            return $this->goBack('/dealer/list');
+        }
+        
+        return $this->render('test-car',['model' => $model,'cars' => $cars]);
+    }
 }
