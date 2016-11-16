@@ -26,7 +26,7 @@ class Inspection extends BaseRecord
     public function scenarios()
     {
         $scenarios = parent::scenarios();
-        $scenarios[self::SCENARIO_INSPECTION] = ['first_name','last_name','phone','email','car','mileage','license_plate','register_inspection'];
+        $scenarios[self::SCENARIO_INSPECTION] = ['first_name','last_name','phone','email','dealer','car','mileage','license_plate','register_inspection'];
         return $scenarios;
     }
 
