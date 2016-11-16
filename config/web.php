@@ -83,6 +83,11 @@ $config = [
                 'article/<param:\w+>/list' => 'article/list-category',
                 'article/list/<page:\d+>' => 'article/list',
                 /**************************************************/
+                'dealer/update/<id:\d+>' => 'dealer/update',
+                'dealer/<id:\d+>' => 'dealer/view',
+                'dealer/test/<id:\d+>' => 'dealer/tests',
+                'dealer/service/<id:\d+>' => 'dealer/service',
+                'dealer/delete/<id:\d+>' => 'dealer/delete',
             ],
         ],
     ],

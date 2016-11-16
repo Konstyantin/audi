@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "66d0ce9b190782e89030f409c6ded6c5",
-    "content-hash": "0effcea87c8c3dca6c5e6c9cfc1046eb",
+    "hash": "edef613aec412811a0acc8f0cd11de3b",
+    "content-hash": "c2f861b3705928ca6a20b2dc02af6d3d",
     "packages": [
         {
             "name": "bower-asset/bootstrap",
@@ -748,6 +748,50 @@
                 "mailer"
             ],
             "time": "2016-10-09 11:45:02"
+        },
+        {
+            "name": "yii2mod/yii2-google-maps-markers",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/yii2mod/yii2-google-maps-markers.git",
+                "reference": "7792ff804cf5c5ba20459c4efb563ae1981097e0"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/yii2mod/yii2-google-maps-markers/zipball/7792ff804cf5c5ba20459c4efb563ae1981097e0",
+                "reference": "7792ff804cf5c5ba20459c4efb563ae1981097e0",
+                "shasum": ""
+            },
+            "require": {
+                "yiisoft/yii2": "*"
+            },
+            "type": "yii2-extension",
+            "autoload": {
+                "psr-4": {
+                    "yii2mod\\google\\maps\\markers\\": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Dmitry Semenov",
+                    "email": "disemx@gmail.com"
+                },
+                {
+                    "name": "Igor Chepurnoy",
+                    "email": "igorzfort@gmail.com"
+                }
+            ],
+            "description": "Google Maps Markers displays a set of user addresses as markers on the map.",
+            "keywords": [
+                "extension",
+                "yii2"
+            ],
+            "time": "2016-11-12 22:10:10"
         },
         {
             "name": "yiisoft/yii2",

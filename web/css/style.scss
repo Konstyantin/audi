@@ -428,3 +428,23 @@ nav {
   background-color: #C80A1B;
   border-color: #C80A1B;
 }
+
+/* dealer list */
+.dealer-list {
+  padding: 0;
+  margin: 0;
+
+  .item {
+    padding: 1%;
+  }
+
+  .item-info {
+    background: #C80A1B;
+    padding: 2%;
+
+    a {
+      font-family: $monserat;
+      color: #fff;
+    }
+  }
+}
