@@ -8,7 +8,7 @@
 use yii2mod\google\maps\markers\GoogleMaps;
 ?>
 <div class="container">
-    <?php echo GoogleMaps::widget([
+    <?=GoogleMaps::widget([
         'userLocations' => [
             [
                 'location' => [
@@ -36,9 +36,10 @@ use yii2mod\google\maps\markers\GoogleMaps;
             ],
         ],
     ]);?>
-
-    <br>
-    <a href="/dealer/add-car" class="btn btn-success">Add test car</a>
+    <div class="dealer-manage">
+        <a href="/dealer/add-car" class="btn btn-success">Add test car</a>
+        <a href="/dealer/test-cars" class="btn btn-success">Test cars list</a>
+    </div>
     <h2 class="text-center">Dealer list</h2>
     <ul class="dealer-list clearfix">
         <?php foreach ($dealers as $dealerItem):?>
@@ -51,3 +52,5 @@ use yii2mod\google\maps\markers\GoogleMaps;
         <?php endforeach;?>
     </ul>
 </div>
+
+

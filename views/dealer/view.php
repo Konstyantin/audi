@@ -7,13 +7,14 @@
  */
 use yii2mod\google\maps\markers\GoogleMaps;
 ?>
-
+<img src="/img/dealer/general.jpg" alt="">
 <div class="container">
-    <a href="/dealer/update/<?=$dealer->id?>" class="btn btn-primary">Update</a>
-    <a href="/dealer/test/<?=$dealer->id?>" class="btn btn-success">View tests</a>
-    <a href="/dealer/service/<?=$dealer->id?>" class="btn btn-success">View service</a>
-    <a href="/dealer/delete/<?=$dealer->id?>" class="btn btn-danger">Delete</a>
-    <div><?=$dealer->city;?></div>
-    <div><?=$dealer->street;?></div>
+    <div class="dealer-manage">
+        <a href="/dealer/update/<?=$dealer->id?>" class="btn btn-primary">Update</a>
+        <a href="/dealer/test/<?=$dealer->id?>" class="btn btn-success">View tests</a>
+        <a href="/dealer/service/<?=$dealer->id?>" class="btn btn-success">View service</a>
+        <a href="/dealer/delete/<?=$dealer->id?>" class="btn btn-danger">Delete</a>
+    </div>
+    <h2 class="text-center"><?=$dealer->city;?></h2>
     <div><?=$dealer->description;?></div>
 </div>

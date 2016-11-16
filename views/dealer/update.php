@@ -50,7 +50,7 @@ use codezeen\yii2\tinymce\TinyMce;
                 ],
             ]
         )?>
-        <?=Html::submitButton('Create Dealer',['class' => 'btn btn-success']);?>
+        <?=Html::submitButton('Update Dealer',['class' => 'btn btn-success']);?>
         <?php $form::end();?>
     </div>
 </div>

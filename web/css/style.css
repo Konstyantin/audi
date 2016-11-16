@@ -284,7 +284,10 @@ nav li:hover a {
   background-color: #C80A1B;
   border-color: #C80A1B; }
 
-/* dealer list */
+/* dealer */
+.dealer-manage {
+  padding-top: 2%; }
+
 .dealer-list {
   padding: 0;
   margin: 0; }

@@ -76,19 +76,7 @@ AppAsset::register($this);
                     <li><a href="/article/news/list">News</a></li>
                     <li><a href="/article/sport/list">Sport</a></li>
                     <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dillers<span class="caret"></span></a>
-                        <ul class="dropdown-menu">
-                            <li><a href="#">Kiev</a></li>
-                            <li><a href="#">Kharkiv</a></li>
-                            <li><a href="#">Lviv</a></li>
-                        </ul>
-                    </li>
-                    <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">About Us<span class="caret"></span></a>
-                        <ul class="dropdown-menu">
-                            <li><a href="#">History</a></li>
-                            <li><a href="#">Museum</a></li>
-                        </ul>
+                        <a href="/dealer/list">Dillers</a>
                     </li>
                     <li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Image<span class="caret"></span></a>

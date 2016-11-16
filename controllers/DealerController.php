@@ -14,6 +14,10 @@ use app\models\dealer\CreateDealer;
 use app\models\dealer\UpdateDealer;
 use app\models\testCar\CreateTestCar;
 
+/**
+ * Class DealerController
+ * @package app\controllers
+ */
 class DealerController extends BaseController
 {
     /**
@@ -85,7 +89,12 @@ class DealerController extends BaseController
 
         return $this->goBack('/dealer/list');
     }
-    
+
+    /**
+     * actionAddCar use for add car which will using test
+     *
+     * @return string|\yii\web\Response
+     */
     public function actionAddCar()
     {
         $model = new CreateTestCar();
@@ -96,5 +105,54 @@ class DealerController extends BaseController
         }
         
         return $this->render('test-car',['model' => $model,'cars' => $cars]);
+    }
+
+    /**
+     * actionTestCarList use for display exist list test drive car
+     *
+     * @return string
+     */
+    public function actionTestCars()
+    {
+        $cars = $this->viewAll('test_car');
+
+        return $this->render('test-car-list',['cars' => $cars]);
+    }
+
+    /**
+     * actionDeleteTestCar use for delete select test car
+     * 
+     * @return \yii\web\Response
+     */
+    public function actionDeleteTestCar()
+    {
+        $id = BaseRequest::getParamOnUrl('id');
+        $this->delete('test_car');
+        return $this->goBack('/dealer/list');
+    }
+
+    /**
+     * actionTests use for display list test drive
+     * 
+     * @return string
+     */
+    public function actionTests()
+    {
+        $dealerId = BaseRequest::getParamOnUrl('id');
+        $list = $this->getAllBy('test_drive',['dealer' => $dealerId]);
+
+        return $this->render('tests',['list' => $list]);
+    }
+
+    /**
+     * actionDeleteTest use fro delete select test drive
+     * 
+     * @return \yii\web\Response
+     */
+    public function actionDeleteTest()
+    {
+        $id = BaseRequest::getParamOnUrl('id');
+        $this->delete('test_drive');
+        return $this->goBack('/dealer/delete-test');
     }
 }
