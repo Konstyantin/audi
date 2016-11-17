@@ -12,6 +12,8 @@ use app\controllers\BaseController;
 
 use app\models\transmission\CreateTransmission;
 use app\models\transmission\UpdateTransmission;
+use app\models\image\ImageModel;
+
 
 /**
  * Class TransmissionController let us to be manipulated with Transmission Item
@@ -28,7 +30,9 @@ class TransmissionController extends BaseController
     {
         $model = new CreateTransmission();
 
-        $this->create($model);
+        if($this->create($model)){
+            $this->goBack('/transmission/list');
+        }
         
         return $this->render('create',['model' => $model]);
     }
@@ -41,8 +45,9 @@ class TransmissionController extends BaseController
     public function actionList()
     {
         $list = $this->viewAll('transmission');
+        $imgs = ImageModel::load('img/transmission/*.png');
 
-        return $this->render('list',['list' => $list]);
+        return $this->render('list',['list' => $list,'imgs' => $imgs]);
     }
 
     /**

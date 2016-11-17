@@ -152,13 +152,12 @@ class CarController extends BaseController
     public function actionDelete()
     {
         $car = $this->viewOne('car');
-
+        
         if($this->delete('car')){
-
             Directories::removeDirectory('./img/car/' . $car->name);
-
             $this->deleteComponent(Car::getCarParam($car));
             $this->setFlash('success','Delete car success');
+            
             return $this->goBack('/model/list');
         }
     }
@@ -170,8 +169,6 @@ class CarController extends BaseController
      */
     public function actionUpdate()
     {
-        $id = BaseRequest::getParamOnUrl('id');
-
         $modelList = $this->viewAll('models');
         $model = new UpdateCar();
         $car = $this->viewOne('car');
@@ -181,10 +178,5 @@ class CarController extends BaseController
         }
 
         return $this->render('update',['model' => $model,'car' => $car,'modelList' => $modelList]);
-    }
-
-    public function actionTest()
-    {
-        Directories::renameDir('./img/test','./img/testasd');
     }
 }

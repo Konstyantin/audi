@@ -21,6 +21,7 @@ use app\models\transmission\Transmission;
  */
 class Car extends BaseRecord
 {
+    public static $path = './img/car/';
     const SCENARIO_CAR = 'car';
 
     /**

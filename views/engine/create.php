@@ -13,7 +13,7 @@ use yii\helpers\Html;
     <h2 class="text-center">Create Engine</h2>
     <div class="col-md-8 col-md-offset-2">
         <?php $form = ActiveForm::begin();?>
-        <?= $form->field($model,'type')->textInput(['placeholder' => 'Type Engine']);?>
+        <?= $form->field($model,'name')->textInput(['placeholder' => 'Type Engine']);?>
         <?= $form->field($model,'num_cylinders')->textInput(['placeholder' => 'Cylinders Engine']);?>
         <?= $form->field($model,'displacment')->textInput(['placeholder' => 'Displacment Engine']);?>
         <?= $form->field($model,'power')->textInput(['placeholder' => 'Power Engine']);?>

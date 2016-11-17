@@ -9,6 +9,9 @@
 namespace app\models\car;
 
 use yii\base\Model;
+use app\models\car\Car;
+use app\models\base\BaseRecord;
+use app\models\directories\Directories;
 
 /**
  * Class UpdateCar
@@ -34,18 +37,43 @@ class UpdateCar extends Model
     }
 
     /**
+     * Get item name before update select item
+     *
+     * @param $item
+     * @return mixed
+     */
+    public function getItemName($item)
+    {
+        return $item->name;
+    }
+
+    /**
+     * Execute rename exists directory which refers to select item  
+     *
+     * @param $item
+     */
+    public function renameDir($item)
+    {
+        $oldDir = Car::$path . $item;
+        $newDir = Car::$path . $this->name;
+
+        Directories::renameDir($oldDir,$newDir);
+    }
+
+    /**
      * Update data about Car
      * Get data from database and change to data from form UpdateCar *
      *
-     * @param $item
+     * @param $car
      * @param $values
      * @return mixed
      */
-    public function update($item,$values)
+    public function update($car,$values)
     {
-        $car = $item;
+        $item = $this->getItemName($car);
         $car->updateAttributes($values);
         $car->update();
+        $this->renameDir($item);
         return $car;
     }
 }

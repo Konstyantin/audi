@@ -17,7 +17,7 @@ use yii\base\Model;
 class UpdateTransmission extends Model
 {
     /** @var int| $type contains line transmission */
-    public $line;
+    public $name;
     /** @var int| $type contains level transmission */
     public $level;
     /** @var int| $type contains description transmission */
@@ -29,7 +29,7 @@ class UpdateTransmission extends Model
     public function rules()
     {
         return [
-            [['line','level','description'],'required'],
+            [['name','level','description'],'required'],
         ];
     }
 
