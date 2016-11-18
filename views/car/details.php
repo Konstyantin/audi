@@ -45,7 +45,9 @@
             </tr>
             </tbody>
         </table>
-        <a href="<?='/body/update/' . $car->body->id;?>" class="btn btn-update">Update Body</a>
+        <?php if(!Yii::$app->user->isGuest):?>
+            <a href="<?='/body/update/' . $car->body->id;?>" class="btn btn-update">Update Body</a>
+        <?php endif;?>
     </div>
     <div class="col-lg-6 table-item">
         <table class="table table-hover">
@@ -82,7 +84,9 @@
             </tr>
             </tbody>
         </table>
-        <a href="<?='/car/select-engine/' . $car->id;?>" class="btn btn-update">Update Engine</a>
+        <?php if(!Yii::$app->user->isGuest):?>
+            <a href="<?='/car/select-engine/' . $car->id;?>" class="btn btn-update">Update Engine</a>
+        <?php endif;?>
     </div>
     <div class="col-lg-6 table-item">
         <table class="table table-hover">
@@ -103,7 +107,9 @@
             </tr>
             </tbody>
         </table>
-        <a href="<?='/performance/update/' . $car->performance->id;?>" class="btn btn-update">Update Performance</a>
+        <?php if(!Yii::$app->user->isGuest):?>
+            <a href="<?='/performance/update/' . $car->performance->id;?>" class="btn btn-update">Update Performance</a>
+        <?php endif;?>
     </div>
     <div class="col-lg-6 table-item">
         <table class="table table-hover">
@@ -124,7 +130,9 @@
             </tr>
             </tbody>
         </table>
-        <a href="<?='/car/select-transmission/' . $car->id;?>" class="btn btn-update">Update Transmission</a>
+        <?php if(!Yii::$app->user->isGuest):?>
+            <a href="<?='/car/select-transmission/' . $car->id;?>" class="btn btn-update">Update Transmission</a>
+        <?php endif;?>
     </div>
     <div class="col-lg-6 table-item">
         <table class="table table-hover">
@@ -153,6 +161,8 @@
             </tr>
             </tbody>
         </table>
-        <a href="<?='/fuel/update/' . $car->fuel->id;?>" class="btn btn-update">Update Fuel</a>
+        <?php if(!Yii::$app->user->isGuest):?>
+            <a href="<?='/fuel/update/' . $car->fuel->id;?>" class="btn btn-update">Update Fuel</a>
+        <?php endif;?>
     </div>
 </div>

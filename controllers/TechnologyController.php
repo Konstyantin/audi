@@ -11,9 +11,32 @@ namespace app\controllers;
 use app\models\base\BaseRequest;
 use app\models\technology\UpdateTechnology;
 use app\controllers\BaseController;
+use yii\filters\AccessControl;
 
 class TechnologyController extends BaseController
 {
+    /**
+     * @inheritdoc
+     */
+    public function behaviors()
+    {
+        return [
+            'access' => [
+                'class' => AccessControl::className(),
+                'only' => ['update'],
+                'denyCallback' => function($rule,$action){
+                    return $this->goBack();
+                },
+                'rules' => [
+                    [
+                        'actions' => ['update'],
+                        'allow' => true,
+                        'roles' => ['@'],
+                    ],
+                ],
+            ],
+        ];
+    }
     public function actionUpdate()
     {
         $model = new UpdateTechnology();

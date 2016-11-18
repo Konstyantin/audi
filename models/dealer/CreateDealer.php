@@ -31,7 +31,8 @@ class CreateDealer extends Model
     public function rules()
     {
         return [
-            [['city','street','location','description'], 'required'],
+            [['city','street','location','description'],'required'],
+            [['city','street','location'],'string','min' => 5, 'max' => 45],
         ];
     }
 

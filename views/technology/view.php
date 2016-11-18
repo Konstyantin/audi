@@ -10,6 +10,8 @@
     <h2><?=$technology->title;?></h2>
     <div class="container service-content">
         <?=$technology->content;?>
-        <a href="/technology/update/<?=$technology->id?>" class="btn btn-primary">Update</a>
+        <?php if(!Yii::$app->user->isGuest):?>
+            <a href="/technology/update/<?=$technology->id?>" class="btn btn-primary">Update</a>
+        <?php endif;?>
     </div>
 </div>

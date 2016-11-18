@@ -30,10 +30,12 @@ use app\models\image\ImageModel;
 
     <div class="manage-container">
         <div class="manage-control">
-            <a href="/car/list" class="btn btn-create">View All</a>
-            <a href="/model/create" class="btn btn-create">Create Model</a>
-            <a href="/car/create" class="btn btn-create">Create Car</a>
-            <a href="/model/delete-list" class="btn btn-delete">Delete All</a>
+            <a href="/car/list" class="btn btn-success">Car List</a>
+            <?php if(!Yii::$app->user->isGuest):?>
+                <a href="/model/create" class="btn btn-create">Create Model</a>
+                <a href="/car/create" class="btn btn-create">Create Car</a>
+                <a href="/model/delete-list" class="btn btn-delete">Delete All</a>
+            <?php endif;?>
         </div>
     </div>
 
@@ -49,8 +51,10 @@ use app\models\image\ImageModel;
                     <h2 class="text-center">
                         <a href="<?='/model/'.$item->id;?>"><?=$item->name?></a>
                     </h2>
-                    <a href="<?= '/model/update/' . $item->id; ?>" class="btn pull-left btn-update">Update</a>
-                    <a href="<?= '/model/delete/' . $item->id; ?>" class="btn pull-right btn-delete">Delete</a>
+                    <?php if(!Yii::$app->user->isGuest):?>
+                        <a href="<?= '/model/update/' . $item->id; ?>" class="btn pull-left btn-update">Update</a>
+                        <a href="<?= '/model/delete/' . $item->id; ?>" class="btn pull-right btn-delete">Delete</a>
+                    <?php endif;?>
                 </div>
             <?php endif;?>
         <?php endforeach;?>

@@ -31,7 +31,9 @@ class CreateFuel extends Model
     public function rules()
     {
         return [
-            [['urban','extra_urban','combined','emission'],'required']
+            [['urban','extra_urban','combined','emission'],'required'],
+            [['urban','extra_urban','combined'],'number','min' => 5, 'max' => 30],
+            [['emission'],'string','min' => 5,'max' => 10]
         ];
     }
 

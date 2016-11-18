@@ -8,6 +8,7 @@
 
 namespace app\controllers;
 
+use yii\filters\AccessControl;
 use app\models\article\Article;
 use app\models\base\BaseRequest;
 use app\controllers\BaseController;
@@ -21,6 +22,28 @@ use app\models\directories\Directories;
  */
 class ArticleController extends BaseController
 {
+    /**
+     * @inheritdoc
+     */
+    public function behaviors()
+    {
+        return [
+            'access' => [
+                'class' => AccessControl::className(),
+                'only' => ['create','update','delete','delete-list'],
+                'denyCallback' => function($rule,$action){
+                    return $this->goBack();
+                },
+                'rules' => [
+                    [
+                        'actions' => ['create','update','delete','delete-list'],
+                        'allow' => true,
+                        'roles' => ['@'],
+                    ],
+                ],
+            ],
+        ];
+    }
     /**
      * actionCreate for create new articles
      *

@@ -25,7 +25,8 @@ class CreateCarModel extends Model
     public function rules()
     {
         return [
-            ['name','required']
+            ['name','required'],
+            [['name'],'string','min' => 2, 'max' => 15]
         ];
     }
 

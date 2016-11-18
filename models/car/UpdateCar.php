@@ -32,7 +32,8 @@ class UpdateCar extends Model
     public function rules()
     {
         return [
-            [['name','price','model_id'],'required']
+            [['name','price','model_id'],'required'],
+            [['name'],'string','min' => 2,'max' => 15]
         ];
     }
 

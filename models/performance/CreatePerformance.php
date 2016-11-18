@@ -27,7 +27,9 @@ class CreatePerformance extends Model
     public function rules()
     {
         return [
-            [['speed','acceleration'],'required']
+            [['speed','acceleration'],'required'],
+            [['speed'],'number','min' => 150,'max' => 350],
+            [['acceleration'],'number','min' => 1,'max' => 20]
         ];
     }
 

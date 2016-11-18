@@ -46,9 +46,11 @@
                 </tr>
                 </tbody>
             </table>
-            <a href="<?='/car/details/' . $car->name;?>" class="btn btn-success">View Datails</a>
-            <a href="<?='/car/update/' . $car->id;?>" class="btn btn-primary">Update</a>
-            <a href="<?='/car/delete/' . $car->id;?>" class="btn btn-danger">Delete</a>
+            <a href="<?='/car/details/' . $car->name;?>" class="btn btn-success">Learn more</a>
+            <?php if(!Yii::$app->user->isGuest):?>
+                <a href="<?='/car/update/' . $car->id;?>" class="btn btn-primary">Update</a>
+                <a href="<?='/car/delete/' . $car->id;?>" class="btn btn-danger">Delete</a>
+            <?php endif;?>
         </div>
     </div>
     <div class="highlights">

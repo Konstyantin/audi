@@ -36,10 +36,12 @@ use yii2mod\google\maps\markers\GoogleMaps;
             ],
         ],
     ]);?>
-    <div class="dealer-manage">
-        <a href="/dealer/add-car" class="btn btn-success">Add test car</a>
-        <a href="/dealer/test-cars" class="btn btn-success">Test cars list</a>
-    </div>
+    <?php if(!Yii::$app->user->isGuest):?>
+        <div class="dealer-manage">
+            <a href="/dealer/add-car" class="btn btn-success">Add test car</a>
+            <a href="/dealer/test-cars" class="btn btn-success">Test cars list</a>
+        </div>
+    <?php endif;?>
     <h2 class="text-center">Dealer list</h2>
     <ul class="dealer-list clearfix">
         <?php foreach ($dealers as $dealerItem):?>

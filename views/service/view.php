@@ -11,6 +11,8 @@
     <h2><?=$service->title;?></h2>
     <div class="container service-content">
         <?=$service->content;?>
-        <a href="/service/update/<?=$service->id?>" class="btn btn-primary">Update </a>
+        <?php if(!Yii::$app->user->isGuest):?>
+            <a href="/service/update/<?=$service->id?>" class="btn btn-primary">Update</a>
+        <?php endif;?>
     </div>
 </div>

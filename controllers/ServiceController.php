@@ -14,6 +14,7 @@ use app\models\base\BaseRequest;
 use app\models\service\InspectionRecord;
 use app\models\service\UpdateService;
 use app\models\service\TestDriveRecord;
+use yii\filters\AccessControl;
 
 /**
  * Class ServiceController
@@ -21,6 +22,28 @@ use app\models\service\TestDriveRecord;
  */
 class ServiceController extends BaseController
 {
+    /**
+     * @inheritdoc
+     */
+    public function behaviors()
+    {
+        return [
+            'access' => [
+                'class' => AccessControl::className(),
+                'only' => ['update'],
+                'denyCallback' => function($rule,$action){
+                    return $this->goBack();
+                },
+                'rules' => [
+                    [
+                        'actions' => ['update'],
+                        'allow' => true,
+                        'roles' => ['@'],
+                    ],
+                ],
+            ],
+        ];
+    }
     /**
      * actionInspection use for formalize inspection for user car
      *

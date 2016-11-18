@@ -12,9 +12,11 @@ use yii\widgets\LinkPager;
     <h2 class="text-center">Article list</h2>
     <ul class="list-item clearfix">
         <div class="manage">
-            <a href="/article/list/" class="btn btn-success">View All</a>
-            <a href="/article/create" class="btn btn-success">Create</a>
-            <a href="/article/delete-list" class="btn btn-danger">Delete all</a>
+            <a href="/article/list/" class="btn btn-success">Articles List</a>
+            <?php if(!Yii::$app->user->isGuest):?>
+                <a href="/article/create" class="btn btn-success">Create</a>
+                <a href="/article/delete-list" class="btn btn-danger">Delete all</a>
+            <?php endif;?>
         </div>
         <?php foreach ($list as $item):?>
             <li class="item col-xs-6 col-md-4">

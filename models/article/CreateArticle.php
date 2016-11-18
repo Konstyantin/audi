@@ -33,6 +33,7 @@ class CreateArticle extends Model
     {
         return [
             [['title','content','category'], 'required'],
+            [['title'],'string','min' => 5],
         ];
     }
 

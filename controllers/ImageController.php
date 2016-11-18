@@ -14,6 +14,7 @@ use app\models\image\UploadForm;
 use app\controllers\BaseController;
 use app\models\image\ImageList;
 use app\models\base\BaseRequest;
+use yii\filters\AccessControl;
 
 /**
  * Class ImageController let us manipulate images
@@ -21,6 +22,28 @@ use app\models\base\BaseRequest;
  */
 class ImageController extends BaseController
 {
+    /**
+     * @inheritdoc
+     */
+    public function behaviors()
+    {
+        return [
+            'access' => [
+                'class' => AccessControl::className(),
+                'only' => ['upload','load','delete'],
+                'denyCallback' => function($rule,$action){
+                    return $this->goBack();
+                },
+                'rules' => [
+                    [
+                        'actions' => ['upload','load','delete'],
+                        'allow' => true,
+                        'roles' => ['@'],
+                    ],
+                ],
+            ],
+        ];
+    }
     /**
      * Perform upload file
      *

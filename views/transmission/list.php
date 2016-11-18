@@ -28,17 +28,21 @@ use app\models\image\LoadWidget;
     <?php endif;?>
 
     <div class="manage-container">
-        <div class="manage-control">
-            <a href="/transmission/create" class="btn btn-create">Create Transmission</a>
-            <a href="/transmission/delete-list" class="btn btn-delete">Delete All</a>
-        </div>
+        <?php if(!Yii::$app->user->isGuest):?>
+            <div class="manage-control">
+                <a href="/transmission/create" class="btn btn-create">Create Transmission</a>
+                <a href="/transmission/delete-list" class="btn btn-delete">Delete All</a>
+            </div>
+        <?php endif;?>
     </div>
     <?php foreach ($list as $item):?>
         <div class="col-lg-3 col-xs-6 item">
             <img src="/img/transmission/<?=$item->name?>.jpg" alt="">
             <h2 class="text-center"><a href="<?= '/transmission/' . $item->id; ?>"><?= $item->name;?></a></h2>
-            <a href="<?= '/transmission/update/' . $item->id; ?>" class="pull-left btn btn-primary">Update</a>
-            <a href="<?= '/transmission/delete/' . $item->id; ?>" class="pull-right btn btn-danger">Delete</a>
+            <?php if(!Yii::$app->user->isGuest):?>
+                <a href="<?= '/transmission/update/' . $item->id; ?>" class="pull-left btn btn-update">Update</a>
+                <a href="<?= '/transmission/delete/' . $item->id; ?>" class="pull-right btn btn-delete">Delete</a>
+            <?php endif;?>
         </div>
     <?php endforeach;?>
 </div>

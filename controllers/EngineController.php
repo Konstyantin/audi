@@ -8,9 +8,9 @@
 
 namespace app\controllers;
 
+use yii\filters\AccessControl;
 use app\models\image\ImageModel;
 use Yii;
-
 use app\models\engine\CreateEngine;
 use app\models\engine\UpdateEngine;
 use app\controllers\BaseController;
@@ -21,6 +21,29 @@ use app\controllers\BaseController;
  */
 class EngineController extends BaseController
 {
+    /**
+     * @inheritdoc
+     */
+    public function behaviors()
+    {
+        return [
+            'access' => [
+                'class' => AccessControl::className(),
+                'only' => ['create','update','delete'],
+                'denyCallback' => function($rule,$action){
+                    return $this->goBack();
+                },
+                'rules' => [
+                    [
+                        'actions' => ['create','update','delete','delete-list'],
+                        'allow' => true,
+                        'roles' => ['@'],
+                    ],
+                ],
+            ],
+        ];
+    }
+    
     /**
      * Create new Engine
      *

@@ -38,7 +38,8 @@ class CreateCar extends Model
     public function rules()
     {
         return [
-            [['name','engine_id','transmission_id','performance_id','fuel_id','body_id','price','model_id'],'required']
+            [['name','engine_id','transmission_id','performance_id','fuel_id','body_id','price','model_id'],'required'],
+            [['name'],'string','min' => 2,'max' => 15]
         ];
     }
 

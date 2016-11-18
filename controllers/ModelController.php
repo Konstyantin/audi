@@ -8,6 +8,7 @@
 
 namespace app\controllers;
 
+use yii\filters\AccessControl;
 use app\models\base\BaseRequest;
 use app\models\carModel\CreateCarModel;
 use app\models\carModel\UpdateCarModel;
@@ -20,6 +21,28 @@ use app\models\image\ImageModel;
  */
 class ModelController extends BaseController
 {
+    /**
+     * @inheritdoc
+     */
+    public function behaviors()
+    {
+        return [
+            'access' => [
+                'class' => AccessControl::className(),
+                'only' => ['create','update','delete','delete-list'],
+                'denyCallback' => function($rule,$action){
+                    return $this->goBack();
+                },
+                'rules' => [
+                    [
+                        'actions' => ['create','update','delete','delete-list'],
+                        'allow' => true,
+                        'roles' => ['@'],
+                    ],
+                ],
+            ],
+        ];
+    }
     /**
      * Create new Model
      *

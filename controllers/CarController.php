@@ -11,6 +11,7 @@ namespace app\controllers;
 use app\controllers\BaseController;
 
 use Yii;
+use yii\filters\AccessControl;
 use app\models\base\BaseRecord;
 use app\models\base\BaseRequest;
 use app\models\car\Car;
@@ -26,6 +27,29 @@ use app\models\performance\CreatePerformance;
 
 class CarController extends BaseController
 {
+    /**
+     * @inheritdoc
+     */
+    public function behaviors()
+    {
+        return [
+            'access' => [
+                'class' => AccessControl::className(),
+                'only' => ['create','update','delete','select-engine','select-transmission'],
+                'denyCallback' => function($rule,$action){
+                    return $this->goBack();
+                },
+                'rules' => [
+                    [
+                        'actions' => ['create','update','delete','delete-list'],
+                        'allow' => true,
+                        'roles' => ['@'],
+                    ],
+                ],
+            ],
+        ];
+    }
+
     /**
      * Create new Car
      *

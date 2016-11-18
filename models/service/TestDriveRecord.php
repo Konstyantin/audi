@@ -39,6 +39,12 @@ class TestDriveRecord extends Model
     {
         return [
             [['first_name','last_name','phone','email','dealer','car','month','day','time'],'required'],
+            [['first_name','last_name'],'string','min' => 3,'max' => 45],
+            [['phone'],'string','min' => 10,'max' => 12],
+            [['email'],'email'],
+            [['month'],'number','min' => 1, 'max' => 12],
+            [['day'],'number','min' => 1, 'max' => 31],
+            [['time'],'number','min' => 9, 'max' => 18],
         ];
     }
 

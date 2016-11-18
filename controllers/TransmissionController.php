@@ -9,7 +9,7 @@
 namespace app\controllers;
 
 use app\controllers\BaseController;
-
+use yii\filters\AccessControl;
 use app\models\transmission\CreateTransmission;
 use app\models\transmission\UpdateTransmission;
 use app\models\image\ImageModel;
@@ -21,6 +21,29 @@ use app\models\image\ImageModel;
  */
 class TransmissionController extends BaseController
 {
+    /**
+     * @inheritdoc
+     */
+    public function behaviors()
+    {
+        return [
+            'access' => [
+                'class' => AccessControl::className(),
+                'only' => ['create','update','delete'],
+                'denyCallback' => function($rule,$action){
+                    return $this->goBack();
+                },
+                'rules' => [
+                    [
+                        'actions' => ['create','update','delete','delete-list'],
+                        'allow' => true,
+                        'roles' => ['@'],
+                    ],
+                ],
+            ],
+        ];
+    }
+
     /**
      * Create new Transmission
      *

@@ -8,6 +8,7 @@
 
 namespace app\controllers;
 
+use yii\filters\AccessControl;
 use app\controllers\BaseController;
 use app\models\base\BaseRequest;
 use app\models\dealer\CreateDealer;
@@ -20,6 +21,32 @@ use app\models\testCar\CreateTestCar;
  */
 class DealerController extends BaseController
 {
+    /**
+     * @inheritdoc
+     */
+    public function behaviors()
+    {
+        return [
+            'access' => [
+                'class' => AccessControl::className(),
+                'only' => ['create','update','delete',
+                           'add-car','test-cars','delete-test-car',
+                           'tests','delete-test','inspection-list',
+                           'delete-inspection'
+                ],
+                'denyCallback' => function($rule,$action){
+                    return $this->goBack();
+                },
+                'rules' => [
+                    [
+                        'actions' => ['create','update','delete','delete-list'],
+                        'allow' => true,
+                        'roles' => ['@'],
+                    ],
+                ],
+            ],
+        ];
+    }
     /**
      * actionList use for display all exist dealer list
      *

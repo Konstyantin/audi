@@ -37,6 +37,8 @@ class UpdateBody extends Model
     {
         return [
             [['height','width','length','wheelbase','drag','weight'],'required'],
+            [['height','width','length','wheelbase'],'number','min' => 1500, 'max' => 8500],
+            [['weight'],'number','min' => 1000,'max' => 5000]
         ];
     }
 

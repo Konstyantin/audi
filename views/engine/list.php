@@ -28,17 +28,21 @@ use app\models\image\LoadWidget;
         <?php endif;?>
 
     <div class="manage-container">
-        <div class="manage-control">
-            <a href="/engine/create" class="btn btn-create">Create Engine</a>
-            <a href="/engine/delete-list" class="btn btn-delete">Delete All</a>
-        </div>
+        <?php if(!Yii::$app->user->isGuest):?>
+            <div class="manage-control">
+                <a href="/engine/create" class="btn btn-create">Create Engine</a>
+                <a href="/engine/delete-list" class="btn btn-delete">Delete All</a>
+            </div>
+        <?php endif;?>
     </div>
     <?php foreach ($list as $item):?>
         <div class="col-lg-3 col-xs-6 item">
             <img src="/img/engine/<?=$item->name?>.jpg" alt="">
             <h2 class="text-center"><a href="<?= '/engine/' . $item->id; ?>"><?= $item->name;?></a></h2>
+            <?php if(!Yii::$app->user->isGuest):?>
                 <a href="<?= '/engine/update/' . $item->id; ?>" class="btn pull-left btn-primary">Update</a>
                 <a href="<?= '/engine/delete/' . $item->id; ?>" class="btn pull-right btn-danger">Delete</a>
+            <?php endif;?>
         </div>
     <?php endforeach;?>
 </div>

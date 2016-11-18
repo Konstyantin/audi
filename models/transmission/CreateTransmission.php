@@ -31,6 +31,8 @@ class CreateTransmission extends Model
     {
         return [
             [['name','level','description'],'required'],
+            [['name'],'string'],
+            [['level'],'number','max' => 1]
         ];
     }
 
