@@ -34,7 +34,7 @@ use yii\widgets\ActiveForm;
                 'value' => $path,
                 'placeholder' => 'Choose directory'
             ]);?>
-            <?= Html::submitButton('View Images',['class' => 'btn btn-create']);?>
+            <?= Html::submitButton('View Images',['class' => 'btn btn-success review']);?>
             <?php $form::end();?>
         </div>
     </div>

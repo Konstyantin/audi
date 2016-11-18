@@ -58,9 +58,11 @@ class ServiceController extends BaseController
             if($model->checkTest()){
                 $values = $model->attributes;
                 $model->create($values);
+
+                $this->setFlash('success','Your application is accepted we will contact with you');
+                return $this->goBack('/service/testDrive');
             }
-            $this->setFlash('success','Your application is accepted we will contact with you');
-            return $this->goBack('/service/testDrive');
+            $this->setFlash('fail_test','Sorry this time is taken, choose another time');
         }
         
         return $this->render('test-drive',compact('model','car','service','dealer'));

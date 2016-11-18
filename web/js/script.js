@@ -104,7 +104,7 @@
                 url:url,
                 data:{param:param},
                 success:function (data) {
-                    var elem = $('.test');
+                    var elem = $('.review');
                     
                     app.reuseSearch(elem);
                 }

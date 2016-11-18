@@ -27,6 +27,16 @@ use yii\helpers\ArrayHelper;
         'body' => $success
     ]);
     ?>
+<?php elseif (Yii::$app->session->hasFlash('fail_test')):?>
+    <?php
+    $fail = Yii::$app->session->getFlash('fail_test');
+    echo \yii\bootstrap\Alert::widget([
+        'options' => [
+            'class' => 'alert-danger'
+        ],
+        'body' => $fail
+    ]);
+    ?>
 <?php endif;?>
 <div class="service-register clearfix">
     <div class="col-md-8 col-md-offset-2">
