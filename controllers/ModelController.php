@@ -43,7 +43,7 @@ class ModelController extends BaseController
      */
     public function actionList()
     {
-        $list = $this->viewAll('models');
+        $list = $this->viewList('models');
         $imgs = ImageModel::load('img/models/');
         return $this->render('list',['list' => $list,'imgs' => $imgs]);
     }

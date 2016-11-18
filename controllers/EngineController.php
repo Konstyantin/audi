@@ -86,7 +86,7 @@ class EngineController extends BaseController
      */
     public function actionList()
     {
-        $list = $this->viewAll('engine');
+        $list = $this->viewList('engine');
 
         $imgs = ImageModel::load('img/engine/*.png');
 

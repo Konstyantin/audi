@@ -29,7 +29,7 @@ class ServiceController extends BaseController
     public function actionInspection()
     {
         $model = new InspectionRecord();
-        $cars = $this->viewAll('car');
+        $cars = $this->viewList('car');
 
         $service = $this->getOneByParam('service',['title' => 'inspection']);
 
@@ -50,9 +50,9 @@ class ServiceController extends BaseController
     {
         $model = new TestDriveRecord();
 
-        $car = $this->viewAll('car');
+        $car = $this->viewList('car');
         $service = $this->getOneByParam('service',['title' => 'Test Drive']);
-        $dealer = $this->viewAll('dealer');
+        $dealer = $this->viewList('dealer','city');
 
         if(BaseRequest::checkModelRequest($model)){
             if($model->checkTest()){

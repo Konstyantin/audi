@@ -9,7 +9,6 @@
 namespace app\models\car;
 
 use yii\base\Model;
-
 /**
  * Class CreateCar
  * @package app\models\car
