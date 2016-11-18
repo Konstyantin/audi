@@ -9,6 +9,8 @@
 namespace app\models\article;
 
 use yii\base\Model;
+use app\models\article\Article;
+use app\models\directories\Directories;
 
 /**
  * Class CreateArticle
@@ -35,6 +37,18 @@ class CreateArticle extends Model
     }
 
     /**
+     * get path to directory which hold all article directory and perform
+     * concatenate with title article which will be create before passes
+     * param $dirName to method Directories::createDirectory for create new directory
+     * with passed name
+     */
+    public function createDir()
+    {
+        $dirName = Article::$path . $this->title;
+        Directories::createDirectory($dirName);
+    }
+
+    /**
      * Create new Engine and add it in database
      * take array data from form CreateEngine
      *
@@ -45,5 +59,6 @@ class CreateArticle extends Model
         $article = new Article(['scenario' => Article::SCENARIO_ARTICLE]);
         $article->attributes = $values;
         $article->save();
+        $this->createDir();
     }
 }

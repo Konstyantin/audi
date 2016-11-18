@@ -8,10 +8,10 @@
 
 namespace app\controllers;
 
+use app\models\base\BaseRequest;
 use app\controllers\BaseController;
 use app\models\article\UpdateArticle;
 use app\models\article\CreateArticle;
-use app\models\base\BaseRequest;
 use app\models\directories\Directories;
 
 /**
@@ -31,7 +31,6 @@ class ArticleController extends BaseController
         $category = $this->viewAll('article_category');
 
         if($this->create($model)){
-            Directories::createDirectory('./img/article/' . $model->title);
             $this->setFlash('success','Article create success');
         }
 
@@ -46,7 +45,7 @@ class ArticleController extends BaseController
      */
     public function actionList()
     {
-        $pagination = $this->setPagination('article',null,1);
+        $pagination = $this->setPagination('article');
         
         $list = $pagination['recordList'];
         $pages = $pagination['pages'];

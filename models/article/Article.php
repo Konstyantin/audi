@@ -16,7 +16,7 @@ use app\models\base\BaseRecord;
  */
 class Article extends BaseRecord
 {
-
+    public static $path = './img/article/';
     const SCENARIO_ARTICLE = 'article';
 
     /**
