@@ -154,7 +154,7 @@ class CarController extends BaseController
         $car = $this->viewOne('car');
 
         if($this->delete('car')){
-            Directories::removeDirectory('./img/car/' . $car->name);
+            Directories::removeDirectory(Car::$path . $car->name);
             $this->deleteComponent(Car::getCarParam($car));
             $this->setFlash('success','Delete car success');
             

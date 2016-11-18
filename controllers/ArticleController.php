@@ -8,6 +8,7 @@
 
 namespace app\controllers;
 
+use app\models\article\Article;
 use app\models\base\BaseRequest;
 use app\controllers\BaseController;
 use app\models\article\UpdateArticle;
@@ -91,7 +92,7 @@ class ArticleController extends BaseController
 
         if($this->delete('article')){
 
-            Directories::removeDirectory('./img/article/' . $article->title);
+            Directories::removeDirectory(Article::$path . $article->title);
             $this->setFlash('success','Article delete success');
         }
         return $this->goBack('/article/list');
