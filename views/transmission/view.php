@@ -8,14 +8,14 @@
 ?>
 <div class="container transmission">
     <div class="col-lg-6 item">
-        <img src="/img/transmission/A1610481_large.jpg" alt="">
+        <img src="/img/transmission/<?=$transmission->name?>.jpg" alt="">
     </div>
     <div class="col-lg-6">
         <table class="table table-hover">
             <thead>
             <tr>
                 <th>Transmission</th>
-                <th class="text-right"><?= $transmission->line;?></th>
+                <th class="text-right"><?= $transmission->name;?></th>
             </tr>
             </thead>
             <tbody>

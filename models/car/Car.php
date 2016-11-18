@@ -21,6 +21,7 @@ use app\models\transmission\Transmission;
  */
 class Car extends BaseRecord
 {
+    public static $path = './img/car/';
     const SCENARIO_CAR = 'car';
 
     /**
@@ -34,7 +35,7 @@ class Car extends BaseRecord
         $scenarios[self::SCENARIO_CAR] = [
             'name','engine_id','transmission_id',
             'performance_id','fuel_id','body_id',
-            'price','model_id','test_drive'
+            'price','model_id'
         ];
         return $scenarios;
     }

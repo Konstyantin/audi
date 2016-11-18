@@ -85,4 +85,12 @@ class Directories
         }
         return false;
     }
+
+    public static function renameDir($oldName,$newName)
+    {
+        if(self::checkExist($oldName)){
+            return rename($oldName,$newName);
+        }
+        return false;
+    }
 }

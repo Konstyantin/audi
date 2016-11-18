@@ -26,7 +26,7 @@
                 <tbody>
                 <tr>
                     <td>Engine</td>
-                    <td class="text-right"><?=$car->engine->type;?></td>
+                    <td class="text-right"><?=$car->engine->name;?></td>
                 </tr>
                 <tr>
                     <td>Power</td>
@@ -42,27 +42,28 @@
                 </tr>
                 <tr>
                     <td>Urban</td>
-                    <td class="text-right"><?=$car->transmission->line?></td>
+                    <td class="text-right"><?=$car->transmission->name?></td>
                 </tr>
                 </tbody>
             </table>
-            <a href="<?='/car/details/' . $car->name;?>" class="btn btn-create">View Datails</a>
-            <a href="<?='/car/delete/' . $car->id;?>" class="btn btn-delete">Delete</a>
+            <a href="<?='/car/details/' . $car->name;?>" class="btn btn-success">View Datails</a>
+            <a href="<?='/car/update/' . $car->id;?>" class="btn btn-primary">Update</a>
+            <a href="<?='/car/delete/' . $car->id;?>" class="btn btn-danger">Delete</a>
         </div>
     </div>
     <div class="highlights">
         <h2 class="text-center">Highlights</h2>
         <ul class="list-item clearfix">
             <li class="item col-xs-6">
-                <img src="<?='/img/car/engine/' . $car->engine->type . '.jpg';?>" alt="">
+                <img src="<?='/img/engine/' . $car->engine->name . '.jpg';?>" alt="">
                 <div class="item-info">
-                    <a href="<?='/engine/' . $car->engine->id;?>"><?=$car->engine->type . ' ' . $name;?></a>
+                    <a href="<?='/engine/' . $car->engine->id;?>"><?=$car->engine->name;?></a>
                 </div>
             </li>
             <li class="item col-xs-6">
-                <img src="<?='/img/car/transmission/'. $car->transmission->line . '.jpg'?>" alt="">
+                <img src="<?='/img/transmission/'. $car->transmission->name . '.jpg'?>" alt="">
                 <div class="item-info">
-                    <a href="<?='/transmission/' . $car->transmission->id;?>"><?=$car->transmission->line . ' ' . $name;?></a>
+                    <a href="<?='/transmission/' . $car->transmission->id;?>"><?=$car->transmission->name;?></a>
                 </div>
             </li>
         </ul>

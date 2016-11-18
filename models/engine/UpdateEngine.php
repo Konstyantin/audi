@@ -17,8 +17,8 @@ use yii\base\Model;
  */
 class UpdateEngine extends Model
 {
-    /** @var int| $type contains type engine */
-    public $type;
+    /** @var int| $name contains type engine */
+    public $name;
     /** @var int| $num_cylinders set the number cylinders engine */
     public $num_cylinders;
     /** @var int| $displacment set displacment engine */
@@ -40,7 +40,7 @@ class UpdateEngine extends Model
     public function rules()
     {
         return [
-            [['type','num_cylinders','displacment','power','rmp','torque','compression','description'], 'required'],
+            [['name','num_cylinders','displacment','power','rmp','torque','compression','description'], 'required'],
         ];
     }
 

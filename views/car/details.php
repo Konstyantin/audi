@@ -58,7 +58,7 @@
             <tbody>
             <tr>
                 <td>Type</td>
-                <td class="text-right"><?=$car->engine->type;?></td>
+                <td class="text-right"><?=$car->engine->name;?></td>
             </tr>
             <tr>
                 <td>Number of Cylinders</td>
@@ -115,8 +115,8 @@
             </thead>
             <tbody>
             <tr>
-                <td>Line</td>
-                <td class="text-right"><?=$car->transmission->line;?></td>
+                <td>Name</td>
+                <td class="text-right"><?=$car->transmission->name;?></td>
             </tr>
             <tr>
                 <td>Level</td>

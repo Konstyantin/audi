@@ -8,14 +8,14 @@
 ?>
 <div class="container engine">
     <div class="col-lg-6 item">
-        <img src="/img/engine/A161508_medium.jpg" alt="">
+        <img src="/img/engine/<?=$engine->name;?>.jpg" alt="">
     </div>
     <div class="col-lg-6">
         <table class="table table-hover">
             <thead>
                 <tr>
                     <th>Engine</th>
-                    <th class="text-right"><?= $engine->type;?></th>
+                    <th class="text-right"><?= $engine->name;?></th>
                 </tr>
             </thead>
             <tbody>

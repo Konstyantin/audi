@@ -5,6 +5,8 @@
  * Date: 21.10.16
  * Time: 22:23
  */
+
+use app\models\image\LoadWidget;
 ?>
 <div class="engine-header">
     <div>
@@ -33,10 +35,10 @@
     </div>
     <?php foreach ($list as $item):?>
         <div class="col-lg-3 col-xs-6 item">
-            <img src="/img/engine/A161508_medium.jpg" alt="">
-            <h2 class="text-center"><a href="<?= '/engine/' . $item->id; ?>"><?= $item->type;?></a></h2>
-                <a href="<?= '/engine/update/' . $item->id; ?>" class="pull-left btn btn-update">Update</a>
-                <a href="<?= '/engine/delete/' . $item->id; ?>" class="pull-right btn btn-delete">Delete</a>
+            <img src="/img/engine/<?=$item->name?>.jpg" alt="">
+            <h2 class="text-center"><a href="<?= '/engine/' . $item->id; ?>"><?= $item->name;?></a></h2>
+                <a href="<?= '/engine/update/' . $item->id; ?>" class="btn pull-left btn-primary">Update</a>
+                <a href="<?= '/engine/delete/' . $item->id; ?>" class="btn pull-right btn-danger">Delete</a>
         </div>
     <?php endforeach;?>
 </div>

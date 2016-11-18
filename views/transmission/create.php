@@ -13,7 +13,7 @@ use yii\helpers\Html;
     <h2 class="text-center">Create Engine</h2>
     <div class="col-md-8 col-md-offset-2">
         <?php $form = ActiveForm::begin();?>
-        <?= $form->field($model,'line')->textInput(['placeholder' => 'Line Transmission']);?>
+        <?= $form->field($model,'name')->textInput(['placeholder' => 'Name Transmission']);?>
         <?= $form->field($model,'level')->textInput(['placeholder' => 'Level Transmission']);?>
         <?= $form->field($model,'description')->textarea(['placeholder' => 'Description Transmission']);?>
         <?= Html::submitButton('Create Transmission',['class' => 'btn btn-create']);?>

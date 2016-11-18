@@ -8,6 +8,7 @@
 
 namespace app\controllers;
 
+use app\models\image\ImageModel;
 use Yii;
 
 use app\models\engine\CreateEngine;
@@ -87,7 +88,9 @@ class EngineController extends BaseController
     {
         $list = $this->viewAll('engine');
 
-        return $this->render('list',['list' => $list]);
+        $imgs = ImageModel::load('img/engine/*.png');
+
+        return $this->render('list',['list' => $list,'imgs' => $imgs]);
     }
 
     /**

@@ -14,8 +14,8 @@ use app\models\base\BaseRecord;
 /**
  * Get all engine, transmission, models for realisation dropDownList Engine, Transmission, Models
  */
-$engines = ArrayHelper::map(BaseRecord::getAll('engine'),'id','type');
-$transmission = ArrayHelper::map(BaseRecord::getAll('transmission'),'id','line');
+$engines = ArrayHelper::map(BaseRecord::getAll('engine'),'id','name');
+$transmission = ArrayHelper::map(BaseRecord::getAll('transmission'),'id','name');
 $models = ArrayHelper::map(BaseRecord::getAll('models'),'id','name');
 ?>
 
@@ -78,7 +78,6 @@ $models = ArrayHelper::map(BaseRecord::getAll('models'),'id','name');
                 <?= $formCar->field($car,'transmission_id')->dropDownList($transmission);?>
                 <?= $formCar->field($car,'price')->textInput(['placeholder' => 'Price Car']);?>
                 <?= $formCar->field($car,'model_id')->dropDownList($models);?>
-                <?= $formCar->field($car,'test_drive')->checkbox(['value' => 0]);?>
                 <?= Html::submitButton('Create Car',['class' => 'btn btn-primary submit_record','id' => 4]);?>
                 <?php $formCar::end();?>
             <?php Pjax::end();?>

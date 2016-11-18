@@ -24,7 +24,7 @@ use yii\helpers\ArrayHelper;
             ?>
         <?php endif;?>
         <?php $form = ActiveForm::begin();?>
-        <?= $form->field($model,'transmission_id')->dropDownList(ArrayHelper::map($transmissions,'id','line'));?>
+        <?= $form->field($model,'transmission_id')->dropDownList(ArrayHelper::map($transmissions,'id','name'));?>
         <?= Html::submitButton('Select Transmission',['class' => 'btn btn-primary']);?>
         <?php $form::end();?>
     </div>

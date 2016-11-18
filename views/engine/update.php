@@ -25,7 +25,7 @@ use yii\helpers\Html;
         <?php endif;?>
         
         <?php $form = ActiveForm::begin();?>
-        <?= $form->field($model,'type')->textInput(['value' => $engine->type]);?>
+        <?= $form->field($model,'name')->textInput(['value' => $engine->name]);?>
         <?= $form->field($model,'num_cylinders')->textInput(['value' => $engine->num_cylinders]);?>
         <?= $form->field($model,'displacment')->textInput(['value' => $engine->displacment]);?>
         <?= $form->field($model,'power')->textInput(['value' => $engine->power]);?>

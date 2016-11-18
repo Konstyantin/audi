@@ -24,7 +24,7 @@ use yii\helpers\ArrayHelper;
         ?>
         <?php endif;?>
         <?php $form = ActiveForm::begin();?>
-            <?= $form->field($model,'engine_id')->dropDownList(ArrayHelper::map($engines,'id','type'));?>
+            <?= $form->field($model,'engine_id')->dropDownList(ArrayHelper::map($engines,'id','name'));?>
             <?= Html::submitButton('Select Engine',['class' => 'btn btn-primary']);?>
         <?php $form::end();?>
     </div>

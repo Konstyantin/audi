@@ -26,7 +26,7 @@ class Transmission extends BaseRecord
     public function scenarios()
     {
         $scenarios = parent::scenarios();
-        $scenarios[self::SCENARIO_TRANSMISSION] = ['line','level','description'];
+        $scenarios[self::SCENARIO_TRANSMISSION] = ['name','level','description'];
         return $scenarios;
     }
 
