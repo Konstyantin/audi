@@ -94,6 +94,18 @@ class BaseController extends Controller
     }
 
     /**
+     * Get list record with define param
+     *
+     * @param $table
+     * @param string $param
+     * @return array|\yii\db\ActiveRecord[]
+     */
+    public function viewList($table,$param = 'name')
+    {
+        return BaseRecord::selectParam($table,['id',$param]);
+    }
+
+    /**
      * Delete all item on table
      *
      * @param $table

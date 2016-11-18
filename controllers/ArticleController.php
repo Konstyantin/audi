@@ -29,7 +29,7 @@ class ArticleController extends BaseController
     public function actionCreate()
     {
         $model = new CreateArticle();
-        $category = $this->viewAll('article_category');
+        $category = $this->viewList('article_category');
 
         if($this->create($model)){
             $this->setFlash('success','Article create success');

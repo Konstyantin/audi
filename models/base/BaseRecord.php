@@ -52,6 +52,19 @@ class BaseRecord extends ActiveRecord
     }
 
     /**
+     * Get list record and return define param
+     *
+     * @param $table
+     * @param $param
+     * @return array|\yii\db\ActiveRecord[]
+     */
+    public static function selectParam($table,$param)
+    {
+        self::setTable($table);
+        return self::find()->select($param)->all();
+    }
+
+    /**
      * Get one item from table
      *
      * @param $param

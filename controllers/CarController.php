@@ -64,7 +64,7 @@ class CarController extends BaseController
      */
     public function actionList()
     {
-        $list = $this->viewAll('car');
+        $list = $this->viewList('car');
         $imgs = ImageModel::load('img/car/logo/');
         return $this->render('list',compact('list','imgs'));
     }
@@ -114,7 +114,7 @@ class CarController extends BaseController
     public function actionSelectEngine()
     {
         $model = new SelectEngine();
-        $engines = $this->viewAll('engine');
+        $engines = $this->viewList('engine');
         $car = $this->viewOne('car');
 
         if(BaseRequest::checkModelRequest($model)){
@@ -133,7 +133,7 @@ class CarController extends BaseController
     public function actionSelectTransmission()
     {
         $model = new SelectTransmission();
-        $transmissions = $this->viewAll('transmission');
+        $transmissions = $this->viewList('transmission');
         $car = $this->viewOne('car');
 
         if(BaseRequest::checkModelRequest($model)){
@@ -169,7 +169,7 @@ class CarController extends BaseController
      */
     public function actionUpdate()
     {
-        $modelList = $this->viewAll('models');
+        $modelList = $this->viewList('models');
         $model = new UpdateCar();
         $car = $this->viewOne('car');
 

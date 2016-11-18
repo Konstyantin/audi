@@ -44,7 +44,7 @@ class TransmissionController extends BaseController
      */
     public function actionList()
     {
-        $list = $this->viewAll('transmission');
+        $list = $this->viewList('transmission');
         $imgs = ImageModel::load('img/transmission/*.png');
 
         return $this->render('list',['list' => $list,'imgs' => $imgs]);

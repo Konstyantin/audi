@@ -29,9 +29,8 @@ class ServiceController extends BaseController
     public function actionInspection()
     {
         $model = new InspectionRecord();
-        $cars = $this->viewAll('car');
-        $dealers = $this->viewAll('dealer');
-
+        $cars = $this->viewList('car');
+        $dealers = $this->viewList('dealer','city');
         $service = $this->getOneByParam('service',['title' => 'inspection']);
 
         if($this->create($model)){
@@ -51,9 +50,9 @@ class ServiceController extends BaseController
     {
         $model = new TestDriveRecord();
 
-        $car = $this->viewAll('car');
+        $car = $this->viewList('car');
         $service = $this->getOneByParam('service',['title' => 'Test Drive']);
-        $dealer = $this->viewAll('dealer');
+        $dealer = $this->viewList('dealer','city');
 
         if(BaseRequest::checkModelRequest($model)){
             if($model->checkTest()){
