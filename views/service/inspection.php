@@ -38,6 +38,7 @@ use yii\helpers\ArrayHelper;
                 'format' => 'dd-M-yyyy HH:ii P'
             ]
         ]);?>
+        <?=$form->field($model,'dealer')->dropDownList(ArrayHelper::map($dealers,'id','city'));?>
         <?=$form->field($model,'car')->dropDownList(ArrayHelper::map($cars,'name','name'));?>
         <?=$form->field($model,'mileage')->textInput();?>
         <?=$form->field($model,'license_plate')->textInput();?>

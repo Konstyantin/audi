@@ -284,4 +284,20 @@ nav li:hover a {
   background-color: #C80A1B;
   border-color: #C80A1B; }
 
+/* dealer */
+.dealer-manage {
+  padding-top: 2%; }
+
+.dealer-list {
+  padding: 0;
+  margin: 0; }
+  .dealer-list .item {
+    padding: 1%; }
+  .dealer-list .item-info {
+    background: #C80A1B;
+    padding: 2%; }
+    .dealer-list .item-info a {
+      font-family: "Montserrat", sans-serif;
+      color: #fff; }
+
 /*# sourceMappingURL=style.css.map */

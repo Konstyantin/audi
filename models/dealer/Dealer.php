@@ -1,22 +1,22 @@
 <?php
+
 /**
  * Created by PhpStorm.
  * User: kostya
- * Date: 12.11.16
- * Time: 14:07
+ * Date: 15.11.16
+ * Time: 23:09
  */
-
-namespace app\models\service;
+namespace app\models\dealer;
 
 use app\models\base\BaseRecord;
 
 /**
- * Class Inspection
- * @package app\models\service
+ * Class Dealer
+ * @package app\models\dealer
  */
-class Inspection extends BaseRecord
+class Dealer extends BaseRecord
 {
-    const SCENARIO_INSPECTION = 'inspection';
+    const SCENARIO_DEALER = 'dealer';
 
     /**
      * Set using scenarious
@@ -26,7 +26,7 @@ class Inspection extends BaseRecord
     public function scenarios()
     {
         $scenarios = parent::scenarios();
-        $scenarios[self::SCENARIO_INSPECTION] = ['first_name','last_name','phone','email','dealer','car','mileage','license_plate','register_inspection'];
+        $scenarios[self::SCENARIO_DEALER] = ['city','street','location','description'];
         return $scenarios;
     }
 
@@ -37,6 +37,6 @@ class Inspection extends BaseRecord
      */
     public static function tableName()
     {
-        return 'inspection';
+        return 'dealer';
     }
 }

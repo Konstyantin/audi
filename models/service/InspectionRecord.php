@@ -24,6 +24,8 @@ class InspectionRecord extends Model
     public $phone;
     /** @var int| $email contains email user */
     public $email;
+    /** @var int| $dealer contains dealer user */
+    public $dealer;
     /** @var int| $car contains car user */
     public $car;
     /** @var int| $mileage contains mileage user */
@@ -33,13 +35,15 @@ class InspectionRecord extends Model
     /** @var int| $register_inspection contains phone user */
     public $register_inspection;
 
+
+
     /**
      * @return array the validation rules.
      */
     public function rules()
     {
         return [
-            [['first_name','last_name','phone','email','car','mileage','license_plate','register_inspection'],'required']
+            [['first_name','last_name','phone','email','dealer','car','mileage','license_plate','register_inspection'],'required']
         ];
     }
 

@@ -30,7 +30,7 @@ class ServiceController extends BaseController
     {
         $model = new InspectionRecord();
         $cars = $this->viewList('car');
-
+        $dealers = $this->viewList('dealer','city');
         $service = $this->getOneByParam('service',['title' => 'inspection']);
 
         if($this->create($model)){
@@ -38,7 +38,7 @@ class ServiceController extends BaseController
             return $this->goHome();
         }
 
-        return $this->render('inspection',['model' => $model,'cars' => $cars,'service' => $service]);
+        return $this->render('inspection',compact('model','cars','service','dealers'));
     }
 
     /**
