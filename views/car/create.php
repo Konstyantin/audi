@@ -14,8 +14,8 @@ use app\models\base\BaseRecord;
 /**
  * Get all engine, transmission, models for realisation dropDownList Engine, Transmission, Models
  */
-$engines = ArrayHelper::map(BaseRecord::getAll('engine'),'id','type');
-$transmission = ArrayHelper::map(BaseRecord::getAll('transmission'),'id','line');
+$engines = ArrayHelper::map(BaseRecord::getAll('engine'),'id','name');
+$transmission = ArrayHelper::map(BaseRecord::getAll('transmission'),'id','name');
 $models = ArrayHelper::map(BaseRecord::getAll('models'),'id','name');
 ?>
 
