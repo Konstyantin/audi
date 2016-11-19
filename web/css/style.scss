@@ -5,9 +5,12 @@
 /* Declared variable */
 
 $nav_color: #1a1a1a;
+$link_color: #494949;
+$link_color_hover: #C80005;
 $open_sans: 'Open Sans', sans-serif;
 $monserat: 'Montserrat', sans-serif;
 /* Navigation Style */
+
 
 html {
   font-size: 100%;
@@ -115,9 +118,6 @@ nav {
   }
 }
 
-.navbar-nav {
-  margin:0 -15px;
-}
 .navbar {
   margin:0;
 
@@ -159,33 +159,47 @@ nav {
 .flexslider {
   border: none;
   margin-bottom: 0;
-
-  .slides p {
-    font-family: 'Montserrat', sans-serif;
-    position: absolute;
-    font-size: 3rem;
-    top: 5%;
-    color: #fff;
-    padding-left: 0.3%;
-  }
 }
 
 /* Services */
 
-.services {
-  p {
-    padding-top:2%;
-    font-family: $open_sans;
+.service {
+  .service-list {
+    padding: 0;
+    margin: 0;
   }
-  .container span {
-    padding-right: 5px;
+  .service-item {
+    margin: 0;
+    padding: 0;
+    margin-right: 1%;
+  }
+
+  .service-list:last-child {
+    margin-right: 0;
+  }
+
+  .col-md-3 {
+    width: 24%;
+  }
+
+  p {
+    padding: 2%;
+    color: #FFF;
+    font-family: $monserat;
+    background: #494949;
+  }
+
+  p:hover {
+    cursor: pointer;
+    transition: .3s;
+    background: $link_color_hover;
   }
 }
 
 /* News */
 
 .news {
-
+  
   .nav-pills {
 
     a {
@@ -195,8 +209,8 @@ nav {
     li.active > a,
     li.active > a:hover,
     li.active > a:focus {
-      background: #f0f0f0;
-      color: $nav_color;
+      background: $nav_color;
+      color: #FFFFFF;
     }
   }
 
@@ -207,14 +221,37 @@ nav {
       border-radius: 0;
     }
   }
-
-  #newsContent {
-  padding-left: 1.5%;
-    p {
-      margin:2% 0;
+  .tab-content {
+    .col-md-3 {
+      width: 24%;
+      padding: 0;
+      margin-right: 1%;
+    }
+    
+    .item .item-info {
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      overflow: hidden;
+      color: #FFF;
+      padding: 2%;
+      background: $link_color;
+    } 
+    
+    .item-info:hover {
+      transition: .3s;
+      background: $link_color_hover;
+    }
+    
+    .item .item-info a {
+      font-family: $monserat;
+      color: #FFF;
+    }
+    .item:last-child {
+      margin-right: 0;
     }
   }
 }
+
 
 /* Login form */
 .login {

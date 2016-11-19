@@ -25,7 +25,6 @@ AppAsset::register($this);
 <?php $this->beginBody() ?>
 
 <div class="wrap">
-
     <!--Logo Company-->
 
     <div class="logo_container">
@@ -37,7 +36,6 @@ AppAsset::register($this);
     </div>
 
     <!--Navigation-->
-
     <nav class="navbar navbar-static-top">
         <div class="container">
             <div class="navbar-header">
@@ -49,46 +47,52 @@ AppAsset::register($this);
                 </button>
             </div>
             <div id="navbar" class="navbar-collapse collapse">
-                <ul class="nav navbar-nav">
-                    <li class="active">
-                        <a href="/model/list">Models</a>
-                    </li>
-                    <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Service<span class="caret"></span></a>
-                        <ul class="dropdown-menu">
-                            <li><a href="/service/inspection">Inspection</a></li>
-                            <li><a href="/service/testDrive">TestDrive</a></li>
-                            <li><a href="/service/view/garantee">Guarantee</a></li>
-                            <li><a href="/service/view/insurance">Insurance</a></li>
-                        </ul>
-                    </li>
-                    <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Technology<span class="caret"></span></a>
-                        <ul class="dropdown-menu">
-                            <li><a href="/engine/list">Engine</a></li>
-                            <li><a href="/transmission/list">Transmission</a></li>
-                            <li><a href="/technology/quattro">Quattro</a></li>
-                            <li><a href="/technology/lighting">Lighting</a></li>
-                            <li><a href="/technology/assistent">Assistent</a></li>
-                            <li><a href="/technology/connect">Connect</a></li>
-                        </ul>
-                    </li>
-                    <li><a href="/article/news/list">News</a></li>
-                    <li><a href="/article/sport/list">Sport</a></li>
-                    <li class="dropdown">
-                        <a href="/dealer/list">Dillers</a>
-                    </li>
-                    <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Image<span class="caret"></span></a>
-                        <ul class="dropdown-menu">
-                            <li><a href="/image/upload">Upload</a></li>
-                            <li><a href="/image/list">View</a></li>
-                        </ul>
-                    </li>
-                    <?php if(!Yii::$app->user->isGuest):?>
-                    <li><a href="/site/logout">Logout</a></li>
-                    <?php endif;?>
-                </ul>
+                <?=Nav::widget([
+                    'options' => [
+                        'class' => 'nav navbar-nav'
+                    ],
+                    'items' => [
+
+                        ['label' => 'Models','url' => '/model/list'],
+                        ['label' => 'Service',
+                            'items' => [
+                                ['label' => 'Inspection','url' => '/service/inspection'],
+                                ['label' => 'TestDrive','url' => '/service/testDrive'],
+                                ['label' => 'Guarantee','url' => '/service/view/garantee'],
+                                ['label' => 'Insurance','url' => '/service/view/insurance'],
+                            ],
+                        ],
+                        ['label' => 'Technology',
+                            'items' => [
+                                ['label' => 'Engine','url' => '/engine/list'],
+                                ['label' => 'Transmission','url' => '/transmission/list'],
+                                ['label' => 'Quattro','url' => '/technology/quattro'],
+                                ['label' => 'Lighting','url' => '/technology/lighting'],
+                                ['label' => 'Assistent','url' => '/technology/assistent'],
+                                ['label' => 'Connect','url' => '/technology/connect'],
+                            ],
+                        ],
+                        ['label' => 'News','url' => '/article/news/list'],
+                        ['label' => 'Sport','url' => '/article/sport/list'],
+                        ['label' => 'Dealers','url' => '/dealer/list'],
+                    ]
+                ]);?>
+                <?php if(!Yii::$app->user->isGuest):?>
+                    <?=Nav::widget([
+                        'options' => [
+                            'class' => 'nav navbar-nav admin',
+                        ],
+                        'items' => [
+                            ['label' => 'Admin',
+                                'items' => [
+                                    ['label' => 'Logout','url' => '/site/logout'],
+                                    ['label' => 'Upload Image','url' => '/image/upload'],
+                                    ['label' => 'List Image','url' => '/image/list'],
+                                ]
+                            ]
+                        ]
+                    ]);?>
+                <?php endif;?>
             </div>
         </div>
     </nav>

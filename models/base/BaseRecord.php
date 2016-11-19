@@ -156,10 +156,24 @@ class BaseRecord extends ActiveRecord
 
         $pages = new Pagination(['totalCount' => $records->count(),'pageSize' => $pageSize,'pageSizeParam' => false,'forcePageParam' => false]);
         $recordList = $records->offset($pages->offset)->where($search)
+                              ->orderBy('id DESC')
                               ->limit($pages->limit)
                               ->all();
 
         return ['pages' => $pages, 'recordList' => $recordList];
+    }
 
+    /**
+     * Get last record by set param and limit by count
+     * 
+     * @param $table
+     * @param $param
+     * @param $count
+     * @return array|\yii\db\ActiveRecord[]
+     */
+    public static function getLastList($table,$param,$count)
+    {
+        self::setTable('article');
+        return self::find()->where($param)->orderBy('id DESC')->limit($count)->all();
     }
 }

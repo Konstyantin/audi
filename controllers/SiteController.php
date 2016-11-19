@@ -2,14 +2,14 @@
 
 namespace app\controllers;
 
+use app\models\image\ImageModel;
 use Yii;
 use yii\filters\AccessControl;
-use yii\web\Controller;
 use app\models\admin\LoginForm;
-use app\models\base\BaseRecord;
+use app\controllers\BaseController;
 
 
-class SiteController extends Controller
+class SiteController extends BaseController
 {
     /**
      * @inheritdoc
@@ -56,7 +56,12 @@ class SiteController extends Controller
      */
     public function actionIndex()
     {
-        return $this->render('index');
+        $slider = ImageModel::load('img/slider/*');
+        $services = $this->viewList('service','title');
+        $news = $this->getLastList('article',['category' => 'news']);
+        $sport = $this->getLastList('article',['category' => 'sport']);
+
+        return $this->render('index',compact('services','news','sport','slider'));
     }
 
     /**
@@ -80,14 +85,5 @@ class SiteController extends Controller
     {
         Yii::$app->user->logout();
         return $this->goHome();
-    }
-
-    public function actionTest()
-    {
-        BaseRecord::setTable('engine');
-        $res = BaseRecord::getBy(['type'=>'abra']);
-        foreach ($res as $item){
-            echo $item->type;
-        }
     }
 }

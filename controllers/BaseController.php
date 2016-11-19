@@ -12,7 +12,6 @@ use Yii;
 use yii\web\Controller;
 use app\models\base\BaseRecord;
 use app\models\base\BaseRequest;
-use yii\data\Pagination;
 
 /**
  * Class BaseController contains commons method for Controllers
@@ -106,6 +105,44 @@ class BaseController extends Controller
     }
 
     /**
+     * Get all Item by param from set table
+     *
+     * @param $table
+     * @param $param
+     * @return static[]
+     */
+    public function getAllBy($table,$param)
+    {
+        return BaseRecord::getAllBy($table,$param);
+    }
+
+    /**
+     * Get last record by set table, param and limit set param $count
+     *
+     * @param $table
+     * @param $param
+     * @param int $count
+     * @return array|\yii\db\ActiveRecord[]
+     */
+    public function getLastList($table,$param,$count = 4)
+    {
+        return BaseRecord::getLastList($table,$param,$count);
+    }
+
+    /**
+     * @param $table
+     * @param null $param
+     * @return static
+     */
+    public function getOneByParam($table,$param = null)
+    {
+        if($table){
+            $param = BaseRequest::checkPassParam($param);
+            return BaseRecord::getOne($table,$param);
+        }
+    }
+
+    /**
      * Delete all item on table
      *
      * @param $table
@@ -156,26 +193,6 @@ class BaseController extends Controller
     public function lastRecord($table)
     {
         return BaseRecord::getLast($table);
-    }
-
-    /**
-     * Get all Item by param from set table
-     *
-     * @param $table
-     * @param $param
-     * @return static[]
-     */
-    public function getAllBy($table,$param)
-    {
-        return BaseRecord::getAllBy($table,$param);
-    }
-
-    public function getOneByParam($table,$param = null)
-    {
-        if($table){
-            $param = BaseRequest::checkPassParam($param);
-            return BaseRecord::getOne($table,$param);
-        }
     }
 
     /**

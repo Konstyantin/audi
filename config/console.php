@@ -10,7 +10,7 @@ $config = [
     'controllerNamespace' => 'app\commands',
     'components' => [
         'cache' => [
-            'class' => 'yii\caching\FileCache',
+            'class' => 'yii\caching\MemCache',
         ],
         'log' => [
             'targets' => [
