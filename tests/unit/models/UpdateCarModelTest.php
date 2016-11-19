@@ -14,16 +14,16 @@ use app\models\carModel\UpdateCarModel;
 
 class UpdateCarModelTest extends Unit
 {
-    public function testUpdate()
-    {
-        $model = new UpdateCarModel();
-        $value = [
-            'name' => 'S8'
-        ];
-        BaseRecord::setTable('models');
-
-        $modelItem = BaseRecord::getOne(['name' => 'A8']);
-        $model->update($modelItem,$value);
-        expect($modelItem->name)->equals('S8');
-    }
+//    public function testUpdate()
+//    {
+//        $model = new UpdateCarModel();
+//        $value = [
+//            'name' => 'S8'
+//        ];
+//        BaseRecord::setTable('models');
+//
+//        $modelItem = BaseRecord::getOne(['name' => 'A8']);
+//        $model->update($modelItem,$value);
+//        expect($modelItem->name)->equals('S8');
+//    }
 }
