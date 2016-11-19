@@ -30,7 +30,7 @@ use yii\helpers\Html;
         <?= $form->field($model,'wheelbase')->textInput(['value' => $body->wheelbase]);?>
         <?= $form->field($model,'drag')->textInput(['value' => $body->drag]);?>
         <?= $form->field($model,'weight')->textInput(['value' => $body->weight]);?>
-        <?= Html::submitButton('Update Body',['class' => 'btn btn-primary submit_record','id' => 1]);?>
+        <?= Html::submitButton('Update Body',['class' => 'btn btn-primary']);?>
         <?php $form::end();?>
     </div>
 </div>

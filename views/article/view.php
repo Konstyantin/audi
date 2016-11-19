@@ -20,11 +20,11 @@
     <?php endif;?>
     <br>
     <div class="manage">
-        <a href="/article/update/<?=$article->id;?>" class="btn btn-primary">Update</a>
-        <a href="/article/delete/<?=$article->id?>" class="btn btn-danger">Delete</a>
+        <a href="/article/update/<?=$article->id;?>" class="btn btn-update">Update</a>
+        <a href="/article/delete/<?=$article->id?>" class="btn btn-delete">Delete</a>
     </div>
     <header>
-        <h2 class="text-center"><?=$article->title?></h2>
+        <h2><?=$article->title?></h2>
     </header>
     <div class="content">
         <?=$article->content;?>

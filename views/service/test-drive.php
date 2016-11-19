@@ -15,7 +15,7 @@ use yii\helpers\ArrayHelper;
     <div class="container service-content">
         <?=$service->content;?>
         <?php if(!Yii::$app->user->isGuest):?>
-            <a href="/service/update/<?=$service->id?>" class="btn btn-primary">Update</a>
+            <a href="/service/update/<?=$service->id?>" class="btn btn-update">Update</a>
         <?php endif;?>
     </div>
 </div>

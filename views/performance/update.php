@@ -25,7 +25,7 @@ use yii\helpers\Html;
         <?php $form = ActiveForm::begin();?>
         <?= $form->field($model,'speed')->textInput(['value' => $performance->speed]);?>
         <?= $form->field($model,'acceleration')->textInput(['value' => $performance->acceleration]);?>
-        <?= Html::submitButton('Update Model',['class' => 'btn btn-create']);?>
+        <?= Html::submitButton('Update Model',['class' => 'btn btn-primary']);?>
         <?php $form->end();?>
     </div>
 </div>

@@ -7,9 +7,9 @@
  */
 ?>
 <div class="short-view container">
-    <div class="container">
+    <header>
         <h2>Technical Specs <span><?=$name;?></span></h2>
-    </div>
+    </header>
     <div class="col-lg-6 table-item">
         <table class="table table-hover">
             <thead>

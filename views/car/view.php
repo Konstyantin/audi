@@ -48,29 +48,31 @@
             </table>
             <a href="<?='/car/details/' . $car->name;?>" class="btn btn-success">Learn more</a>
             <?php if(!Yii::$app->user->isGuest):?>
-                <a href="<?='/car/update/' . $car->id;?>" class="btn btn-primary">Update</a>
-                <a href="<?='/car/delete/' . $car->id;?>" class="btn btn-danger">Delete</a>
+                <a href="<?='/car/update/' . $car->id;?>" class="btn btn-update">Update</a>
+                <a href="<?='/car/delete/' . $car->id;?>" class="btn btn-delete">Delete</a>
             <?php endif;?>
         </div>
     </div>
     <div class="highlights">
-        <h2 class="text-center">Highlights</h2>
-        <ul class="list-item clearfix">
-            <li class="item col-xs-6">
-                <img src="<?='/img/engine/' . $car->engine->name . '.jpg';?>" alt="">
-                <div class="item-info">
-                    <a href="<?='/engine/' . $car->engine->id;?>"><?=$car->engine->name;?></a>
-                </div>
-            </li>
-            <li class="item col-xs-6">
-                <img src="<?='/img/transmission/'. $car->transmission->name . '.jpg'?>" alt="">
-                <div class="item-info">
-                    <a href="<?='/transmission/' . $car->transmission->id;?>"><?=$car->transmission->name;?></a>
-                </div>
-            </li>
-        </ul>
+        <div class="container">
+            <h2 class="text-center">Highlights</h2>
+            <ul class="list-item clearfix">
+                <li class="item col-xs-6">
+                    <img src="<?='/img/engine/' . $car->engine->name . '.jpg';?>" alt="">
+                    <div class="item-info">
+                        <a href="<?='/engine/' . $car->engine->id;?>"><?=$car->engine->name;?></a>
+                    </div>
+                </li>
+                <li class="item col-xs-6">
+                    <img src="<?='/img/transmission/'. $car->transmission->name . '.jpg'?>" alt="">
+                    <div class="item-info">
+                        <a href="<?='/transmission/' . $car->transmission->id;?>"><?=$car->transmission->name;?></a>
+                    </div>
+                </li>
+            </ul>
+        </div>
     </div>
-    <div class="demo-gallery">
+    <div class="demo-gallery container">
         <h2 class="text-center">Gallery</h2>
         <ul id="lightgallery" class="list-unstyled row">
             <?php foreach ($imgGallery as $galleryItem):?>

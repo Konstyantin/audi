@@ -15,7 +15,7 @@ use yii\helpers\Html;
     <div class="col-md-8 col-md-offset-2">
         <?php $form = ActiveForm::begin();?>
         <?= $form->field($model,'name')->textInput(['placeholder' => 'Name Model']);?>
-        <?= Html::submitButton('Create Model',['class' => 'btn btn-create']);?>
+        <?= Html::submitButton('Create Model',['class' => 'btn btn-success']);?>
         <?php $form->end();?>
     </div>
 </div>

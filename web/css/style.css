@@ -65,7 +65,7 @@ section h2 {
   transition: .3s; }
 
 /* Set border for element */
-.navbar, .manage-container, .news {
+.navbar, .news {
   border-top: 1px solid #f0f0f0;
   border-bottom: 1px solid #f0f0f0; }
 
@@ -123,14 +123,11 @@ nav li:hover a {
 .service .col-md-3 {
   width: 24%; }
 .service p {
-  padding: 2%;
+  padding: 3%;
   color: #FFF;
   font-family: "Montserrat", sans-serif;
-  background: #494949; }
-.service p:hover {
-  cursor: pointer;
-  transition: .3s;
-  background: #C80005; }
+  background: #C80005;
+  cursor: pointer; }
 
 /* News */
 .news .nav-pills a {
@@ -153,10 +150,7 @@ nav li:hover a {
   white-space: nowrap;
   overflow: hidden;
   color: #FFF;
-  padding: 2%;
-  background: #494949; }
-.news .tab-content .item-info:hover {
-  transition: .3s;
+  padding: 3%;
   background: #C80005; }
 .news .tab-content .item .item-info a {
   font-family: "Montserrat", sans-serif;
@@ -183,19 +177,6 @@ nav li:hover a {
 .description p {
   font-family: "Roboto", sans-serif; }
 
-/* Engine */
-.engine-header, .transmission-header, .model-header {
-  position: relative;
-  width: 100%; }
-  .engine-header p, .transmission-header p, .model-header p {
-    font-family: 'Montserrat', sans-serif;
-    position: absolute;
-    font-size: 3rem;
-    top: 63%;
-    left: 3%;
-    color: #fff;
-    padding-left: 0.3%; }
-
 /* List Image */
 .list-image .list-item .item {
   width: 100%; }
@@ -221,7 +202,7 @@ nav li:hover a {
     margin: 0 0 2%; }
 
 .highlights, .article {
-  background: rgba(73, 73, 73, 0.62);
+  background: #C80005;
   padding: 3% 0;
   font-family: "Montserrat", sans-serif;
   color: #f0f0f0; }
@@ -232,12 +213,9 @@ nav li:hover a {
     padding: 0; }
   .highlights .item, .article .item {
     padding: 0 3%; }
-    .highlights .item:hover .item-info, .article .item:hover .item-info {
-      background: rgba(200, 10, 27, 0.87);
-      transition: .3s; }
     .highlights .item .item-info, .article .item .item-info {
       padding: 3%;
-      background: rgba(73, 73, 73, 0.62); }
+      background: #C80005; }
       .highlights .item .item-info a, .article .item .item-info a {
         color: #f0f0f0; }
 
@@ -258,14 +236,15 @@ nav li:hover a {
 
 /* article list */
 .article {
-  padding: 3% 5%;
+  padding: 2%;
   background: none; }
   .article h2 {
     color: #000; }
   .article .manage {
-    padding: 1%; }
+    padding: 1% 0; }
   .article .item {
-    padding: 1%; }
+    padding: 1%;
+    padding-left: 0; }
 
 /* article view */
 .article-view {
@@ -314,7 +293,7 @@ nav li:hover a {
   .dealer-list .item {
     padding: 1%; }
   .dealer-list .item-info {
-    background: #C80A1B;
+    background: #C80005;
     padding: 2%; }
     .dealer-list .item-info a {
       font-family: "Montserrat", sans-serif;

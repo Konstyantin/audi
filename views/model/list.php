@@ -12,10 +12,7 @@ use app\models\image\ImageModel;
 <div class="model-header">
     <div>
         <img class="engine-img" src="/img/models/AU150161_medium.jpg" alt="">
-        <p>Audi Models</p>
     </div>
-</div>
-<div class="model">
     <?php if(Yii::$app->session->hasFlash('success')):?>
         <?php
         $success = Yii::$app->session->getFlash('success');
@@ -27,7 +24,8 @@ use app\models\image\ImageModel;
         ]);
         ?>
     <?php endif;?>
-
+</div>
+<div class="model container">
     <div class="manage-container">
         <div class="manage-control">
             <a href="/car/list" class="btn btn-success">Car List</a>

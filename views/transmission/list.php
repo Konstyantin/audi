@@ -11,10 +11,7 @@ use app\models\image\LoadWidget;
 <div class="transmission-header">
     <div>
         <img class="engine-img" src="/img/transmission/general.jpg" alt="">
-        <p>Audi Transsmisiion</p>
     </div>
-</div>
-<div class="transmission">
     <?php if(Yii::$app->session->hasFlash('delete_transmission')):?>
         <?php
         $success = Yii::$app->session->getFlash('delete_transmission');
@@ -25,8 +22,9 @@ use app\models\image\LoadWidget;
             'body' => $success
         ]);
         ?>
-    <?php endif;?>
-
+    <?php endif;?>  
+</div>
+<div class="transmission container">
     <div class="manage-container">
         <?php if(!Yii::$app->user->isGuest):?>
             <div class="manage-control">

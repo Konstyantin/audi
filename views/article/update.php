@@ -51,7 +51,7 @@ use yii\helpers\ArrayHelper;
                 ],
             ]
         )?>
-        <?=Html::submitButton('Update Article',['class' => 'btn btn-success']);?>
+        <?=Html::submitButton('Update Article',['class' => 'btn btn-update']);?>
         <?php $form::end();?>
     </div>
 </div>

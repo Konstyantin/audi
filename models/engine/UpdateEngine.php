@@ -41,7 +41,7 @@ class UpdateEngine extends Model
     {
         return [
             [['name','num_cylinders','displacment','power','rmp','torque','compression','description'], 'required'],
-            [['num_cylinders','displacment','power','rmp','torque','compression'],'number','max' => 5],
+            [['num_cylinders','displacment','power','rmp','torque','compression'],'number'],
             [['name','description'],'string'],
         ];
     }

@@ -39,7 +39,10 @@ class DealerController extends BaseController
                 },
                 'rules' => [
                     [
-                        'actions' => ['create','update','delete','delete-list'],
+                        'actions' => ['create','update','delete',
+                            'add-car','test-cars','delete-test-car',
+                            'tests','delete-test','inspection-list',
+                            'delete-inspection'],
                         'allow' => true,
                         'roles' => ['@'],
                     ],

@@ -21,7 +21,7 @@ use yii\helpers\Html;
         <?= $form->field($model,'torque')->textInput(['placeholder' => 'Torque Engine']);?>
         <?= $form->field($model,'compression')->textInput(['placeholder' => 'Compression Engine']);?>
         <?= $form->field($model,'description')->textarea(['placeholder' => 'Description Engine']);?>
-        <?= Html::submitButton('Create Engine',['class' => 'btn btn-create']);?>
+        <?= Html::submitButton('Create Engine',['class' => 'btn btn-success']);?>
         <?php $form->end();?>
     </div>
 </div>

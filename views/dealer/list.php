@@ -38,8 +38,8 @@ use yii2mod\google\maps\markers\GoogleMaps;
     ]);?>
     <?php if(!Yii::$app->user->isGuest):?>
         <div class="dealer-manage">
-            <a href="/dealer/add-car" class="btn btn-success">Add test car</a>
-            <a href="/dealer/test-cars" class="btn btn-success">Test cars list</a>
+            <a href="/dealer/add-car" class="btn btn-create">Add test car</a>
+            <a href="/dealer/test-cars" class="btn btn-create">Test cars list</a>
         </div>
     <?php endif;?>
     <h2 class="text-center">Dealer list</h2>

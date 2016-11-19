@@ -175,5 +175,6 @@ class BaseRecord extends ActiveRecord
     {
         self::setTable('article');
         return self::find()->where($param)->orderBy('id DESC')->limit($count)->all();
+
     }
 }

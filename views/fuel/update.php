@@ -28,7 +28,7 @@ use yii\helpers\Html;
             <?= $form->field($model,'extra_urban')->textInput(['value' => $fuel->extra_urban]);?>
             <?= $form->field($model,'combined')->textInput(['value' => $fuel->combined]);?>
             <?= $form->field($model,'emission')->textInput(['value' => $fuel->emission]);?>
-            <?= Html::submitButton('Update Fuel',['class' => 'btn btn-update']);?>
+            <?= Html::submitButton('Update Fuel',['class' => 'btn btn-primary']);?>
         <?php $form->end();?>
     </div>
 </div>
