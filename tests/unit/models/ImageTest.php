@@ -10,7 +10,8 @@ namespace tests\models;
 
 use Codeception\Test\Unit;
 use app\models\image\ImageList;
-class ImageListTest extends Unit
+use app\models\image\ImageModel;
+class ImageTest extends Unit
 {
     public function testShapePath()
     {
@@ -22,8 +23,13 @@ class ImageListTest extends Unit
     public function testCheckExists()
     {
         $model = new ImageList();
-        $result = $model->checkExists('img/dealer/general.jpg');
+        $result = $model->checkExists('/img/dealer/general.jpg');
+        $this->isTrue($result);
+    }
 
-        $this->assertFileExists('./img/dealer/general.jpg');
+    public function testCheckMatch()
+    {
+        expect_that($resTrue = ImageModel::checkMatch('test', 'test'));
+        expect($resTrue)->true();
     }
 }

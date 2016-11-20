@@ -25,10 +25,7 @@ class BaseRecordTest extends Unit
         expect_that($allEngine = BaseRecord::getAll('engine'));
         expect($allEngine)->notEmpty();
     }
-
-    /**
-     * will edit
-     */
+    
     public function testSelectParam()
     {
         $tets = null;

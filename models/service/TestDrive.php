@@ -162,11 +162,6 @@ class TestDrive extends BaseRecord
 
         $modelTime = (int)$model->time;
 
-        echo $minTimeCar . 'min' . '<br>';
-        echo $maxTimeCar . 'max' . '<br>';
-        echo $modelTime . 'time' . '<br>';
-        echo "<hr>";
-
         if($modelTime <= $minTimeCar || $modelTime >= $maxTimeCar) {
             return true;
         }
