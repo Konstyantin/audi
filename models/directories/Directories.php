@@ -86,6 +86,13 @@ class Directories
         return false;
     }
 
+    /**
+     * Perform rename directory if select directory exist 
+     *
+     * @param $oldName
+     * @param $newName
+     * @return bool
+     */
     public static function renameDir($oldName,$newName)
     {
         if(self::checkExist($oldName)){

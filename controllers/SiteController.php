@@ -2,6 +2,7 @@
 
 namespace app\controllers;
 
+use app\models\directories\Directories;
 use app\models\image\ImageModel;
 use Yii;
 use yii\filters\AccessControl;
