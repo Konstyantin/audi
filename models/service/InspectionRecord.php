@@ -43,7 +43,7 @@ class InspectionRecord extends Model
     public function rules()
     {
         return [
-            [['first_name','last_name','phone','email','dealer','car','mileage','license_plate','register_inspection'],'required'],
+            [['first_name','last_name','phone','email','dealer','car','mileage','license_plate','date'],'required'],
             [['first_name','last_name'],'string','min' => 3,'max' => 45],
             [['phone'],'string','min' => 10,'max' => 12],
             [['email'],'email'],

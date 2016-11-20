@@ -22,7 +22,8 @@ class ImageListTest extends Unit
     public function testCheckExists()
     {
         $model = new ImageList();
-        expect_that($result = $model->checkExists('img/models/A7.png'));
-        
+        $result = $model->checkExists('img/dealer/general.jpg');
+
+        $this->assertFileExists('./img/dealer/general.jpg');
     }
 }

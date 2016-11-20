@@ -11,6 +11,7 @@ namespace app\models\image;
 use Yii;
 use yii\base\Model;
 use app\models\image\ImageModel;
+use app\models\base\BaseRequest;
 
 /**
  * Class ImageList provide form for search and load exists image
