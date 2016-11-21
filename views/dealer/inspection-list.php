@@ -31,7 +31,7 @@
             <td><?=$item->mileage?></td>
             <td><?=$item->license_plate?></td>
             <td><?=$item->date?></td>
-            <td><a href="/dealer/delete-test/<?=$item->id?>" class="btn btn-danger">Delete</a></td>
+            <td><a href="/dealer/delete-inspection/<?=$item->id?>" class="btn btn-danger">Delete</a></td>
         </tr>
     <?php endforeach;?>
     </tbody>

@@ -9,6 +9,17 @@ use yii\widgets\LinkPager;
 ?>
 
 <div class="clearfix article container">
+    <?php if(Yii::$app->session->hasFlash('delete_article')):?>
+        <?php
+        $success = Yii::$app->session->getFlash('delete_article');
+        echo \yii\bootstrap\Alert::widget([
+            'options' => [
+                'class' => 'alert-success'
+            ],
+            'body' => $success
+        ]);
+        ?>
+    <?php endif;?>
     <h2>Article list</h2>
     <ul class="list-item clearfix">
         <div class="manage">

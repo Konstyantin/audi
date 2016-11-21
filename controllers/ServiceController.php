@@ -73,7 +73,7 @@ class ServiceController extends BaseController
     {
         $model = new TestDriveRecord();
 
-        $car = $this->viewList('car');
+        $car = $this->viewList('test_car');
         $service = $this->getOneByParam('service',['title' => 'Test Drive']);
         $dealer = $this->viewList('dealer','city');
 
@@ -82,7 +82,7 @@ class ServiceController extends BaseController
                 $values = $model->attributes;
                 $model->create($values);
 
-                $this->setFlash('success','Your application is accepted we will contact with you');
+                $this->setFlash('test_drive_success','Your application is accepted we will contact with you');
                 return $this->goBack('/service/testDrive');
             }
             $this->setFlash('fail_test','Sorry this time is taken, choose another time');
@@ -118,7 +118,7 @@ class ServiceController extends BaseController
         $service = $this->viewOne('service');
 
         if($this->update($model,$service)){
-            $this->setFlash('success','Service content update success');
+            $this->setFlash('update_service','Service content update success');
             return $this->goHome();
         }
         return $this->render('update',['model' => $model,'service' => $service]);

@@ -11,9 +11,9 @@ use yii\helpers\Html;
 <div class="container">
     <h2 class="text-center">Update Fuel</h2>
     <div class="col-md-8 col-md-offset-2">
-        <?php if(Yii::$app->session->hasFlash('update')):?>
+        <?php if(Yii::$app->session->hasFlash('update_fuel')):?>
             <?php
-            $success = Yii::$app->session->getFlash('update');
+            $success = Yii::$app->session->getFlash('update_fuel');
             echo \yii\bootstrap\Alert::widget([
                 'options' => [
                     'class' => 'alert-success'

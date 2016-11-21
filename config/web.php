@@ -92,6 +92,7 @@ $config = [
                 'dealer/delete-test-car/<id:\d+>' => 'dealer/delete-test-car',
                 'dealer/tests/<id:\d+>' => 'dealer/tests/',
                 'dealer/delete-test/<id:\d+>' => 'dealer/delete-test',
+                'dealer/delete-inspection/<id:\d+>' => 'dealer/delete-inspection',
                 'dealer/inspection-list/<id:\d+>' => 'dealer/inspection-list',
             ],
         ],

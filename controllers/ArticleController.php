@@ -55,7 +55,7 @@ class ArticleController extends BaseController
         $category = $this->viewList('article_category');
 
         if($this->create($model)){
-            $this->setFlash('success','Article create success');
+            $this->setFlash('create_article','Article create success');
         }
 
         return $this->render('create',['model' => $model,'category' => $category]);
@@ -116,7 +116,7 @@ class ArticleController extends BaseController
         if($this->delete('article')){
 
             Directories::removeDirectory(Article::$path . $article->title);
-            $this->setFlash('success','Article delete success');
+            $this->setFlash('delete_article','Article delete success');
         }
         return $this->goBack('/article/list');
     }
@@ -128,9 +128,7 @@ class ArticleController extends BaseController
      */
     public function actionDeleteList()
     {
-        if($this->deleteAll('article')){
-            $this->setFlash('success','Article list is clear');
-        }
+        $this->deleteAll('article');
         return $this->goBack('/article/list');
     }
 
@@ -146,7 +144,7 @@ class ArticleController extends BaseController
         $article = $this->viewOne('article');
 
         if ($this->update($model,$article)) {
-            $this->setFlash('success','Article update success');
+            $this->setFlash('update_article','Article update success');
             return $this->goBack('/article/' . $article->id);
         }
 

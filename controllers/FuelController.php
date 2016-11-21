@@ -28,7 +28,7 @@ class FuelController extends BaseController
         $fuel = $this->viewOne('fuel');
 
         if($this->update($model,$fuel)){
-            $this->setFlash('update','Fuel successful update');
+            $this->setFlash('update_fuel','Fuel successful update');
         }
 
         return $this->render('update',['model' => $model,'fuel' => $fuel]);

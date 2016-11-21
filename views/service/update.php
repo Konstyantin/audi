@@ -11,6 +11,17 @@ use codezeen\yii2\tinymce\TinyMce;
 ?>
 
 <div class="container">
+    <?php if(Yii::$app->session->hasFlash('update_service')):?>
+    <?php
+    $success = Yii::$app->session->getFlash('update_service');
+    echo \yii\bootstrap\Alert::widget([
+        'options' => [
+            'class' => 'alert-success'
+        ],
+        'body' => $success
+    ]);
+    ?>
+    <?php endif;?>
         <?php $form = ActiveForm::begin();?>
             <?=$form->field($model,'content')->widget(
             TinyMce::className(),

@@ -28,7 +28,7 @@ class BodyController extends BaseController
 
         $body = $this->viewOne('body');
         if($this->update($model,$body)){
-            $this->setFlash('update','Body successful update');
+            $this->setFlash('update_body','Body successful update');
         }
         
         return $this->render('update',['model' => $model,'body' => $body]);

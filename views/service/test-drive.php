@@ -19,9 +19,9 @@ use yii\helpers\ArrayHelper;
         <?php endif;?>
     </div>
 </div>
-<?php if(Yii::$app->session->hasFlash('success')):?>
+<?php if(Yii::$app->session->hasFlash('test_drive_success')):?>
     <?php
-    $success = Yii::$app->session->getFlash('success');
+    $success = Yii::$app->session->getFlash('test_drive_success');
     echo \yii\bootstrap\Alert::widget([
         'options' => [
             'class' => 'alert-success'

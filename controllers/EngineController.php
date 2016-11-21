@@ -71,7 +71,7 @@ class EngineController extends BaseController
         $engine = $this->viewOne('engine');
         
         if ($this->update($model,$engine)) {
-            $this->setFlash('update', 'Engine successful update');
+            $this->setFlash('update_engine', 'Engine successful update');
         }
         
         return $this->render('update',compact('model','engine'));
@@ -84,10 +84,7 @@ class EngineController extends BaseController
      */
     public function actionDelete()
     {
-        if($this->delete('engine')){
-            $this->setFlash('delete','Engine delete successful');
-        }
-
+        $this->delete('engine');
         return $this->goBack('/engine/list');
     }
 
@@ -110,9 +107,8 @@ class EngineController extends BaseController
     public function actionList()
     {
         $list = $this->viewList('engine');
-
         $imgs = ImageModel::load('img/engine/*.png');
-
+        
         return $this->render('list',['list' => $list,'imgs' => $imgs]);
     }
 
@@ -124,7 +120,7 @@ class EngineController extends BaseController
     public function actionView()
     {
         $engine = $this->viewOne('engine');
-
+        
         return $this->render('view',['engine' => $engine]);
     }
 }

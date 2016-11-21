@@ -13,9 +13,9 @@ use app\models\image\ImageModel;
     <div>
         <img class="engine-img" src="/img/models/AU150161_medium.jpg" alt="">
     </div>
-    <?php if(Yii::$app->session->hasFlash('success')):?>
+    <?php if(Yii::$app->session->hasFlash('create_model')):?>
         <?php
-        $success = Yii::$app->session->getFlash('success');
+        $success = Yii::$app->session->getFlash('create_model');
         echo \yii\bootstrap\Alert::widget([
             'options' => [
                 'class' => 'alert-success'

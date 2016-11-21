@@ -13,9 +13,9 @@ use codezeen\yii2\tinymce\TinyMce;
 <div class="container">
     <h2 class="text-center">Update Dealer</h2>
     <div class="form">
-        <?php if(Yii::$app->session->hasFlash('success')):?>
+        <?php if(Yii::$app->session->hasFlash('update_dealer')):?>
             <?php
-            $success = Yii::$app->session->getFlash('success');
+            $success = Yii::$app->session->getFlash('update_dealer');
             echo \yii\bootstrap\Alert::widget([
                 'options' => [
                     'class' => 'alert-success'

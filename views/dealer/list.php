@@ -40,6 +40,7 @@ use yii2mod\google\maps\markers\GoogleMaps;
         <div class="dealer-manage">
             <a href="/dealer/add-car" class="btn btn-create">Add test car</a>
             <a href="/dealer/test-cars" class="btn btn-create">Test cars list</a>
+            <a href="/dealer/create" class="btn btn-create">Create dealer</a>
         </div>
     <?php endif;?>
     <h2 class="text-center">Dealer list</h2>

@@ -15,9 +15,9 @@ use yii\helpers\ArrayHelper;
 <div class="container">
     <h2 class="text-center">Create Article</h2>
     <div class="form">
-        <?php if(Yii::$app->session->hasFlash('success')):?>
+        <?php if(Yii::$app->session->hasFlash('create_article')):?>
             <?php
-            $success = Yii::$app->session->getFlash('success');
+            $success = Yii::$app->session->getFlash('create_article');
             echo \yii\bootstrap\Alert::widget([
                 'options' => [
                     'class' => 'alert-success'

@@ -45,7 +45,7 @@ class TechnologyController extends BaseController
         $technology = $this->viewOne('technology');
 
         if($this->update($model,$technology)){
-            $this->setFlash('success','technology content update success');
+            $this->setFlash('update_technology','technology content update success');
             return $this->goHome();
         }
         return $this->render('update',['model' => $model,'technology' => $technology]);

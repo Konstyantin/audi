@@ -53,6 +53,7 @@ class ModelController extends BaseController
         $model = new CreateCarModel();
 
         if($this->create($model)){
+            $this->setFlash('create_model','create model success');
             return $this->goBack('/model/list');
         }
 
@@ -95,9 +96,7 @@ class ModelController extends BaseController
      */
     public function actionDelete()
     {
-        if($this->delete('models')){
-            $this->setFlash('delete_model','Models delete successful');
-        }
+        $this->delete('models');
 
         return $this->goBack('/model/list');
     }

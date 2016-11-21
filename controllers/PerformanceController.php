@@ -29,7 +29,7 @@ class PerformanceController extends BaseController
         $performance = $this->viewOne('performance');
 
         if($this->update($model,$performance)){
-            $this->setFlash('update','Performance successful update');
+            $this->setFlash('update_performance','Performance successful update');
         }
 
         return $this->render('update',['model' => $model,'performance' => $performance]);

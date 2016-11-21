@@ -12,9 +12,9 @@ use app\models\image\LoadWidget;
     <div>
         <img class="engine-img" src="/img/transmission/general.jpg" alt="">
     </div>
-    <?php if(Yii::$app->session->hasFlash('delete_transmission')):?>
+    <?php if(Yii::$app->session->hasFlash('create_transmission')):?>
         <?php
-        $success = Yii::$app->session->getFlash('delete_transmission');
+        $success = Yii::$app->session->getFlash('create_transmission');
         echo \yii\bootstrap\Alert::widget([
             'options' => [
                 'class' => 'alert-success'

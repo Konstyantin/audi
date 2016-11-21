@@ -54,6 +54,7 @@ class TransmissionController extends BaseController
         $model = new CreateTransmission();
 
         if($this->create($model)){
+            $this->setFlash('create_transmission','Transmission create success');
             $this->goBack('/transmission/list');
         }
         
@@ -108,9 +109,7 @@ class TransmissionController extends BaseController
      */
     public function actionDelete()
     {
-        if ($this->delete('transmission')) {
-            $this->setFlash('delete_transmission','Delete Transmission successful');
-        }
+        $this->delete('transmission');
 
         return $this->goBack('/transmission/list');
     }

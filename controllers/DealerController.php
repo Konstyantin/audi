@@ -71,7 +71,7 @@ class DealerController extends BaseController
         $model = new CreateDealer();
 
         if($this->create($model)){
-            $this->setFlash('success','create dealer success');
+            $this->setFlash('dealer_create','create dealer success');
         }
         return $this->render('create',['model' => $model]);
     }
@@ -88,7 +88,7 @@ class DealerController extends BaseController
         $dealer = $this->viewOne('dealer');
 
         if($this->update($model,$dealer)){
-            $this->setFlash('success','Dealer date update success');
+            $this->setFlash('update_dealer','Dealer date update success');
         }
 
         return $this->render('update',['model' => $model,'dealer' => $dealer]);
@@ -112,11 +112,7 @@ class DealerController extends BaseController
      */
     public function actionDelete()
     {
-        $id = BaseRequest::getParamOnUrl('id');
-        if($this->delete('dealer')){
-            $this->setFlash('success','dealer delete success');
-        }
-
+        $this->delete('dealer');
         return $this->goBack('/dealer/list');
     }
 
@@ -145,7 +141,6 @@ class DealerController extends BaseController
     public function actionTestCars()
     {
         $cars = $this->viewAll('test_car');
-
         return $this->render('test-car-list',['cars' => $cars]);
     }
 
@@ -156,7 +151,6 @@ class DealerController extends BaseController
      */
     public function actionDeleteTestCar()
     {
-        $id = BaseRequest::getParamOnUrl('id');
         $this->delete('test_car');
         return $this->goBack('/dealer/list');
     }
@@ -181,9 +175,8 @@ class DealerController extends BaseController
      */
     public function actionDeleteTest()
     {
-        $id = BaseRequest::getParamOnUrl('id');
         $this->delete('test_drive');
-        return $this->goBack('/dealer/tests');
+        return $this->goBack('/dealer/list');
     }
 
     /**
@@ -206,8 +199,7 @@ class DealerController extends BaseController
      */
     public function actionDeleteInspection()
     {
-        $id = BaseRequest::getParamOnUrl('id');
         $this->delete('inspection');
-        return $this->goBack('/dealer/inspection-list');
+        return $this->goBack('/dealer/list');
     }
 }
