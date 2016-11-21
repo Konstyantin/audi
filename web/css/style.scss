@@ -8,8 +8,6 @@ $nav_color: #1a1a1a;
 $link_color: #C80005;
 $open_sans: 'Open Sans', sans-serif;
 $monserat: 'Montserrat', sans-serif;
-/* Navigation Style */
-
 
 html {
   font-size: 100%;
@@ -100,6 +98,8 @@ section {
     margin: 0 auto;
   }
 }
+
+/* Navigation Style */
 
 nav {
   .navbar-header {
@@ -328,16 +328,16 @@ nav {
     margin:0;
     padding: 0;
   }
-  .item {
-    padding: 0 3%;
+  .item .item-info {
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+    color: #FFF;
+    padding: 3%;
+    background: $link_color;
 
-    .item-info {
-      padding: 3%;
-      background: $link_color;
-
-      a {
-        color: #f0f0f0;
-      }
+    a {
+      color: white;
     }
   }
 }

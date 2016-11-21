@@ -33,7 +33,7 @@ class UpdateCar extends Model
     {
         return [
             [['name','price','model_id'],'required'],
-            [['name'],'string','min' => 2,'max' => 15]
+            [['name'],'string','length' => [2,15]]
         ];
     }
 

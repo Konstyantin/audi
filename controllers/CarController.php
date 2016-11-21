@@ -71,8 +71,6 @@ class CarController extends BaseController
             $model = $this->selectModel([$body,$fuel,$performance,$car]);
             if($this->create($model)){
                 if($model === $car){
-                    Directories::createDirectory('./img/car/' . $model->name);
-                    $this->setFlash('success','Create success');
                     return $this->goBack('/model/list');
                 }
             }

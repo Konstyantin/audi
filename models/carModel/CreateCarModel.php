@@ -26,7 +26,7 @@ class CreateCarModel extends Model
     {
         return [
             ['name','required'],
-            [['name'],'string','min' => 2, 'max' => 15]
+            [['name'],'string','length' => [2,15]]
         ];
     }
 

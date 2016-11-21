@@ -3,7 +3,6 @@
 @import "https://fonts.googleapis.com/css?family=Roboto+Condensed";
 @import "https://fonts.googleapis.com/css?family=Pacifico|Roboto:100i";
 /* Declared variable */
-/* Navigation Style */
 html {
   font-size: 100%; }
 
@@ -73,6 +72,7 @@ section h2 {
   width: 100px;
   margin: 0 auto; }
 
+/* Navigation Style */
 nav .navbar-header {
   background: #f6f6f6; }
 nav .icon-bar {
@@ -211,13 +211,15 @@ nav li:hover a {
   .highlights .list-item, .article .list-item {
     margin: 0;
     padding: 0; }
-  .highlights .item, .article .item {
-    padding: 0 3%; }
-    .highlights .item .item-info, .article .item .item-info {
-      padding: 3%;
-      background: #C80005; }
-      .highlights .item .item-info a, .article .item .item-info a {
-        color: #f0f0f0; }
+  .highlights .item .item-info, .article .item .item-info {
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+    color: #FFF;
+    padding: 3%;
+    background: #C80005; }
+    .highlights .item .item-info a, .article .item .item-info a {
+      color: white; }
 
 /* car gallery */
 .demo-gallery {

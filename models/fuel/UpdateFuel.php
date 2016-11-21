@@ -28,8 +28,8 @@ class UpdateFuel extends Model
     {
         return [
             [['urban','extra_urban','combined','emission'],'required'],
-            [['urban','extra_urban','combined'],'number','min' => 5, 'max' => 30],
-            [['emission'],'string','min' => 5,'max' => 10]
+            [['urban','extra_urban','combined'],'number','min' => 2, 'max' => 30],
+            [['emission'],'string','length' => [4,10]]
         ];
     }
 

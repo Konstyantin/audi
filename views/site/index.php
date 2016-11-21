@@ -19,7 +19,8 @@
 </section>
 
 <!--Services-->
-<section class="service">
+
+<section class="service clearfix">
     <div class="container">
         <h2>Audi service</h2>
         <ul class="service-list clearfix">
@@ -32,10 +33,11 @@
         </ul>
     </div>
 </section>
+
 <!--News-->
 
-<section class="news">
-    <div class="container">
+<section class="news clearfix">
+    <div class="container clearfix">
         <h2>Audi News</h2>
         <ul id="newsTab" class="nav nav-pills">
             <li class="active">

@@ -12,9 +12,9 @@ use yii\helpers\Html;
 <div class="container custom-form">
     <h2 class="text-center">Create Engine</h2>
     <div class="col-md-8 col-md-offset-2">
-        <?php if(Yii::$app->session->hasFlash('update_technology')):?>
+        <?php if(Yii::$app->session->hasFlash('model_update')):?>
             <?php
-            $success = Yii::$app->session->getFlash('update_technology');
+            $success = Yii::$app->session->getFlash('model_update');
             echo \yii\bootstrap\Alert::widget([
                 'options' => [
                     'class' => 'alert-success'

@@ -10,7 +10,7 @@ use yii\widgets\ActiveForm;
 use yii\helpers\Html;
 ?>
 <div class="container custom-form">
-    <h2 class="text-center">Create Engine</h2>
+    <h2 class="text-center">Update Engine</h2>
     <div class="col-md-8 col-md-offset-2">
         <?php if(Yii::$app->session->hasFlash('update_engine')):?>
             <?php

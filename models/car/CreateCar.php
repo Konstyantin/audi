@@ -9,6 +9,9 @@
 namespace app\models\car;
 
 use yii\base\Model;
+use app\models\car\Car;
+use app\models\directories\Directories;
+
 /**
  * Class CreateCar
  * @package app\models\car
@@ -39,8 +42,20 @@ class CreateCar extends Model
     {
         return [
             [['name','engine_id','transmission_id','performance_id','fuel_id','body_id','price','model_id'],'required'],
-            [['name'],'string','min' => 2,'max' => 15]
+            [['name'],'string','length' => [2,45]]
         ];
+    }
+
+    /**
+     * get path to directory which hold all article directory and perform
+     * concatenate with title car which will be create before passes
+     * param $dirName to method Directories::createDirectory for create new directory
+     * with passed name
+     */
+    public function createDir()
+    {
+        $dirName = Car::$path . $this->name;
+        Directories::createDirectory($dirName);
     }
 
     /**
@@ -54,6 +69,7 @@ class CreateCar extends Model
         $car = new Car(['scenario' => Car::SCENARIO_CAR]);
         $car->attributes = $values;
         $car->save();
+        $this->createDir();
     }
     
 }

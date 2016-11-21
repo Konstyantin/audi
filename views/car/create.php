@@ -21,17 +21,6 @@ $models = ArrayHelper::map(BaseRecord::getAll('models'),'id','name');
 
 
 <div id="rootwizard" class="container">
-    <?php if(Yii::$app->session->hasFlash('success')):?>
-        <?php
-        $success = Yii::$app->session->getFlash('success');
-        echo \yii\bootstrap\Alert::widget([
-            'options' => [
-                'class' => 'alert-success'
-            ],
-            'body' => $success
-        ]);
-        ?>
-    <?php endif;?>
     <h2 class="text-center">Create Car</h2>
     <div class="tab-content">
         <div id="bar" class="progress">

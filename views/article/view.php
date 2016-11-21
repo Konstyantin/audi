@@ -19,10 +19,12 @@
         ?>
     <?php endif;?>
     <br>
-    <div class="manage">
-        <a href="/article/update/<?=$article->id;?>" class="btn btn-update">Update</a>
-        <a href="/article/delete/<?=$article->id?>" class="btn btn-delete">Delete</a>
-    </div>
+    <?php if(!Yii::$app->user->isGuest):?>
+        <div class="manage">
+            <a href="/article/update/<?=$article->id;?>" class="btn btn-update">Update</a>
+            <a href="/article/delete/<?=$article->id?>" class="btn btn-delete">Delete</a>
+        </div>
+    <?php endif;?>
     <header>
         <h2><?=$article->title?></h2>
     </header>

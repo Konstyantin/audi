@@ -44,8 +44,8 @@ class InspectionRecord extends Model
     {
         return [
             [['first_name','last_name','phone','email','dealer','car','mileage','license_plate','date'],'required'],
-            [['first_name','last_name'],'string','min' => 3,'max' => 45],
-            [['phone'],'string','min' => 10,'max' => 12],
+            [['first_name','last_name'],'string','length' => [3,45]],
+            [['phone'],'string','length' => [10,12]],
             [['email'],'email'],
         ];
     }
