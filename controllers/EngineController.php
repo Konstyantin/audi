@@ -29,7 +29,7 @@ class EngineController extends BaseController
         return [
             'access' => [
                 'class' => AccessControl::className(),
-                'only' => ['create','update','delete'],
+                'only' => ['create','update','delete','delete-list'],
                 'denyCallback' => function($rule,$action){
                     return $this->goBack();
                 },

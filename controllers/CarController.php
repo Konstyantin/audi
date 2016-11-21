@@ -41,7 +41,7 @@ class CarController extends BaseController
                 },
                 'rules' => [
                     [
-                        'actions' => ['create','update','delete','delete-list'],
+                        'actions' => ['create','update','delete','delete-list','select-engine','select-transmission'],
                         'allow' => true,
                         'roles' => ['@'],
                     ],
@@ -181,7 +181,6 @@ class CarController extends BaseController
             Directories::removeDirectory(Car::$path . $car->name);
             $this->deleteComponent(Car::getCarParam($car));
             $this->setFlash('success','Delete car success');
-            
             return $this->goBack('/model/list');
         }
     }
