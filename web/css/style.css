@@ -3,6 +3,8 @@
 @import "https://fonts.googleapis.com/css?family=Roboto+Condensed";
 @import "https://fonts.googleapis.com/css?family=Pacifico|Roboto:100i";
 /* Declared variable */
+/* Color */
+/* Fonts */
 html {
   height: 100%; }
 
@@ -78,6 +80,9 @@ section h2 {
 .navbar {
   border-top: 1px solid #f0f0f0;
   border-bottom: 1px solid #f0f0f0; }
+  .navbar ul {
+    margin-top: 0;
+    margin-bottom: 0; }
 
 .logo_container .audi_logo {
   width: 100px;
@@ -135,7 +140,7 @@ nav li:hover a {
   width: 24%; }
 .service p {
   padding: 3%;
-  color: #FFF;
+  color: #FFFFFF;
   font-family: "Montserrat", sans-serif;
   background: #C80005;
   cursor: pointer; }
@@ -160,12 +165,12 @@ nav li:hover a {
   text-overflow: ellipsis;
   white-space: nowrap;
   overflow: hidden;
-  color: #FFF;
+  color: #FFFFFF;
   padding: 3%;
   background: #C80005; }
 .news .tab-content .item .item-info a {
   font-family: "Montserrat", sans-serif;
-  color: #FFF; }
+  color: #FFFFFF; }
 .news .tab-content .item:last-child {
   margin-right: 0; }
 
@@ -226,11 +231,11 @@ nav li:hover a {
     text-overflow: ellipsis;
     white-space: nowrap;
     overflow: hidden;
-    color: #FFF;
+    color: #FFFFFF;
     padding: 3%;
     background: #C80005; }
     .highlights .item .item-info a, .article .item .item-info a {
-      color: white; }
+      color: #FFFFFF; }
 
 /* car gallery */
 .demo-gallery {
@@ -268,7 +273,7 @@ nav li:hover a {
   list-style: disc; }
 .service-description h2 {
   margin: 0;
-  background: #f6f6f6;
+  background: #F6F6F6;
   padding: 1.5% 6.5%; }
 .service-description .service-content {
   padding-top: 2%;

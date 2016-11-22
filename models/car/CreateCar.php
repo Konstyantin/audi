@@ -71,5 +71,26 @@ class CreateCar extends Model
         $car->save();
         $this->createDir();
     }
+
+    /**
+     * Select model to choose from array models
+     * and check send request from select model
+     * after execute create new record
+     *
+     * @param $models
+     * @return mixed
+     */
+    public function selectModel($models)
+    {
+        if(is_array($models)){
+            foreach ($models as $modelItem){
+                if(BaseRequest::checkModelRequest($modelItem)){
+                    return $modelItem;
+                }
+            }
+        }
+
+        return $models;
+    }
     
 }

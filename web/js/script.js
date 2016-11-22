@@ -202,7 +202,6 @@
                 });
 
                 if(isValid){
-                    console.log('true');
                     app.set_active_item(tab_pane,record_pos);
                     app.progress_bar(record_pos);
                 }

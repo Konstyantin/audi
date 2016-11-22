@@ -4,8 +4,10 @@
 @import 'https://fonts.googleapis.com/css?family=Pacifico|Roboto:100i';
 /* Declared variable */
 
+/* Color */
 $nav_color: #1a1a1a;
 $link_color: #C80005;
+/* Fonts */
 $open_sans: 'Open Sans', sans-serif;
 $monserat: 'Montserrat', sans-serif;
 
@@ -17,8 +19,6 @@ body {
   min-height: 100%;
   position: relative;
 }
-
-
 
 img {
   width: 100%;
@@ -103,9 +103,14 @@ section {
 }
 
 /* Set border for element */
+
 .navbar {
   border-top: 1px solid #f0f0f0;
   border-bottom: 1px solid #f0f0f0;
+  ul {
+    margin-top: 0;
+    margin-bottom: 0;
+  }
 }
 
 .logo_container {
@@ -199,7 +204,7 @@ nav {
 
   p {
     padding: 3%;
-    color: #FFF;
+    color: #FFFFFF;
     font-family: $monserat;
     background: $link_color;
     cursor: pointer;
@@ -242,14 +247,14 @@ nav {
       text-overflow: ellipsis;
       white-space: nowrap;
       overflow: hidden;
-      color: #FFF;
+      color: #FFFFFF;
       padding: 3%;
       background: $link_color;
     } 
 
     .item .item-info a {
       font-family: $monserat;
-      color: #FFF;
+      color: #FFFFFF;
     }
     .item:last-child {
       margin-right: 0;
@@ -348,12 +353,12 @@ nav {
     text-overflow: ellipsis;
     white-space: nowrap;
     overflow: hidden;
-    color: #FFF;
+    color: #FFFFFF;
     padding: 3%;
     background: $link_color;
 
     a {
-      color: white;
+      color: #FFFFFF;
     }
   }
 }
@@ -412,7 +417,7 @@ nav {
   }
   h2 {
     margin:0;
-    background: #f6f6f6;
+    background: #F6F6F6;
     padding: 1.5% 6.5%;
   }
   .service-content {

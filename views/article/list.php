@@ -30,12 +30,14 @@ use yii\widgets\LinkPager;
             <?php endif;?>
         </div>
         <?php foreach ($list as $item):?>
-            <li class="item col-xs-6 col-md-4">
-                <img src="/img/article/<?=$item->title?>/general.jpg" alt="">
-                <div class="item-info">
-                    <a href="/article/<?=$item->id?>"><?=$item->title;?></a>
-                </div>
-            </li>
+            <a href="/article/<?=$item->id?>">
+                <li class="item col-xs-6 col-md-4">
+                    <img src="/img/article/<?=$item->title?>/general.jpg" alt="">
+                    <div class="item-info">
+                        <a href="/article/<?=$item->id?>"><?=$item->title;?></a>
+                    </div>
+                </li>
+            </a>
         <?php endforeach;?>
     </ul>
     <?=LinkPager::widget(['pagination' => $pages])?>

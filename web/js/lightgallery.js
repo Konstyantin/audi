@@ -3,5 +3,4 @@
  */
 $(document).ready(function() {
     $("#lightgallery").lightGallery();
-    console.log('asd');
 });

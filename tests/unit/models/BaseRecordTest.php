@@ -36,7 +36,7 @@ class BaseRecordTest extends Unit
     public function testGetOne()
     {
         expect_that($engine = BaseRecord::getOne('engine',['id' => 1]));
-        expect($engine->name)->equals('1.4 TFSI');
+        expect($engine->name)->equals('1.0 TFSI');
     }
     
     public function testGetBy()

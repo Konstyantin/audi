@@ -30,7 +30,7 @@ AppAsset::register($this);
     <div class="logo_container">
         <div class="audi_logo">
             <div>
-                <a href="/site/index"><img src="/img/audi_logo.png" alt=""></a>
+                <a href="/site/index"><img src="/img/logo/audi_logo.png" alt=""></a>
             </div>
         </div>
     </div>

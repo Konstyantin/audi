@@ -46,12 +46,14 @@ use yii2mod\google\maps\markers\GoogleMaps;
     <h2 class="text-center">Dealer list</h2>
     <ul class="dealer-list clearfix">
         <?php foreach ($dealers as $dealerItem):?>
-            <li class="item col-md-6">
-                <img src="/img/dealer/<?=$dealerItem->city;?>.jpg" alt="">
-                <div class="item-info">
-                    <a href="/dealer/<?=$dealerItem->id?>"><?=$dealerItem->city;?></a>
-                </div>
-            </li>
+            <a href="/dealer/<?=$dealerItem->id?>">
+                <li class="item col-md-6">
+                    <img src="/img/dealer/<?=$dealerItem->city;?>.jpg" alt="">
+                    <div class="item-info">
+                        <a href="/dealer/<?=$dealerItem->id?>"><?=$dealerItem->city;?></a>
+                    </div>
+                </li>
+            </a>
         <?php endforeach;?>
     </ul>
 </div>

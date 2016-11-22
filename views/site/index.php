@@ -50,22 +50,24 @@
         <div id="newsContent" class="tab-content clearfix">
             <div class="tab-pane fade in active clearfix" id="news">
                 <?php foreach ($news as $newsItem):?>
-                    <div class="item col-md-3 col-xs-6">
-                        <img src="/img/article/<?=$newsItem->title?>/general.jpg" alt="">
-                        <div class="item-info">
-                            <a href="/article/<?=$newsItem->id?>" class="news_title text-center"><?=$newsItem->title;?></a>
+                    <a href="/article/<?=$newsItem->id?>" class="news_title text-center">
+                        <div class="item col-md-3 col-xs-6">
+                            <img src="/img/article/<?=$newsItem->title?>/general.jpg" alt="">
+                            <div class="item-info">
+                                <a href="/article/<?=$newsItem->id?>" class="news_title text-center"><?=$newsItem->title;?></a>
+                            </div>
                         </div>
-                    </div>
                 <?php endforeach;?>
             </div>
             <div class="tab-pane fade clearfix" id="sport">
                 <?php foreach ($sport as $sportItem):?>
-                    <div class="item col-md-3 col-xs-6">
-                        <img src="/img/article/<?=$sportItem->title?>/general.jpg" alt="">
-                        <div class="item-info">
-                            <a href="/article/<?=$sportItem->id?>"><?=$sportItem->title;?></a>
+                    <a href="/article/<?=$sportItem->id?>">
+                        <div class="item col-md-3 col-xs-6">
+                            <img src="/img/article/<?=$sportItem->title?>/general.jpg" alt="">
+                            <div class="item-info">
+                                <a href="/article/<?=$sportItem->id?>"><?=$sportItem->title;?></a>
+                            </div>
                         </div>
-                    </div>
                 <?php endforeach;?>
             </div>
         </div>
