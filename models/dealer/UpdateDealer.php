@@ -32,7 +32,7 @@ class UpdateDealer extends Model
     {
         return [
             [['city','street','location','description'],'required'],
-            [['city','street','location'],'string','length' => [5,45]],
+            [['city','street','location'],'string','length' => [4,45]],
         ];
     }
 

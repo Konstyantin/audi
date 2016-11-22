@@ -97,12 +97,15 @@ AppAsset::register($this);
         </div>
     </nav>
     <div>
-        <?= Breadcrumbs::widget([
-            'links' => isset($this->params['breadcrumbs']) ? $this->params['breadcrumbs'] : [],
-        ]) ?>
-        <?= $content ?>
+        <?=$content?>
     </div>
     <img class="scrollTop" src="/img/logo/up-arrow.png" alt="">
+    <!--Footer-->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; AUDI AG. All rights reserved</p>
+        </div>
+    </footer>
 </div>
 
 

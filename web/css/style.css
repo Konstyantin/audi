@@ -4,13 +4,14 @@
 @import "https://fonts.googleapis.com/css?family=Pacifico|Roboto:100i";
 /* Declared variable */
 html {
-  font-size: 100%; }
+  height: 100%; }
+
+body {
+  min-height: 100%;
+  position: relative; }
 
 img {
   width: 100%; }
-
-html, body {
-  height: 100%; }
 
 ul {
   list-style: none; }
@@ -23,7 +24,17 @@ section h2 {
   margin-bottom: 2%; }
 
 .wrap {
-  height: 100%; }
+  padding-bottom: 7%; }
+
+.footer {
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  padding: 1%;
+  border-top: 1px solid #f4f4f4; }
+  .footer p {
+    font-family: "Montserrat", sans-serif;
+    margin-bottom: 0; }
 
 .form-control {
   border-radius: 0; }
@@ -64,7 +75,7 @@ section h2 {
   transition: .3s; }
 
 /* Set border for element */
-.navbar, .news {
+.navbar {
   border-top: 1px solid #f0f0f0;
   border-bottom: 1px solid #f0f0f0; }
 
@@ -264,7 +275,6 @@ nav li:hover a {
   padding-bottom: 2%; }
 
 .service-register {
-  background: #f6f6f6;
   padding: 2%; }
 
 .bootstrap-timepicker-widget {
