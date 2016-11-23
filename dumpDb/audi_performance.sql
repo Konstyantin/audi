@@ -1,0 +1,52 @@
+-- MySQL dump 10.13  Distrib 5.7.16, for Linux (x86_64)
+--
+-- Host: localhost    Database: audi
+-- ------------------------------------------------------
+-- Server version	5.7.16-0ubuntu0.16.04.1
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8 */;
+/*!40103 SET @OLD_TIME_ZONE=@@TIME_ZONE */;
+/*!40103 SET TIME_ZONE='+00:00' */;
+/*!40014 SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0 */;
+/*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
+/*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
+/*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
+
+--
+-- Table structure for table `performance`
+--
+
+DROP TABLE IF EXISTS `performance`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `performance` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `speed` int(11) NOT NULL,
+  `acceleration` float NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=37 DEFAULT CHARSET=latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `performance`
+--
+
+LOCK TABLES `performance` WRITE;
+/*!40000 ALTER TABLE `performance` DISABLE KEYS */;
+INSERT INTO `performance` VALUES (1,240,6.3),(2,226,8.2),(3,250,3.9),(4,186,11.1),(5,200,20),(6,220,8.2),(7,230,8),(8,210,8.7),(9,210,10.1),(10,220,8.9),(11,233,7.9),(12,250,5.8),(13,238,7.5),(14,204,8.9),(15,210,8.5),(16,216,7.1),(17,250,3.9),(18,250,3.9),(19,250,5.3),(20,200,20),(21,200,12),(22,200,20),(23,200,12),(24,250,4.6),(25,250,4.1),(26,241,6.9),(27,200,20),(28,320,3.5),(32,200,12),(36,220,12);
+/*!40000 ALTER TABLE `performance` ENABLE KEYS */;
+UNLOCK TABLES;
+/*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
+
+/*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
+/*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;
+/*!40014 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS */;
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+/*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
+
+-- Dump completed on 2016-11-23 18:15:19
